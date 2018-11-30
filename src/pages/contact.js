@@ -3,8 +3,8 @@ import Header from "../components/Header";
 
 export default () => (
   <div style={{ color: `teal` }}>
-    <Header headerText="Light My Fire Puget Sound" />
+    <Header headerText="Contact" />
 
-    <p>Such wow. Very React.</p>
+    <p>Contact us</p>
   </div>
 );

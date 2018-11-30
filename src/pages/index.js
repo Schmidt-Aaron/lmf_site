@@ -1,15 +1,8 @@
-import React from "react"
-import Header from "../components/Header";
-import Nav from "../components/Nav";
-
+import React from "react";
 
 export default () => (
-  <main>
-    <Header
-      headerText="Light my Fire"
-       />
-    <Nav></Nav>
-    <div>Hello world!</div>
-
-  </main>
-)
+  <div style={{ color: `teal` }}>
+    <h1>About Gatsby</h1>
+    <p>Such wow. Very React.</p>
+  </div>
+);

@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
+import Layout from "../components/layout";
 
 export default () => (
-  <div style={{ color: `teal` }}>
-    <Header headerText="Donate!" />
+  <Layout>
     <h1>Donate to LMF</h1>
     <p>now accepting donations</p>
-  </div>
+  </Layout>
 );

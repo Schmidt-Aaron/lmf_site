@@ -1,4 +1,7 @@
 module.exports = {
+  siteMetadata: {
+    title: `Light My Fire - Puget Sound`
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-typography`,
@@ -10,6 +13,7 @@ module.exports = {
       resolve: `gatsby-plugin-emotion`,
       options: {
         // Accepts all options defined by `babel-plugin-emotion` plugin.
-      },
-    ],
+      }
+    }
+  ]
 };

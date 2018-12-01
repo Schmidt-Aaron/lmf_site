@@ -1,10 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
+import Layout from "../components/layout";
 
 export default () => (
-  <div style={{ color: `teal` }}>
-    <Header headerText="Contact" />
+  <Layout>
     <h1>Contact LMF</h1>
     <p>Contact us</p>
-  </div>
+  </Layout>
 );

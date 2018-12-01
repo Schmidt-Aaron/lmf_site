@@ -1,10 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
+import Layout from "../components/layout";
 
 export default () => (
-  <div style={{ color: `teal` }}>
-    <Header headerText="Light My Fire Puget Sound" />
-
-    <p>Such wow. Very React.</p>
-  </div>
+  <Layout>
+    <p>Home Page content goes here.</p>
+  </Layout>
 );

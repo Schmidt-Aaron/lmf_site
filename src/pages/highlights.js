@@ -1,9 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
+import Layout from "../components/layout";
 
 export default () => (
-  <div style={{ color: `teal` }}>
-    <Header headerText="Highlights" />
+  <Layout>
     <h1>Our Highlights</h1>
     <p>
       We do a variety of events throughout the year. We will post some photos &
@@ -11,5 +10,5 @@ export default () => (
       information on our Facebook account.
     </p>
     <p>add highlights</p>
-  </div>
+  </Layout>
 );

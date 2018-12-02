@@ -1,15 +1,6 @@
 import React from "react";
 import Layout from "../components/layout";
-
-const PartnerImage = props => (
-  <a href={props.link} target="_blank" rel="noopener noreferrer">
-    <img
-      src={props.imgURL}
-      alt={props.altText}
-      description={props.description}
-    />
-  </a>
-);
+import Partners from "../components/Partners";
 
 export default () => (
   <Layout>
@@ -23,7 +14,7 @@ export default () => (
       to make it happen!
     </p>
     <div>
-      <p>Partner Images go here</p>
+      <Partners />
     </div>
   </Layout>
 );

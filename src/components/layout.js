@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default ({ children }) => (
-  <div style={{ width: `100vw`, display: `grid` }}>
+  <div style={{ width: `100vw`, minHeight: `100vh`, display: `grid` }}>
     <Header />
     <main
       style={{

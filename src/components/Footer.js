@@ -1,5 +1,4 @@
 import React from "react";
-import NavMenu from "../components/NavMenu";
 // import { Link } from "gatsby";
 
 const Footer = () => {

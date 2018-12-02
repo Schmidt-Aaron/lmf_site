@@ -9,8 +9,7 @@ export default ({ children }) => (
       style={{
         maxWidth: 1200,
         justifySelf: `start`,
-        margin: `0`,
-        paddingTop: `3rem`
+        margin: `0`
       }}
     >
       {children}

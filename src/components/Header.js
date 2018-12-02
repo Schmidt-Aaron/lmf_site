@@ -1,8 +1,10 @@
 import React from "react";
 import NavMenu from "../components/NavMenu";
+import logo from "../../static/images/lmflogo-text.png";
 import { StaticQuery, Link, graphql } from "gatsby";
 
 export default () => (
+  // queries gatsby-config file for site title
   <StaticQuery
     query={graphql`
       query {
@@ -17,9 +19,10 @@ export default () => (
       <header
         style={{
           display: `grid`,
-          gridTemplateRows: `1`,
+          gridTemplateRows: `3rem`,
           gridTemplateColumns: `auto`,
-          padding: `1.25rem 1rem`
+          position: `fixed`,
+          height: `3rem`
         }}
       >
         <div
@@ -39,9 +42,12 @@ export default () => (
               color: `black`
             }}
           >
-            <h3 style={{ display: `inline` }}>
-              {data.site.siteMetadata.title}
-            </h3>
+            <h3 style={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
+            <img
+              src={logo}
+              alt="Light My Fire Puget Sound"
+              description="Light My Fire"
+            />
           </Link>
         </div>
         <div

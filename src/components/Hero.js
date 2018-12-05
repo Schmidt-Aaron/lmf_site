@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const Hero = () => {
   return (
@@ -21,16 +22,16 @@ const Hero = () => {
         backgroundPosition: `center center`,
         backgroundRepeat: `no-repeat`,
         backgroundAttachment: `fixed`,
-        paddingTop: `3rem`
+        padding: `3rem 0 0 0`
       }}
     >
-      <div class="hero-inner">
+      <div>
         <h1 style={{ fontSize: `5rem` }}>Light My Fire</h1>
         <h2>
           We have been Helping families recover from fire damage since 2014
         </h2>
-        <a
-          href="https://example.com/"
+        <Link
+          to="/donate"
           class="btn"
           style={{
             /* Positioning and sizing */
@@ -50,11 +51,12 @@ const Hero = () => {
 
             /* Border styles */
             border: `3px solid white`,
-            borderRadius: `20px`
+            borderRadius: `20px`,
+            backgroundColor: `rgba(147, 112, 219, 0.8)`
           }}
         >
           Help Today
-        </a>
+        </Link>
       </div>
     </section>
   );

@@ -26,9 +26,34 @@ const Hero = () => {
     >
       <div class="hero-inner">
         <h1 style={{ fontSize: `5rem` }}>Light My Fire</h1>
-        <h2>Helping families recover from fire damage!</h2>
-        <a href="https://example.com/" class="btn">
-          How to Help
+        <h2>
+          We have been Helping families recover from fire damage since 2014
+        </h2>
+        <a
+          href="https://example.com/"
+          class="btn"
+          style={{
+            /* Positioning and sizing */
+            display: `block`,
+            width: `200px`,
+
+            /* Padding and margins */
+            padding: `1em`,
+            marginTop: `50px`,
+            marginLeft: `auto`,
+            marginRight: `auto`,
+
+            /* Text styles */
+            color: `white`,
+            textDecoration: `none`,
+            fontSize: `1.5em`,
+
+            /* Border styles */
+            border: `3px solid white`,
+            borderRadius: `20px`
+          }}
+        >
+          Help Today
         </a>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import UpcomingEvents from "../components/UpcomingEvents";
+import PastEvents from "../components/PastEvents";
 
 export default () => (
   <Layout>
@@ -10,6 +11,7 @@ export default () => (
       highlight information for these events. You can also find other photos and
       information on our Facebook account.
     </p>
-    <UpcomingEvents />
+    <UpcomingEvents style={{ marginBottom: `2rem` }} />
+    <PastEvents style={{ marginBottom: `2rem` }} />
   </Layout>
 );

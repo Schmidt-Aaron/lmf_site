@@ -8,7 +8,7 @@ export default ({ children }) => (
       width: `100vw`,
       minHeight: `100vh`,
       display: `grid`,
-      gridTemplateRows: ` 100px 80% 200px`
+      gridTemplateRows: ` 100px auto 200px`
     }}
   >
     <Header style={{ gridRow: `1/2` }} />
@@ -19,7 +19,8 @@ export default ({ children }) => (
         margin: `0`,
         padding: `1.5rem 3rem`,
         paddingTop: `3rem`,
-        gridRow: `2/3`
+        gridRow: `2/3`,
+        marginBottom: ` 2rem`
       }}
     >
       {children}

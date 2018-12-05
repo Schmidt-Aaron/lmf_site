@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoAre = () => {
   return (
-    <section style={{ marginBottom: `2rem` }}>
+    <section>
       <h2>About Light My Fire</h2>
       <p>
         In the Seattle area alone, there are around 400 home fires every year.

@@ -5,10 +5,10 @@ import Header from "./Header";
 export default ({ children }) => (
   <div
     style={{
-      width: `100vw`,
-      minHeight: `100vh`,
       display: `grid`,
-      gridTemplateRows: ` 100px auto 200px`
+      gridTemplateRows: `100px auto max-content`,
+      width: `100vw`,
+      minHeight: `100vh`
     }}
   >
     <Header style={{ gridRow: `1/2` }} />
@@ -16,11 +16,10 @@ export default ({ children }) => (
       style={{
         maxWidth: 1200,
         justifySelf: `start`,
-        margin: `0`,
+        margin: `0 auto`,
         padding: `1.5rem 3rem`,
         paddingTop: `3rem`,
-        gridRow: `2/3`,
-        marginBottom: ` 2rem`
+        gridRow: `2/3`
       }}
     >
       {children}

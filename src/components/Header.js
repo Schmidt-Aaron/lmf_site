@@ -21,8 +21,7 @@ export default () => (
           display: `grid`,
           gridTemplateRows: `3rem`,
           gridTemplateColumns: `auto`,
-          position: `fixed`,
-          height: `3rem`
+          position: `fixed`
         }}
       >
         <div

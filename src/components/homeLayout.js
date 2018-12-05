@@ -7,7 +7,6 @@ export default ({ children }) => (
     <Header />
     <main
       style={{
-        maxWidth: 1200,
         justifySelf: `start`,
         margin: `0 0 2rem`
       }}

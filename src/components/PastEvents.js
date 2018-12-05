@@ -2,7 +2,7 @@ import React from "react";
 
 const PastEvents = () => {
   return (
-    <section style={{ marginBottom: `2rem` }}>
+    <section>
       <h2>Past Events</h2>
       <h3>2015 President’s Choice Fundraiser</h3>
       <p>

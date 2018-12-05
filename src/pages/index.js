@@ -8,7 +8,9 @@ import UpcomingEvents from "../components/UpcomingEvents";
 export default () => (
   <Layout>
     <Hero />
-    <section style={{ padding: `1.5rem 3rem` }}>
+    <section
+      style={{ padding: `1.5rem 3rem`, margin: `2rem auto`, maxWidth: 1200 }}
+    >
       <WhoAre />
       <HowHelp />
       <UpcomingEvents />

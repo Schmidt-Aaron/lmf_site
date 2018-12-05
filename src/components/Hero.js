@@ -13,9 +13,10 @@ const Hero = () => {
 
         /* Text styles */
         textAlign: `center`,
+        color: `white`,
 
         /* Background styles */
-        backgroundImage: `url(https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg)`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg)`,
         backgroundSize: `cover`,
         backgroundPosition: `center center`,
         backgroundRepeat: `no-repeat`,
@@ -25,9 +26,9 @@ const Hero = () => {
     >
       <div class="hero-inner">
         <h1 style={{ fontSize: `5rem` }}>Light My Fire</h1>
-        <h2>Look at this website and bask in its amazing glory!</h2>
+        <h2>Helping families recover from fire damage!</h2>
         <a href="https://example.com/" class="btn">
-          Go ahead...
+          How to Help
         </a>
       </div>
     </section>

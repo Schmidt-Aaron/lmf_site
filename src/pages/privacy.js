@@ -2,6 +2,8 @@ import React from "react";
 import Layout from "../components/layout";
 import { Link } from "@reach/router";
 
+// used on privacy page
+
 export default () => (
   <Layout>
     <h1>Privacy Policy</h1>

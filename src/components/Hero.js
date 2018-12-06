@@ -29,9 +29,11 @@ const Hero = () => {
     >
       <div>
         <h1 style={{ fontSize: `5rem` }}>Light My Fire</h1>
-        <h2>
-          We have been Helping families recover from fire damage since 2014
-        </h2>
+        <h2>A house fire can destroy an entire family's possessions</h2>
+        <h3>
+          We have been Helping local PNW families recover from catastrophic fire
+          damage since 2014
+        </h3>
         <Link
           to="/donate"
           className="btn"

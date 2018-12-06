@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import Sidebar from "./Sidebar";
 
 //  standard layout for every page except homepage
 
@@ -21,10 +22,14 @@ export default ({ children }) => (
         margin: `0 auto`,
         padding: `1.5rem 3rem`,
         paddingTop: `3rem`,
-        gridRow: `2/3`
+        gridRow: `2/3`,
+        display: `grid`
       }}
     >
       {children}
+      <aside>
+        <Sidebar />
+      </aside>
     </main>
     <Footer style={{ gridRow: `3/3` }} />
   </div>

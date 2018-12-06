@@ -3,6 +3,8 @@ import NavMenu from "../components/NavMenu";
 import logo from "../../static/images/lmflogo-text.png";
 import { StaticQuery, Link, graphql } from "gatsby";
 
+// used on everypage
+
 export default () => (
   // queries gatsby-config file for site title
   <StaticQuery

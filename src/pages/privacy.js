@@ -18,7 +18,7 @@ export default () => (
     </p>
     <p>
       We don’t like junk email anymore than you do, so if you think you received
-      any messages from us that are spam, please use the
+      any messages from us that are spam, please use the{" "}
       <Link to="/contact">contact us</Link> page to let us know about it.
     </p>
   </Layout>

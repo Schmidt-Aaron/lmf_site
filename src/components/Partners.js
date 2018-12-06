@@ -19,6 +19,8 @@ const PartnerImage = props => {
   );
 };
 
+//  used on the partners page
+
 const Partners = () => {
   return (
     <div>

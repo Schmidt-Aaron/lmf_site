@@ -2,6 +2,8 @@ import React from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
+//  standard layout for every page except homepage
+
 export default ({ children }) => (
   <div
     style={{

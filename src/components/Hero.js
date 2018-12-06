@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
 
+// used on homepage only
+
 const Hero = () => {
   return (
     <section

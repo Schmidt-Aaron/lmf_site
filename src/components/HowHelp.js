@@ -1,5 +1,7 @@
 import React from "react";
 
+//  used on the homepage only
+
 const HowHelp = () => {
   return (
     <section>

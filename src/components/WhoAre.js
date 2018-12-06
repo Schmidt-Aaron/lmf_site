@@ -1,5 +1,7 @@
 import React from "react";
 
+// This component is used on the homepage and the about us page
+
 const WhoAre = () => {
   return (
     <section>

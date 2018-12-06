@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
-import logo from "../../static/images/lmf-logo.207x212.png"
+import logo from "../../static/images/lmf-logo.207x212.png";
+
+// used on every page
 
 const Footer = () => {
   // get the current year
@@ -27,7 +29,17 @@ const Footer = () => {
           textAlign: `center`
         }}
       >
-      <img src={logo} alt="light my fire homepage" style={{position:`absolute`, left:`20px`, height:`100px`, width: `auto`, margin:`0`}}/>
+        <img
+          src={logo}
+          alt="light my fire homepage"
+          style={{
+            position: `absolute`,
+            left: `20px`,
+            height: `100px`,
+            width: `auto`,
+            margin: `0`
+          }}
+        />
         <p>Copyright © {year()} Light My Fire of Puget Sound</p>
         <Link to="/privacy">Privacy Policy</Link>
       </div>

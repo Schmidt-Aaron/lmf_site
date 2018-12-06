@@ -2,6 +2,8 @@ import React from "react";
 import auction from "../../static/images/auction2019.png";
 import Event from "./Event";
 
+// this component is used on the homepage and the events page
+
 const UpcomingEvents = () => {
   return (
     <section>

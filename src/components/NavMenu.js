@@ -14,6 +14,8 @@ const ListLink = props => (
   </li>
 );
 
+// used on every page
+
 export default () => (
   <nav>
     <ul>

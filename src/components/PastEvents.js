@@ -1,5 +1,7 @@
 import React from "react";
 
+// used on the events page
+
 const PastEvents = () => {
   return (
     <section>

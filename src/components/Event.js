@@ -2,9 +2,9 @@ import React from "react";
 
 const Event = props => {
   return (
-    <section>
+    <section style={{ display: `flex` }}>
       <img src={props.imgURL} alt={props.imgAlt} height="300px" width="auto" />
-      <div>
+      <div style={{ marginLeft: `2rem` }}>
         <p>
           <span>What:</span> {props.eventName}
         </p>

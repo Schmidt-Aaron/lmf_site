@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 import UpcomingEvents from "../components/UpcomingEvents";
 import PastEvents from "../components/PastEvents";
 

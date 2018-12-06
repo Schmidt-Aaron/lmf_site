@@ -1,9 +1,24 @@
 import React from "react";
+import DaveMataftin from "./Board/DaveMataftin";
+import DavidKean from "./Board/DavidKean";
+import DianeSalz from "./Board/DianeSalz";
+import JeremyKennard from "./Board/JeremyKennard";
+import RobertFrance from "./Board/RobertFrance";
+import RyanJensen from "./Board/RyanJensen";
 
-// used on about page
+//  board members imported from  ../Board; used on About
 
 const Board = () => {
-  return <h2>board</h2>;
+  return (
+    <section>
+      <DaveMataftin />
+      <DavidKean />
+      <DianeSalz />
+      <JeremyKennard />
+      <RobertFrance />
+      <RyanJensen />
+    </section>
+  );
 };
 
 export default Board;

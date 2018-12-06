@@ -1,9 +1,14 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout";
 
-export default () => (
-  <Layout>
-    <h1>Donate to LMF</h1>
-    <p>now accepting donations</p>
-  </Layout>
-);
+export default () => {
+  return (
+    <Layout>
+      <section>
+        <h1>Help</h1>
+        <h1>Donate to LMF</h1>
+        <p>now accepting donations</p>
+      </section>
+    </Layout>
+  );
+};

@@ -32,7 +32,7 @@ const Hero = () => {
         </h2>
         <Link
           to="/donate"
-          class="btn"
+          className="btn"
           style={{
             /* Positioning and sizing */
             display: `block`,

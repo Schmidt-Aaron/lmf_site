@@ -13,7 +13,7 @@ const Board = () => {
     <section>
       <DaveMataftin />
       <DavidKean />
-      <DianeSalz />
+      {/* <DianeSalz /> */}
       <JeremyKennard />
       <RobertFrance />
       <RyanJensen />

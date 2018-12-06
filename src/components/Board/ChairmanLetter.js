@@ -1,5 +1,5 @@
 import React from "react";
-// import DianeSign from "../../static/images/diane_sign.png";
+import DianeSign from "../../../static/images/diane_sign.png";
 
 // chairmans letter; used on about page
 
@@ -42,7 +42,9 @@ const Chairman = () => {
         firefighters who protect it, thank you for supporting us in whatever way
         you are able.
       </p>
-      <p>{/* <img src={DianeSign} /> */}</p>
+      <p>
+        <img src={DianeSign} />
+      </p>
     </section>
   );
 };

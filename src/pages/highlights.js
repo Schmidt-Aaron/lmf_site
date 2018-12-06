@@ -9,6 +9,7 @@ export default () => (
       highlight information for these events. You can also find other photos and
       information on our Facebook account.
     </p>
+    <PastEvents style={{ marginBottom: `2rem` }} />
     <p>add highlights</p>
   </Layout>
 );

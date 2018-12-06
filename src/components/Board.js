@@ -11,9 +11,10 @@ import RyanJensen from "./Board/RyanJensen";
 const Board = () => {
   return (
     <section>
+      <h2>Board of Directors</h2>
       <DaveMataftin />
       <DavidKean />
-      {/* <DianeSalz /> */}
+      <DianeSalz />
       <JeremyKennard />
       <RobertFrance />
       <RyanJensen />

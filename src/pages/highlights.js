@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
+import PastEvents from "../components/PastEvents";
 
 export default () => (
   <Layout>

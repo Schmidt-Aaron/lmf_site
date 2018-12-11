@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "gatsby";
+import Menu from "@material-ui/core/Menu";
+import Button from "@material-ui/core/Button";
+import MenuItem from "@material-ui/core/MenuItem";
 
 // paypal link
 const donate =
@@ -22,9 +25,18 @@ const ListLink = props => (
 
 // used on every page
 
+class NavMenu extends React.Component {
+  state;
+}
 export default () => (
-  <nav>
-    <ul>
+  <nav style={{ paddingTop: `1rem`, display: `flex` }}>
+    <ul
+      style={{
+        listStyle: `none`,
+        display: `flex`,
+        justifyContent: `space-between`
+      }}
+    >
       <ListLink to="/">Home</ListLink>
       <ListLink to="/about">About</ListLink>
       <ListLink to="/highlights">Highlights</ListLink>
@@ -44,7 +56,7 @@ export default () => (
       </svg>
     </a>
     <a href={donate}>
-      <button>Donate!</button>
+      <Button>Donate!</Button>
     </a>
   </nav>
 );

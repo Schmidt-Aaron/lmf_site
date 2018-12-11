@@ -11,6 +11,8 @@
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@material-ui/core": "^3.6.1",
+    "@material-ui/icons": "^3.0.1",
     "emotion": "^10.0.0",
     "emotion-server": "^10.0.0",
     "gatsby": "^2.0.33",

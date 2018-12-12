@@ -15,8 +15,8 @@ const Footer = () => {
   return (
     <footer
       style={{
-        display: `grid`,
-        gridRow: `3/3`,
+        gridColumn: `1/3`,
+        gridRow: `3/4`,
         padding: `1.25rem 1rem`,
         backgroundColor: `#222`
       }}

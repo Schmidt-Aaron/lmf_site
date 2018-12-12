@@ -2,6 +2,7 @@ import React from "react";
 import Global from "./global";
 import Footer from "../Footer";
 import Header from "../Header";
+import styles from "./global.module.css";
 
 // homepage layout
 
@@ -12,7 +13,8 @@ export default ({ children }) => (
       <main
         style={{
           justifySelf: `start`,
-          margin: `0 0 2rem`
+          margin: `0 0 2rem`,
+          textAlign: `center`
         }}
       >
         {children}

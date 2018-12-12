@@ -4,7 +4,7 @@ const Event = props => {
   return (
     <section style={{ display: `flex` }}>
       <img src={props.imgURL} alt={props.imgAlt} height="300px" width="auto" />
-      <div style={{ marginLeft: `2rem` }}>
+      <div style={{ marginLeft: `2rem`, textAlign: `left` }}>
         <p>
           <span>What:</span> {props.eventName}
         </p>

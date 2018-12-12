@@ -2,10 +2,10 @@ import React from "react";
 
 // This component is used on the homepage and the about us page
 
-const WhoAre = () => {
+const WhoAre = props => {
   return (
     <section>
-      <h2>About Light My Fire</h2>
+      <h2>Our Mission</h2>
       <p>
         In the Seattle area alone, there are around 400 home fires every year.
         Immediately following these tragedies, many families are left homeless

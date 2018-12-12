@@ -23,13 +23,14 @@ export default () => (
           display: `grid`,
           gridTemplateRows: `3rem`,
           gridTemplateColumns: `auto`,
-          position: `fixed`
+          position: `fixed`,
+          backgroundColor: `white`
         }}
       >
         <div
           style={{
-            gridColumn: `1 / 2`,
-            gridRow: `1 / 1`,
+            gridColumn: `1`,
+            gridRow: `1`,
             justifySelf: `start`,
             paddingRight: `2rem`
           }}
@@ -53,8 +54,8 @@ export default () => (
         </div>
         <div
           style={{
-            gridRow: `1 / 1`,
-            gridcolumn: `2 / 4`,
+            gridRow: `1`,
+            gridcolumn: `2`,
             justifySelf: `end`
           }}
         >

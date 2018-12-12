@@ -1,18 +1,18 @@
 import React from "react";
 import Layout from "../components/layouts/homeLayout";
 import Hero from "../components/Hero";
-import HowHelp from "../components/HowHelp";
+import HomepageHowHelp from "../components/HomepageHowHelp";
 import WhoAre from "../components/WhoAre";
 import UpcomingEvents from "../components/UpcomingEvents";
 
-export default () => (
+export default props => (
   <Layout>
     <Hero />
     <section
       style={{ padding: `1.5rem 3rem`, margin: `2rem auto`, maxWidth: 1200 }}
     >
-      <WhoAre />
-      <HowHelp />
+      <WhoAre styles={props.styles} />
+      <HomepageHowHelp />
       <UpcomingEvents />
     </section>
   </Layout>

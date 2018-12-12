@@ -21,6 +21,7 @@ export default () => (
       <header
         style={{
           display: `grid`,
+          width: `100vw`,
           gridTemplateRows: `3rem`,
           gridTemplateColumns: `auto`,
           position: `fixed`,
@@ -56,7 +57,8 @@ export default () => (
           style={{
             gridRow: `1`,
             gridcolumn: `2`,
-            justifySelf: `end`
+            justifySelf: `end`,
+            paddingRight: `3rem`
           }}
         >
           <NavMenu />

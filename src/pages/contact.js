@@ -15,7 +15,7 @@ export default () => (
       For more information or to contact us, you can also visit our Facebook
       page. While you are there, be sure to like it as well!
     </p>
-    <ContactForm />
+    {/* <ContactForm /> */}
     <p>
       You can also email us at lightmyfireofps@gmail.com if you have any
       questions or concerns.

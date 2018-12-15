@@ -1,7 +1,9 @@
+/** @jsx jsx */
 import React from "react";
 import NavMenu from "../components/NavMenu";
 import logo from "../../static/images/lmflogo-text.png";
 import { StaticQuery, Link, graphql } from "gatsby";
+import { css, jsx } from "@emotion/core";
 
 // used on everypage
 
@@ -18,38 +20,54 @@ export default () => (
       }
     `}
     render={data => (
-      <div className="wrapper-header" style={{ boxShadow: `#eee 0px 3px 3px` }}>
+      <div
+        className="wrapper-header"
+        css={css`
+          box-shadow: #eee 0px 3px 3px;
+        `}
+      >
         <header
-          style={{
-            display: `grid`,
-            // width: `100vw`,
-            maxWidth: `1600px`,
-            margin: `0 auto`,
-            gridTemplateRows: `100px`,
-            gridTemplateColumns: `minmax(max-content) 50%`,
-            // position: `fixed`,
-            backgroundColor: `white`
-          }}
+          css={css`
+            display: grid;
+            /* width: 100vw; */
+            max-width: 1600px;
+            margin: 0 auto;
+            grid-template-rows: 100px;
+            grid-template-columns: minmax(max-content, max-content) 1fr;
+            /* position: fixed; */
+            background-color: white;
+            @media (max-width: 970px) {
+              grid-template-rows: auto;
+              text-align: center;
+              & div {
+                min-width: 100%;
+              }
+            }
+          `}
         >
           <div
-            style={{
-              gridColumn: `1`,
-              gridRow: `1`,
-              justifySelf: `start`
-            }}
+            css={css`
+              grid-column: 1;
+              grid-row: 1;
+              justify-self: start;
+              @media (max-width: 970px) {
+                min-width: 100%;
+                grid-row: 1;
+                grid-column: span 2;
+                justify-self: center;
+              }
+            `}
           >
             <Link
               to="/"
-              style={{
+              css={{
                 textShadow: `none`,
                 backgroundImage: `none`,
                 textDecoration: `none`,
                 color: `black`
               }}
             >
-              <h3 style={{ display: `none` }}>
-                {data.site.siteMetadata.title}
-              </h3>
+              <h3 css={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
               <img
                 src={logo}
                 alt="Light My Fire Puget Sound"
@@ -60,12 +78,18 @@ export default () => (
             </Link>
           </div>
           <div
-            style={{
-              gridRow: `1`,
-              gridcolumn: `2`,
-              justifySelf: `end`,
-              alignSelf: `end`
-            }}
+            css={css`
+              grid-row: 1;
+              grid-column: 2;
+              justify-self: end;
+              align-self: end;
+              @media (max-width: 970px) {
+                min-width: 100%;
+                grid-row: 2;
+                grid-column: span 2;
+                justify-self: center;
+              }
+            `}
           >
             <NavMenu />
           </div>

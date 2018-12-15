@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from "react";
 import belfor from "../../static/images/belfor.250x74.png";
 import dls from "../../static/images/dls.250x230.png";
@@ -6,6 +7,7 @@ import psaa from "../../static/images/psaa.261x131.png";
 import pwc from "../../static/images/pwc.252x77.png";
 import servpro from "../../static/images/servpro.250x57.png";
 import techblox from "../../static/images/techblox.254x55.png";
+import { css, jsx } from "@emotion/core";
 
 const PartnerImage = props => {
   return (

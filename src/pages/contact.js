@@ -1,5 +1,6 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
+import ContactForm from "../components/Contactform";
 
 export default () => (
   <Layout>
@@ -14,10 +15,10 @@ export default () => (
       For more information or to contact us, you can also visit our Facebook
       page. While you are there, be sure to like it as well!
     </p>
-    <p>Contact form coming soon!</p>
+    <ContactForm />
     <p>
-      In the mean time, please email us at lightmyfireofps@gmail.com if you have
-      any questions or concerns. Sorry for the inconvenience
+      You can also email us at lightmyfireofps@gmail.com if you have any
+      questions or concerns.
     </p>
   </Layout>
 );

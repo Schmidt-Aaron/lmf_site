@@ -1,5 +1,7 @@
+/** @jsx jsx */
 import React from "react";
 import HowCanHelp from "./HowCanHelp";
+import { css, jsx } from "@emotion/core";
 
 // inner text for components below
 const helpText =

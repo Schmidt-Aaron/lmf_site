@@ -1,10 +1,12 @@
+/** @jsx jsx */
 import React from "react";
 import { Link } from "gatsby";
+import { css, jsx } from "@emotion/core";
 
 const HowCanHelp = props => {
   return (
     <div
-      style={{
+      css={{
         display: `flexbox`,
         alignItems: `center`,
         justifyContent: `center`,

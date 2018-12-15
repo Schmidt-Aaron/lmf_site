@@ -1,9 +1,11 @@
+/** @jsx jsx */
 import React from "react";
 import SidebarHowHelp from "./SidebarHowHelp";
+import { css, jsx } from "@emotion/core";
 
 const Sidebar = () => {
   return (
-    <div style={{ textAlign: `center` }}>
+    <div css={{ textAlign: `center` }}>
       <SidebarHowHelp style={{ display: `block`, flexDirection: `column` }} />
     </div>
   );

@@ -1,7 +1,8 @@
+/** @jsx jsx */
 import React from "react";
 import { Link } from "gatsby";
 import logo from "../../static/images/lmf-logo.207x212.png";
-
+import { css, jsx } from "@emotion/core";
 // used on every page
 
 const Footer = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
 
   return (
     <footer
-      style={{
+      css={{
         gridColumn: `1/3`,
         gridRow: `3/4`,
         padding: `1.25rem 1rem`,
@@ -26,7 +27,7 @@ const Footer = () => {
       }}
     >
       <div
-        style={{
+        css={{
           maxWidth: 1200,
           margin: `0 auto`,
           color: `white`,
@@ -36,16 +37,16 @@ const Footer = () => {
         <img
           src={logo}
           alt="light my fire homepage"
-          style={{
+          css={{
             height: `100px`,
             width: `auto`,
             margin: `0`
           }}
         />
-        <p style={{ margin: `0` }}>
+        <p css={{ margin: `0` }}>
           Copyright © {year()} Light My Fire of Puget Sound
         </p>
-        <Link to="/privacy" style={{ textDecoration: `none` }}>
+        <Link to="/privacy" css={{ textDecoration: `none` }}>
           Privacy Policy
         </Link>
       </div>

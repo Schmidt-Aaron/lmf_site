@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from "react";
 import DaveMataftin from "./Board/DaveMataftin";
 import DavidKean from "./Board/DavidKean";
@@ -5,6 +6,7 @@ import DianeSalz from "./Board/DianeSalz";
 import JeremyKennard from "./Board/JeremyKennard";
 import RobertFrance from "./Board/RobertFrance";
 import RyanJensen from "./Board/RyanJensen";
+import { css, jsx } from "@emotion/core";
 
 //  board members imported from  ../Board; used on About
 

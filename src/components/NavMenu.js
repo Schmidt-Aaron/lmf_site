@@ -1,8 +1,10 @@
+/** @jsx jsx */
 import React from "react";
 import { Link } from "gatsby";
 // import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
 // import MenuItem from "@material-ui/core/MenuItem";
+import { css, jsx } from "@emotion/core";
 
 // paypal link
 const donate =
@@ -12,12 +14,12 @@ const donate =
 const facebook = "https://www.facebook.com/lightmyfireps";
 const ListLink = props => (
   <li
-    style={{
+    css={{
       display: `inline-block`,
       marginRight: `1rem`
     }}
   >
-    <Link to={props.to} style={{ textDecoration: `none` }}>
+    <Link to={props.to} css={{ textDecoration: `none` }}>
       {props.children}
     </Link>
   </li>
@@ -31,7 +33,7 @@ class NavMenu extends React.Component {
 export default () => (
   <nav>
     <ul
-      style={{
+      css={{
         listStyle: `none`,
         display: `flex`,
         justifyContent: `space-between`,
@@ -45,7 +47,7 @@ export default () => (
       <ListLink to="/contact">Contact</ListLink>
       <ListLink to="/help">Help</ListLink>
       <li
-        style={{
+        css={{
           display: `inline-block`,
           marginRight: `1rem`
         }}
@@ -64,12 +66,12 @@ export default () => (
         </a>
       </li>
       <li
-        style={{
+        css={{
           display: `inline-block`,
           marginRight: `1rem`
         }}
       >
-        <a href={donate} style={{ textDecoration: `none`, color: `#bd1014` }}>
+        <a href={donate} css={{ textDecoration: `none`, color: `#bd1014` }}>
           Donate!
         </a>
       </li>

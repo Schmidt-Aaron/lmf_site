@@ -1,12 +1,13 @@
+/** @jsx jsx */
 import React from "react";
 import { Link } from "@reach/router";
-
+import { css, jsx } from "@emotion/core";
 // used on homepage only
 
 const Hero = () => {
   return (
     <section
-      style={{
+      css={{
         width: `100vw`,
         height: `100vh`,
         /* Flexbox stuff */
@@ -28,7 +29,7 @@ const Hero = () => {
       }}
     >
       <div>
-        <h1 style={{ fontSize: `5rem` }}>Light My Fire</h1>
+        <h1 css={{ fontSize: `5rem` }}>Light My Fire</h1>
         <h2>A house fire can destroy an entire family's possessions</h2>
         <h3>
           We have been Helping local PNW families recover from catastrophic fire
@@ -37,7 +38,7 @@ const Hero = () => {
         <Link
           to="/help"
           className="btn"
-          style={{
+          css={{
             /* Positioning and sizing */
             display: `block`,
             width: `200px`,

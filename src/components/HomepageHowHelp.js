@@ -1,6 +1,8 @@
+/** @jsx jsx */
 import React from "react";
 import HowCanHelp from "./HowCanHelp";
 import styles from "./layouts/global.module.css";
+import { css, jsx } from "@emotion/core";
 
 // inner text for components below
 const helpText =
@@ -16,7 +18,7 @@ const HomePageHowHelp = () => {
   return (
     <section className={styles.section}>
       <h2>Help Today</h2>
-      <div style={{ display: `flex` }}>
+      <div css={{ display: `flex` }}>
         <HowCanHelp
           title="Donations"
           innerText={helpText}

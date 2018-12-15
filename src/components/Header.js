@@ -18,52 +18,59 @@ export default () => (
       }
     `}
     render={data => (
-      <header
-        style={{
-          display: `grid`,
-          width: `100vw`,
-          gridTemplateRows: `3rem`,
-          gridTemplateColumns: `auto`,
-          position: `fixed`,
-          backgroundColor: `white`
-        }}
-      >
-        <div
+      <div className="wrapper-header" style={{ boxShadow: `#eee 0px 3px 3px` }}>
+        <header
           style={{
-            gridColumn: `1`,
-            gridRow: `1`,
-            justifySelf: `start`,
-            paddingRight: `2rem`
+            display: `grid`,
+            // width: `100vw`,
+            maxWidth: `1600px`,
+            margin: `0 auto`,
+            gridTemplateRows: `100px`,
+            gridTemplateColumns: `minmax(max-content) 50%`,
+            // position: `fixed`,
+            backgroundColor: `white`
           }}
         >
-          <Link
-            to="/"
+          <div
             style={{
-              textShadow: `none`,
-              backgroundImage: `none`,
-              textDecoration: `none`,
-              color: `black`
+              gridColumn: `1`,
+              gridRow: `1`,
+              justifySelf: `start`
             }}
           >
-            <h3 style={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
-            <img
-              src={logo}
-              alt="Light My Fire Puget Sound"
-              description="Light My Fire"
-            />
-          </Link>
-        </div>
-        <div
-          style={{
-            gridRow: `1`,
-            gridcolumn: `2`,
-            justifySelf: `end`,
-            paddingRight: `3rem`
-          }}
-        >
-          <NavMenu />
-        </div>
-      </header>
+            <Link
+              to="/"
+              style={{
+                textShadow: `none`,
+                backgroundImage: `none`,
+                textDecoration: `none`,
+                color: `black`
+              }}
+            >
+              <h3 style={{ display: `none` }}>
+                {data.site.siteMetadata.title}
+              </h3>
+              <img
+                src={logo}
+                alt="Light My Fire Puget Sound"
+                description="Light My Fire"
+                height="100px"
+                width="auto"
+              />
+            </Link>
+          </div>
+          <div
+            style={{
+              gridRow: `1`,
+              gridcolumn: `2`,
+              justifySelf: `end`,
+              alignSelf: `end`
+            }}
+          >
+            <NavMenu />
+          </div>
+        </header>
+      </div>
     )}
   />
 );

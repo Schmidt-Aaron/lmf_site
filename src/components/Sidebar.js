@@ -3,7 +3,7 @@ import SidebarHowHelp from "./SidebarHowHelp";
 
 const Sidebar = () => {
   return (
-    <div style={{ border: `solid 1px black` }}>
+    <div style={{ textAlign: `center` }}>
       <SidebarHowHelp style={{ display: `block`, flexDirection: `column` }} />
     </div>
   );

@@ -19,7 +19,10 @@ const Footer = () => {
         gridRow: `3/4`,
         padding: `1.25rem 1rem`,
         backgroundColor: `#222`,
-        width: `100vw`
+        width: `100vw`,
+        maxWidth: `100%`,
+        fontSize: `0.75rem`,
+        color: `#e8e8e8`
       }}
     >
       <div
@@ -34,15 +37,17 @@ const Footer = () => {
           src={logo}
           alt="light my fire homepage"
           style={{
-            position: `absolute`,
-            left: `20px`,
             height: `100px`,
             width: `auto`,
             margin: `0`
           }}
         />
-        <p>Copyright © {year()} Light My Fire of Puget Sound</p>
-        <Link to="/privacy">Privacy Policy</Link>
+        <p style={{ margin: `0` }}>
+          Copyright © {year()} Light My Fire of Puget Sound
+        </p>
+        <Link to="/privacy" style={{ textDecoration: `none` }}>
+          Privacy Policy
+        </Link>
       </div>
     </footer>
   );

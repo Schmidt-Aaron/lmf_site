@@ -35,7 +35,7 @@ const Hero = () => {
           damage since 2014
         </h3>
         <Link
-          to="/donate"
+          to="/help"
           className="btn"
           style={{
             /* Positioning and sizing */

@@ -11,8 +11,8 @@ export default props => (
     <section
       style={{ padding: `1.5rem 3rem`, margin: `2rem auto`, maxWidth: 1200 }}
     >
-      <WhoAre styles={props.styles} />
-      <HomepageHowHelp />
+      <WhoAre style={{ marginBottom: `5rem` }} />
+      <HomepageHowHelp style={{ marginBottom: `5rem` }} />
       <UpcomingEvents />
     </section>
   </Layout>

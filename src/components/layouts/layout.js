@@ -11,13 +11,26 @@ export default ({ children }) => (
     <div
       style={{
         width: `100vw`,
+        maxWidth: `100%`,
         minHeight: `100vh`,
-        display: `grid`,
-        gridGap: `10px`,
-        gridTemplateRows: `100px auto max-content`
+        display: `flex column`,
+        alignSelf: `center`,
+        // maxWidth: 1600,
+        // margin: `0 auto`
+        padding: `0`,
+        margin: `0`
+        // gridGap: `10px`,
+        // gridTemplateRows: `100px auto max-content`
       }}
     >
-      <Header style={{ gridRow: `1/2` }} />
+      <Header
+        style={{
+          width: `100vw`,
+          height: `100px`,
+          margin: `0 auto`,
+          borderBottom: `3px solid red`
+        }}
+      />
       <div
         style={{
           display: `grid`,

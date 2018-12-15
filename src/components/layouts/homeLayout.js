@@ -8,7 +8,15 @@ import styles from "./global.module.css";
 
 export default ({ children }) => (
   <Global>
-    <div style={{ width: `100vw`, minHeight: `100vh`, display: `grid` }}>
+    <div
+      style={{
+        width: `100vw`,
+        maxWidth: `100%`,
+        minHeight: `100vh`,
+        display: `flex`,
+        flexDirection: `column`
+      }}
+    >
       <Header />
       <main
         style={{

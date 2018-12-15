@@ -7,7 +7,7 @@ const helpText =
 const involvedText =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sint aut eaque odio laborum cum";
 const eventText =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sint aut eaque odio laborum cum";
+  "We put on a large charity auction / dinner event once a year ";
 
 //  used on the homepage only
 

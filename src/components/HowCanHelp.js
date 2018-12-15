@@ -10,7 +10,8 @@ const HowCanHelp = props => {
         justifyContent: `center`,
         border: `1px black solid`,
         padding: `1rem`,
-        textAlign: `center`
+        textAlign: `center`,
+        margin: `0.5rem`
       }}
     >
       <h3>{props.title}</h3>

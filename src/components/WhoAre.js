@@ -2,10 +2,10 @@ import React from "react";
 
 // This component is used on the homepage and the about us page
 
-const WhoAre = props => {
+const Mission = props => {
   return (
-    <section>
-      <h2>Our Mission</h2>
+    <section className="mission">
+      <h2 style={{ marginBottom: `2rem` }}>Our Mission</h2>
       <p>
         In the Seattle area alone, there are around 400 home fires every year.
         Immediately following these tragedies, many families are left homeless
@@ -19,4 +19,4 @@ const WhoAre = props => {
     </section>
   );
 };
-export default WhoAre;
+export default Mission;

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
-import ContactForm from "../components/Contactform";
+// import ContactForm from "../components/ContactForm";
 
 export default () => (
   <Layout>

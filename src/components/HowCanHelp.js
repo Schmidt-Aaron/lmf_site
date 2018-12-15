@@ -6,8 +6,9 @@ import { css, jsx } from "@emotion/core";
 const HowCanHelp = props => {
   return (
     <div
-      css={{
+      style={{
         display: `flexbox`,
+        flexDirection: `column`,
         alignItems: `center`,
         justifyContent: `center`,
         border: `1px black solid`,

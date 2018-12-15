@@ -11,7 +11,7 @@ import { css, jsx } from "@emotion/core";
 export default ({ children }) => (
   <Global>
     <div
-      css={{
+      style={{
         width: `100vw`,
         maxWidth: `100%`,
         minHeight: `100vh`,

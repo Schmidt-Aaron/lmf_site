@@ -10,20 +10,21 @@ const ContactForm = () => {
       data-netlify="true"
       action="/thanks"
       netlify-honeypot="bot-field"
+      netlify
     >
-      <input hidden className="hidden" name="bot-field" />
+      <input hidden className="contact" name="bot-field" />
       <p>
-        <label>
+        <label for="name">
           Your Name: <input type="text" name="name" />
         </label>
       </p>
       <p>
-        <label>
+        <label for="email">
           Your Email: <input type="email" name="email" />
         </label>
       </p>
       <p>
-        <label>
+        <label for="message">
           Message: <textarea name="message" />
         </label>
       </p>

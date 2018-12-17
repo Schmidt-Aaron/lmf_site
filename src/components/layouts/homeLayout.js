@@ -3,7 +3,6 @@ import React from "react";
 import Global from "./global";
 import Footer from "../Footer";
 import Header from "../Header";
-import styles from "./global.module.css";
 import { css, jsx } from "@emotion/core";
 // homepage layout
 

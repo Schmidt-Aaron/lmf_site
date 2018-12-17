@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import { css, jsx } from "@emotion/core";
+import heroImage from "../../static/images/juliane-liebermann-542688.jpg";
 // used on homepage only
 
 const Hero = () => {
@@ -20,7 +21,7 @@ const Hero = () => {
         color: `white`,
 
         /* Background styles */
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg)`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${heroImage})`,
         backgroundSize: `cover`,
         backgroundPosition: `center center`,
         backgroundRepeat: `no-repeat`,
@@ -32,8 +33,7 @@ const Hero = () => {
         <h1 css={{ fontSize: `5rem` }}>Light My Fire</h1>
         <h2>A house fire can destroy an entire family's possessions</h2>
         <h3>
-          We have been Helping local PNW families recover from catastrophic fire
-          damage since 2014
+          We Help local PNW families recover from catastrophic fire damage
         </h3>
         <Link
           to="/help"

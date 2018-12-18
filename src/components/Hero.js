@@ -30,7 +30,9 @@ const Hero = () => {
       }}
     >
       <div>
-        <h1 css={{ fontSize: `5rem` }}>Light My Fire</h1>
+        <h1 css={{ fontSize: `5rem`, textTransform: `uppercase` }}>
+          Light My Fire
+        </h1>
         <h2>A house fire can destroy an entire family's possessions</h2>
         <h3>
           We Help local PNW families recover from catastrophic fire damage

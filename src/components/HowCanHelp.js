@@ -14,7 +14,7 @@ const HowCanHelp = props => {
         border: `1px black solid`,
         padding: `1rem`,
         textAlign: `center`,
-        margin: `0.5rem`
+        margin: `0.5rem 0`
       }}
     >
       <h3>{props.title}</h3>

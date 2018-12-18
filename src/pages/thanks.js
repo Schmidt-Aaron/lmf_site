@@ -8,8 +8,8 @@ export default () => {
         <h1>Thanks for reaching out!</h1>
         <p>Your submission has been recieved.</p>
         <p>
-          Responses are typically sent Monday - Friday during business hours. We
-          will get back to you as soon as we can.
+          We will get back to you as soon as we can. Responses are typically
+          sent Monday - Friday during business hours.
         </p>
         <p>Thanks again for your interest!</p>
       </section>

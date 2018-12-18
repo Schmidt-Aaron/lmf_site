@@ -13,8 +13,17 @@ export default props => (
     <section
       css={{ padding: `1.5rem 3rem`, margin: `2rem auto`, maxWidth: 1200 }}
     >
-      <Mission style={{ marginBottom: `5rem` }} />
-      <HomepageHowHelp style={{ marginBottom: `5rem` }} />
+      <Mission
+        css={css`
+          max-width: 800px;
+          margin: 0 auto 5rem;
+        `}
+      />
+      <HomepageHowHelp
+        css={css`
+          margin: 0 auto 5rem;
+        `}
+      />
       <UpcomingEvents />
     </section>
   </Layout>

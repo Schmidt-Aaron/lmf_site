@@ -7,7 +7,7 @@ import { css, jsx } from "@emotion/core";
 const Mission = props => {
   return (
     <section className="mission">
-      <h2 css={{ marginBottom: `2rem` }}>Our Mission</h2>
+      <h2>Our Mission</h2>
       <p>
         In the Seattle area alone, there are around 400 home fires every year.
         Immediately following these tragedies, many families are left homeless

@@ -40,7 +40,6 @@ export default () => (
         alignItems: `center`
       }}
     >
-      <ListLink to="/">Home</ListLink>
       <ListLink to="/about">About</ListLink>
       <ListLink to="/partners">Partners</ListLink>
       <ListLink to="/events">Events</ListLink>

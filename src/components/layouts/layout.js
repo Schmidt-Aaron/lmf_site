@@ -5,6 +5,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import { css, jsx } from "@emotion/core";
+import backgroundTexture from "../../../static/images/asfalt-dark.png";
 
 //  standard layout for every page except homepage
 
@@ -50,6 +51,7 @@ export default ({ children }) => (
           padding: 1.5rem 3rem;
           margin: 2rem auto;
           max-width: 1200px;
+          /* background: url(../../../static/images/asfalt-dark.png) repeat; */
           @media (max-width: 970px) {
             grid-row: 1;
             grid-column: span 2;

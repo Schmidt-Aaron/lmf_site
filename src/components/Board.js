@@ -14,12 +14,21 @@ const Board = () => {
   return (
     <section>
       <h2>Board of Directors</h2>
-      <DaveMataftin />
-      <DavidKean />
-      <DianeSalz />
-      <JeremyKennard />
-      <RobertFrance />
-      <RyanJensen />
+      <div
+        css={css`
+          display: grid;
+          grid-gap: 10px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto;
+        `}
+      >
+        <RobertFrance />
+        <DaveMataftin />
+        <DavidKean />
+        <DianeSalz />
+        <JeremyKennard />
+        <RyanJensen />
+      </div>
     </section>
   );
 };

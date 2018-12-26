@@ -19,7 +19,21 @@ const HowCanHelp = props => {
     >
       <h3>{props.title}</h3>
       <p>{props.innerText}</p>
-      <Link to={props.link}>{props.linkText}</Link>
+      {// use props.otherSite for outsite links -- props.link for inner links
+      !props.link ? (
+        <a
+          href={props.otherSite}
+          target="_blank"
+          title={props.linkTitle}
+          type="button"
+        >
+          {props.linkText}
+        </a>
+      ) : (
+        <Link to={props.link} title={props.linkTitle} type="button">
+          {props.linkText}
+        </Link>
+      )}
     </div>
   );
 };

@@ -6,7 +6,13 @@ import { css, jsx } from "@emotion/core";
 
 const Mission = props => {
   return (
-    <section className="mission">
+    <section
+      className="mission"
+      css={css`
+        max-width: 800px;
+        margin: 0 auto 5rem;
+      `}
+    >
       <h2>Our Mission</h2>
       <p>
         In the Seattle area alone, there are around 400 home fires every year.

@@ -1,6 +1,16 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
+import styled from "@emotion/styled";
+
+const Label = styled.label`
+  display: inline-block;
+  min-width: 140px;
+  text-align: right;
+  vertical-align: top;
+  padding-right: 10px;
+  margin-bottom: 20px;
+`;
 
 const ContactForm = () => {
   return (
@@ -10,27 +20,24 @@ const ContactForm = () => {
       data-netlify="true"
       action="/thanks"
       netlify-honeypot="bot-field"
-      netlify
+      netlify="true"
     >
-      <input hidden className="contact" name="bot-field" />
-      <p>
-        <label for="name">
-          Your Name: <input type="text" name="name" />
-        </label>
-      </p>
-      <p>
-        <label for="email">
-          Your Email: <input type="email" name="email" />
-        </label>
-      </p>
-      <p>
-        <label for="message">
-          Message: <textarea name="message" />
-        </label>
-      </p>
-      <p>
-        <button type="submit">Send</button>
-      </p>
+      <fieldset style={{ border: `0 solid black` }}>
+        <input hidden className="contact" name="bot-field" />
+        <Label htmlfor="name">Full Name:</Label>
+        <input type="text" name="name" />
+        <br />
+        <Label htmlfor="email">Email:</Label>
+        <input type="email" name="email" />
+        <br />
+        <Label htmlfor="message">Message: </Label>
+        <textarea name="message" rows="5" cols="60" />
+        <p>
+          <button type="submit" style={{ marginLeft: `140px` }}>
+            Submit
+          </button>
+        </p>
+      </fieldset>
     </form>
   );
 };

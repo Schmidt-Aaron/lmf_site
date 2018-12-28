@@ -71,7 +71,14 @@ export default () => (
           marginRight: `1rem`
         }}
       >
-        <a href={donate} css={{ textDecoration: `none`, color: `#bd1014` }}>
+        <a
+          href={donate}
+          css={{
+            textDecoration: `none`,
+            color: `#bd1014`,
+            textTransform: `uppercase`
+          }}
+        >
           Donate!
         </a>
       </li>

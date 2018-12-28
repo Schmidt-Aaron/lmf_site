@@ -37,7 +37,8 @@ export default () => (
         listStyle: `none`,
         display: `flex`,
         justifyContent: `space-between`,
-        alignItems: `center`
+        alignItems: `center`,
+        marginBottom: `20px`
       }}
     >
       <ListLink to="/about">About</ListLink>

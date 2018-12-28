@@ -74,6 +74,7 @@ export default () => (
                 description="Light My Fire"
                 height="100px"
                 width="auto"
+                style={{ marginBottom: 0 }}
               />
             </Link>
           </div>

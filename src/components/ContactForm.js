@@ -5,11 +5,14 @@ import styled from "@emotion/styled";
 
 const Label = styled.label`
   display: inline-block;
-  min-width: 140px;
+  min-width: 110px;
   text-align: right;
   vertical-align: top;
   padding-right: 10px;
   margin-bottom: 20px;
+`;
+const Input = styled.input`
+  width: 300px;
 `;
 
 const ContactForm = () => {
@@ -25,15 +28,20 @@ const ContactForm = () => {
       <fieldset style={{ border: `0 solid black` }}>
         <input hidden className="contact" name="bot-field" />
         <Label htmlfor="name">Full Name:</Label>
-        <input type="text" name="name" />
+        <Input type="text" name="name" placeholder="Name" />
         <br />
         <Label htmlfor="email">Email:</Label>
-        <input type="email" name="email" />
+        <Input type="email" name="Email" placeholder="email" />
         <br />
         <Label htmlfor="message">Message: </Label>
-        <textarea name="message" rows="5" cols="60" />
+        <textarea
+          name="message"
+          placeholder="How can we help?"
+          rows="5"
+          style={{ width: `calc(100% - 110px)` }}
+        />
         <p>
-          <button type="submit" style={{ marginLeft: `140px` }}>
+          <button type="submit" style={{ marginLeft: `110px` }}>
             Submit
           </button>
         </p>

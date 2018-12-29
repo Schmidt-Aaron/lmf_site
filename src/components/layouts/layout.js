@@ -16,21 +16,22 @@ export default ({ children }) => (
         width: `100vw`,
         maxWidth: `100%`,
         minHeight: `100vh`,
-        display: `flex column`,
+        display: `grid`,
         alignSelf: `center`,
         // maxWidth: 1600,
         // margin: `0 auto`
         padding: `0`,
-        margin: `0`
+        margin: `0`,
         // gridGap: `10px`,
-        // gridTemplateRows: `100px auto max-content`
+        gridTemplateRows: `min-content auto max-content`
       }}
     >
       <Header
         css={{
           width: `100vw`,
           height: `100px`,
-          margin: `0 auto`
+          margin: `0 auto`,
+          gridRow: `1`
         }}
       />
       <div
@@ -47,13 +48,13 @@ export default ({ children }) => (
           display: grid;
           grid-template-columns: auto 300px;
           grid-column: 1/3;
-          grid-row: 1;
+          grid-row: 2;
           padding: 1.5rem 3rem;
           margin: 2rem auto;
           max-width: 1200px;
           /* background: url(../../../static/images/asfalt-dark.png) repeat; */
           @media (max-width: 970px) {
-            grid-row: 1;
+            grid-row: 2;
             grid-column: span 2;
           }
         `}
@@ -63,6 +64,7 @@ export default ({ children }) => (
             justify-self: start;
             padding-right: 2rem;
             grid-column: 1/2;
+
             @media (max-width: 970px) {
               grid-row: 1;
               grid-column: span 2;

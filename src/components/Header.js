@@ -24,6 +24,8 @@ export default () => (
         className="wrapper-header"
         css={css`
           box-shadow: #eee 0px 3px 3px;
+          grid-row: 1;
+          grid-column: 1/3;
         `}
       >
         <header

@@ -31,14 +31,14 @@ const ContactForm = () => {
         <Input type="text" name="name" placeholder="Name" />
         <br />
         <Label htmlfor="email">Email:</Label>
-        <Input type="email" name="Email" placeholder="email" />
+        <Input type="email" name="email" placeholder="Email" />
         <br />
         <Label htmlfor="message">Message: </Label>
         <textarea
           name="message"
           placeholder="How can we help?"
           rows="5"
-          style={{ width: `calc(100% - 110px)` }}
+          style={{ width: `calc(100% - 140px)` }}
         />
         <p>
           <button type="submit" style={{ marginLeft: `110px` }}>

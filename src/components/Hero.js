@@ -30,13 +30,19 @@ const Hero = () => {
       }}
     >
       <div>
-        <h1 css={{ fontSize: `5rem`, textTransform: `uppercase` }}>
+        <h1
+          css={{
+            fontSize: `5rem`,
+            textTransform: `uppercase`,
+            marginBottom: `4rem`
+          }}
+        >
           Light My Fire
         </h1>
-        <h2>A house fire can destroy an entire family's possessions</h2>
-        <h3>
-          We Help local PNW families recover from catastrophic fire damage
-        </h3>
+        <h2 style={{ marginBottom: `1rem` }}>
+          A house fire can destroy an entire family's possessions
+        </h2>
+        <h3>Our mission is to help them get back on their feet</h3>
         <Link
           to="/help"
           className="btn"

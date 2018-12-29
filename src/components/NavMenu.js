@@ -76,7 +76,8 @@ export default () => (
           css={{
             textDecoration: `none`,
             color: `#bd1014`,
-            textTransform: `uppercase`
+            textTransform: `uppercase`,
+            fontSize: `1.1rem`
           }}
         >
           Donate!

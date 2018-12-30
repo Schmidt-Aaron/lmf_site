@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
-import WhoAre from "../components/WhoAre";
+import Mission from "../components/Mission";
 import Board from "../components/Board";
 import Chairman from "../components/Board/ChairmanLetter";
 
 export default () => (
   <Layout>
-    <WhoAre />
+    <Mission />
     <Chairman />
     <Board />
   </Layout>

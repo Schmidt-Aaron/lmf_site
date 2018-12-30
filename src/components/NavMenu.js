@@ -1,8 +1,10 @@
+/** @jsx jsx */
 import React from "react";
 import { Link } from "gatsby";
-import Menu from "@material-ui/core/Menu";
+// import Menu from "@material-ui/core/Menu";
 import Button from "@material-ui/core/Button";
-import MenuItem from "@material-ui/core/MenuItem";
+// import MenuItem from "@material-ui/core/MenuItem";
+import { css, jsx } from "@emotion/core";
 
 // paypal link
 const donate =
@@ -12,12 +14,12 @@ const donate =
 const facebook = "https://www.facebook.com/lightmyfireps";
 const ListLink = props => (
   <li
-    style={{
+    css={{
       display: `inline-block`,
       marginRight: `1rem`
     }}
   >
-    <Link to={props.to} style={{ textDecoration: `none` }}>
+    <Link to={props.to} css={{ textDecoration: `none` }}>
       {props.children}
     </Link>
   </li>
@@ -29,34 +31,58 @@ class NavMenu extends React.Component {
   state;
 }
 export default () => (
-  <nav style={{ paddingTop: `1rem`, display: `flex` }}>
+  <nav>
     <ul
-      style={{
+      css={{
         listStyle: `none`,
         display: `flex`,
-        justifyContent: `space-between`
+        justifyContent: `space-between`,
+        alignItems: `center`,
+        marginBottom: `20px`
       }}
     >
-      <ListLink to="/">Home</ListLink>
       <ListLink to="/about">About</ListLink>
-      <ListLink to="/highlights">Highlights</ListLink>
       <ListLink to="/partners">Partners</ListLink>
       <ListLink to="/events">Events</ListLink>
       <ListLink to="/contact">Contact</ListLink>
       <ListLink to="/help">Help</ListLink>
-    </ul>
-    <a href={facebook} target="_blank">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="60"
-        height="60"
-        viewBox="0 0 60 60"
+      <li
+        css={{
+          display: `inline-block`,
+          marginRight: `1rem`
+        }}
       >
-        <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z" />
-      </svg>
-    </a>
-    <a href={donate}>
-      <Button>Donate!</Button>
-    </a>
+        <a href={facebook} target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+
+            // fill="blue" change this to be :hover
+          >
+            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z" />
+          </svg>
+        </a>
+      </li>
+      <li
+        css={{
+          display: `inline-block`,
+          marginRight: `1rem`
+        }}
+      >
+        <a
+          href={donate}
+          css={{
+            textDecoration: `none`,
+            color: `#bd1014`,
+            textTransform: `uppercase`,
+            fontSize: `1.1rem`
+          }}
+        >
+          Donate!
+        </a>
+      </li>
+    </ul>
   </nav>
 );

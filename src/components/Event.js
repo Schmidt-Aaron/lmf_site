@@ -1,10 +1,12 @@
+/** @jsx jsx */
 import React from "react";
+import { css, jsx } from "@emotion/core";
 
 const Event = props => {
   return (
-    <section style={{ display: `flex` }}>
+    <section css={{ display: `flex` }}>
       <img src={props.imgURL} alt={props.imgAlt} height="300px" width="auto" />
-      <div style={{ marginLeft: `2rem`, textAlign: `left` }}>
+      <div css={{ marginLeft: `2rem`, textAlign: `left` }}>
         <p>
           <span>What:</span> {props.eventName}
         </p>

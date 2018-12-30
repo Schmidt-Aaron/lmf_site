@@ -1,10 +1,18 @@
+/** @jsx jsx */
 import React from "react";
+import { css, jsx } from "@emotion/core";
 
 // This component is used on the homepage and the about us page
 
-const WhoAre = props => {
+const Mission = props => {
   return (
-    <section>
+    <section
+      className="mission"
+      css={css`
+        max-width: 800px;
+        margin: 0 auto 5rem;
+      `}
+    >
       <h2>Our Mission</h2>
       <p>
         In the Seattle area alone, there are around 400 home fires every year.
@@ -19,4 +27,4 @@ const WhoAre = props => {
     </section>
   );
 };
-export default WhoAre;
+export default Mission;

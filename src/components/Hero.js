@@ -1,12 +1,14 @@
+/** @jsx jsx */
 import React from "react";
 import { Link } from "@reach/router";
-
+import { css, jsx } from "@emotion/core";
+import heroImage from "../../static/images/juliane-liebermann-542688.jpg";
 // used on homepage only
 
 const Hero = () => {
   return (
     <section
-      style={{
+      css={{
         width: `100vw`,
         height: `100vh`,
         /* Flexbox stuff */
@@ -19,7 +21,7 @@ const Hero = () => {
         color: `white`,
 
         /* Background styles */
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://codetheweb.blog/assets/img/posts/full-image-hero/image.jpg)`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${heroImage})`,
         backgroundSize: `cover`,
         backgroundPosition: `center center`,
         backgroundRepeat: `no-repeat`,
@@ -28,16 +30,23 @@ const Hero = () => {
       }}
     >
       <div>
-        <h1 style={{ fontSize: `5rem` }}>Light My Fire</h1>
-        <h2>rob is cool</h2>
-        <h3>
-          We have been Helping local PNW families recover from catastrophic fire
-          damage since 2014
-        </h3>
+        <h1
+          css={{
+            fontSize: `5rem`,
+            textTransform: `uppercase`,
+            marginBottom: `4rem`
+          }}
+        >
+          Light My Fire
+        </h1>
+        <h2 style={{ marginBottom: `1rem` }}>
+          A house fire can destroy an entire family's possessions
+        </h2>
+        <h3>Our mission is to help them get back on their feet</h3>
         <Link
-          to="/donate"
+          to="/help"
           className="btn"
-          style={{
+          css={{
             /* Positioning and sizing */
             display: `block`,
             width: `200px`,

@@ -12,9 +12,7 @@ const involvedText =
 const eventText =
   "We are putting on a dinner auction in April. Come out and support a good cause!";
 const amazonText =
-  "We are now a participating charity on" +
-  <a href={amazonSmileLink}>smile.amazon.com </a> +
-  "If you select our charity for your Amazon Smile account a small portion of your puchases will be donated to us.";
+  "We are now a participating charity on Amazon Smile. If you select our charity for your Amazon Smile account a small portion of your puchases will be donated to us.";
 
 //  used on the homepage only
 
@@ -29,6 +27,9 @@ const HomePageHowHelp = () => {
           grid-template-rows: 1/1;
           grid-template-columns: repeat(3, 1fr);
           margin-bottom: 5rem;
+          @media (max-width: 860px) {
+            grid-template-columns: auto;
+          }
         `}
       >
         <HowCanHelp
@@ -36,7 +37,7 @@ const HomePageHowHelp = () => {
           innerText={amazonText}
           otherSite={amazonSmileLink}
           linkTitle="Sign up for Amazon Smile"
-          linkText="Learn More"
+          linkText="Sign Up"
         />
         <HowCanHelp
           title="Get Involved"

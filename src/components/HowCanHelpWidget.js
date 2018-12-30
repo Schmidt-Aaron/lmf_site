@@ -26,11 +26,29 @@ const HowCanHelp = props => {
           target="_blank"
           title={props.linkTitle}
           type="button"
+          css={css`
+            padding: 10px;
+            text-decoration: none;
+            &:hover {
+              transform: translateY(-1px);
+            }
+          `}
         >
           {props.linkText}
         </a>
       ) : (
-        <Link to={props.link} title={props.linkTitle} type="button">
+        <Link
+          to={props.link}
+          title={props.linkTitle}
+          type="button"
+          css={css`
+            padding: 10px;
+            text-decoration: none;
+            &:hover {
+              transform: translateY(-1px);
+            }
+          `}
+        >
           {props.linkText}
         </Link>
       )}

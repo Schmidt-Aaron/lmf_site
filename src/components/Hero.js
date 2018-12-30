@@ -29,20 +29,24 @@ const Hero = () => {
         padding: `3rem 0 0 0`
       }}
     >
-      <div>
+      <div
+        css={css`
+          padding: 40px;
+        `}
+      >
         <h1
           css={{
-            fontSize: `5rem`,
+            fontSize: `10vmin`,
             textTransform: `uppercase`,
             marginBottom: `4rem`
           }}
         >
           Light My Fire
         </h1>
-        <h2 style={{ marginBottom: `1rem` }}>
-          A house fire can destroy an entire family's possessions
+        <h2 style={{ marginBottom: `0` }}>
+          A house fire can destroy an entire family's possessions. Our mission
+          is to help them get back on their feet
         </h2>
-        <h3>Our mission is to help them get back on their feet</h3>
         <Link
           to="/help"
           className="btn"
@@ -64,8 +68,8 @@ const Hero = () => {
 
             /* Border styles */
             border: `3px solid white`,
-            borderRadius: `20px`,
-            backgroundColor: `rgba(147, 112, 219, 0.8)`
+            borderRadius: `4px`,
+            backgroundColor: `rgba(249, 68, 68, 0.8)`
           }}
         >
           Help Today

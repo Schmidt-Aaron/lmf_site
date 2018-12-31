@@ -9,21 +9,24 @@ import { css, jsx } from "@emotion/core";
 export default ({ children }) => (
   <Global>
     <div
-      css={{
-        width: `100vw`,
-        maxWidth: `100%`,
-        minHeight: `100vh`,
-        display: `flex`,
-        flexDirection: `column`
-      }}
+      css={css`
+        width: 100vw;
+        max-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      `}
     >
       <Header />
       <main
-        css={{
-          justifySelf: `start`,
-          margin: `0 0 2rem`,
-          textAlign: `center`
-        }}
+        css={css`
+          justify-self: start;
+          margin: 0 0 2rem;
+          text-align: center;
+          @media (max-width: 970px) {
+            margin-top: 100px;
+          }
+        `}
       >
         {children}
       </main>

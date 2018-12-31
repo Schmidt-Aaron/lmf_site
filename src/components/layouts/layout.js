@@ -64,8 +64,8 @@ export default ({ children }) => (
             justify-self: start;
             padding-right: 2rem;
             grid-column: 1/2;
-
             @media (max-width: 970px) {
+              margin-top: 100px;
               grid-row: 1;
               grid-column: span 2;
             }

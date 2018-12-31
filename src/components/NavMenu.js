@@ -5,6 +5,7 @@ import { Link } from "gatsby";
 import Button from "@material-ui/core/Button";
 // import MenuItem from "@material-ui/core/MenuItem";
 import { css, jsx } from "@emotion/core";
+import BurgerMenu from "./BurgerMenu";
 
 // paypal link
 const donate =
@@ -33,13 +34,16 @@ class NavMenu extends React.Component {
 export default () => (
   <nav>
     <ul
-      css={{
-        listStyle: `none`,
-        display: `flex`,
-        justifyContent: `space-between`,
-        alignItems: `center`,
-        marginBottom: `20px`
-      }}
+      css={css`
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        @media (max-width: 970px) {
+          display: none;
+        }
+      `}
     >
       <ListLink to="/about">About</ListLink>
       <ListLink to="/partners">Partners</ListLink>
@@ -84,5 +88,6 @@ export default () => (
         </a>
       </li>
     </ul>
+    <BurgerMenu right />
   </nav>
 );

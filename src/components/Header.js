@@ -26,6 +26,10 @@ export default () => (
           box-shadow: #eee 0px 3px 3px;
           grid-row: 1;
           grid-column: 1/3;
+          @media (max-width: 970px) {
+            position: fixed;
+            min-width: 100%;
+          }
         `}
       >
         <header
@@ -38,13 +42,6 @@ export default () => (
             grid-template-columns: minmax(max-content, max-content) 1fr;
             /* position: fixed; */
             background-color: white;
-            @media (max-width: 970px) {
-              grid-template-rows: auto;
-              text-align: center;
-              & div {
-                min-width: 100%;
-              }
-            }
           `}
         >
           <div

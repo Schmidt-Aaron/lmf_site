@@ -20,7 +20,9 @@ export default () => {
         <h2>Donate to LMF</h2>
         <p>
           We are accepting monetary donations through{" "}
-          <a href={donate}>Paypal</a>.
+          <a href={donate}>Paypal</a>. We also accept service/material donations
+          that we can auction off. For more information on what you can do
+          please <Link to="/contact">contact us</Link>.
         </p>
         <h2>Come to one of our events</h2>
 
@@ -31,7 +33,7 @@ export default () => {
 
         <h2>Amazon Smile</h2>
         <p>
-          Light MY Fire Puget Sound is now a participating charity on Amazon
+          Light My Fire Puget Sound is now a participating charity on Amazon
           Smile. When you shop at{" "}
           <a href="https://smile.amazon.com/ch/46-5717849">smile.amazon.com</a>{" "}
           a small portion of your purchases will be donated to us.{" "}

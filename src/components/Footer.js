@@ -15,16 +15,16 @@ const Footer = () => {
 
   return (
     <footer
-      style={{
-        gridColumn: `1/3`,
-        gridRow: `3/4`,
-        padding: `1.25rem 1rem`,
-        backgroundColor: `#222`,
-        width: `100vw`,
-        maxWidth: `100%`,
-        fontSize: `0.75rem`,
-        color: `#e8e8e8`
-      }}
+      css={css`
+        grid-column: 1/3;
+        grid-row: 3/4;
+        padding: 1.25rem 1rem;
+        background-color: #222;
+        // width: 100vw;
+        max-width: 100%;
+        font-size: 0.75rem;
+        color: #e8e8e8;
+      `}
     >
       <div
         style={{

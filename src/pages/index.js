@@ -6,10 +6,11 @@ import Mission from "../components/Mission";
 import UpcomingEvents from "../components/UpcomingEvents";
 import { css, jsx } from "@emotion/core";
 import React from "react";
+import { graphql } from "gatsby";
 
-export default props => (
+export default ({ data }) => (
   <Layout>
-    <Hero />
+    <Hero {...data} />
     <section
       css={{ padding: `1.5rem 3rem`, margin: `2rem auto`, maxWidth: 1200 }}
     >
@@ -19,3 +20,17 @@ export default props => (
     </section>
   </Layout>
 );
+
+export const query = graphql`
+  query {
+    heroImg: file(relativePath: { eq: "juliane-liebermann-542688.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 1600) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;

@@ -26,6 +26,7 @@ export default () => (
           box-shadow: #eee 0px 3px 3px;
           grid-row: 1;
           grid-column: 1/3;
+          z-index: 5;
           @media (max-width: 970px) {
             position: fixed;
             min-width: 100%;

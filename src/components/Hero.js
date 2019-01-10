@@ -45,7 +45,7 @@ const Hero = props => {
       <div
         css={css`
           padding: 40px;
-          z-index: 5;
+          z-index: 2;
         `}
       >
         <h1
@@ -57,6 +57,7 @@ const Hero = props => {
         >
           Light My Fire
         </h1>
+        <hr/>
         <h2 style={{ marginBottom: `0` }}>
           A house fire can destroy an entire family's possessions. Our goal is
           to help them get back on their feet

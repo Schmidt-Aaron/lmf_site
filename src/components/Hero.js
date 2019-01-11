@@ -37,13 +37,13 @@ const Hero = props => {
     >
       <Img
         fluid={props.heroImg.childImageSharp.fluid}
-        style={{ position: "absolute", zIndex: "-1" }}
         css={css`
           position: absolute;
           top: 100px;
           left: 0;
           width: 100%;
           height: 100%;
+          z-index: -1;
         `}
       />
       <div

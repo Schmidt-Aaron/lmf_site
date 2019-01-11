@@ -3,10 +3,10 @@ import BoardMember from "../BoardMember";
 import davidKeanPic from "../../../static/images/davidKean.jpg";
 
 const linkedIn = "https://www.linkedin.com/in/david-kean-9b921619/";
-const DavidKean = () => {
+const DavidKean = props => {
   return (
     <BoardMember
-      imgURL={davidKeanPic}
+      img={props.img}
       imgAlt="David Kean"
       imgDescription="LMF Board Member"
       name="David Kean"

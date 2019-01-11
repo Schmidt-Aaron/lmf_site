@@ -11,12 +11,6 @@ import { StaticQuery, Link, graphql } from "gatsby";
 // global effects; used in other layouts as parent wrapper
 
 export default ({ children }) => (
-  // <React.Fragment >
-  //   {/* <MuiThemeProvider> */}
-  //   {/* <CssBaseline>{children}</CssBaseline> */}
-  //   {/* </MuiThemeProvider> */}
-  //   {children}
-  // </React.Fragment>
   <StaticQuery
     query={graphql`
       query {

@@ -10,7 +10,7 @@ import { css, jsx } from "@emotion/core";
 
 //  board members imported from  ../Board; used on About
 
-const Board = () => {
+const Board = props => {
   return (
     <section style={{ marginBottom: `3rem` }}>
       <h2>Board of Directors</h2>
@@ -28,12 +28,12 @@ const Board = () => {
           }
         `}
       >
-        <RobertFrance />
-        <DaveMataftin />
-        <DavidKean />
-        <DianeSalz />
-        <JeremyKennard />
-        <RyanJensen />
+        <RobertFrance img={props.rob} />
+        <DaveMataftin img={props.dave} />
+        <DavidKean img={props.davidKean} />
+        <DianeSalz img={props.diane} />
+        <JeremyKennard img={props.jeremy} />
+        <RyanJensen img={props.ryanJensen} />
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
+import Img from "gatsby-image";
 
 // board member template; Used on Board.js
 
@@ -18,17 +19,48 @@ const BoardMember = props => {
         }
       `}
     >
-      <img
+      {/* <img
         src={props.imgURL}
         alt={props.imgAlt}
         description={props.ImgDescription}
         width="100%"
-        style={{ marginBottom: `0.5rem` }}
+        css={css`
+        margin-bottom: 0.5rem;
+      `} 
       />
-      <div style={{ padding: `10px` }}>
-        <h3 style={{ marginBottom: `0.5rem` }}>{props.name}</h3>
-        <h4 style={{ fontSize: `0.8rem` }}>{props.job}</h4>
-        <p style={{ display: `none` }}>{props.description}</p>
+      */}
+      <Img
+        fluid={props.img.childImageSharp.fluid}
+        // css={css`
+        //   margin-bottom: 0.5rem;
+        // `}
+      />
+      <div
+        css={css`
+          padding: 10px;
+        `}
+      >
+        <h3
+          css={css`
+            margin-bottom: 0.5rem;
+          `}
+        >
+          {props.name}
+        </h3>
+        <h4
+          css={css`
+            fontsize: 0.8rem;
+          `}
+        >
+          {props.job}
+        </h4>
+        <p
+          css={css`
+            display: none;
+          `}
+        >
+          {props.description}
+        </p>
 
         {linkedIn ? <a href={linkedIn}>LinkedIn</a> : ""}
       </div>

@@ -12,27 +12,24 @@ import backgroundTexture from "../../../static/images/asfalt-dark.png";
 export default ({ children }) => (
   <Global>
     <div
-      style={{
-        width: `100vw`,
-        maxWidth: `100%`,
-        minHeight: `100vh`,
-        display: `grid`,
-        alignSelf: `center`,
-        // maxWidth: 1600,
-        // margin: `0 auto`
-        padding: `0`,
-        margin: `0`,
-        // gridGap: `10px`,
-        gridTemplateRows: `min-content auto max-content`
-      }}
+      css={css`
+        width: 100vw;
+        max-width: 100%;
+        min-height: 100vh;
+        display: grid;
+        align-self: center;
+        padding: 0;
+        margin: 0;
+        grid-template-rows: min-content auto max-content;
+      `}
     >
       <Header
-        css={{
-          width: `100vw`,
-          height: `100px`,
-          margin: `0 auto`,
-          gridRow: `1`
-        }}
+        css={css`
+          width: 100vw;
+          height: 100px;
+          margin: 0 auto;
+          grid-row: 1;
+        `}
       />
       <div
         // style={{

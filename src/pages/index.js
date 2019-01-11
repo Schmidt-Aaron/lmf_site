@@ -12,7 +12,11 @@ export default ({ data }) => (
   <Layout>
     <Hero {...data} />
     <section
-      css={{ padding: `1.5rem 3rem`, margin: `2rem auto`, maxWidth: 1200 }}
+      css={css`
+        padding: 1.5rem 3rem;
+        margin: 2rem auto;
+        max-width: 1200;
+      `}
     >
       <Mission />
       <HomepageHowHelp />

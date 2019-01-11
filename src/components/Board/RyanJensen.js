@@ -2,10 +2,10 @@ import React from "react";
 import BoardMember from "../BoardMember";
 import ryanJensen from "../../../static/images/ryanJensen.jpg";
 
-const RyanJensen = () => {
+const RyanJensen = props => {
   return (
     <BoardMember
-      imgURL={ryanJensen}
+      img={props.img}
       imgAlt="RyanJenson | Board Member"
       imgDescription="LMF Board Member"
       name="Ryan Jensen"

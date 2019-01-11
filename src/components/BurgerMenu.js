@@ -9,10 +9,10 @@ import { Link } from "gatsby";
 const styles = {
   bmBurgerButton: {
     position: "fixed",
-    width: "36px",
-    height: "30px",
-    right: "36px",
-    top: "36px"
+    width: "100px",
+    height: "100px",
+    right: "0",
+    top: "0"
   },
   bmBurgerBars: {
     background: "#373a47",
@@ -28,7 +28,6 @@ const styles = {
   },
   bmMenu: {
     background: "#373a47",
-    padding: "2.5em 1.5em 0",
     fontSize: "1.15em"
   },
   bmMorphShape: {
@@ -36,7 +35,8 @@ const styles = {
   },
   bmItemList: {
     color: "#b8b7ad",
-    padding: "0.8em"
+    listStyle: "none",
+    textAlign: "center"
   },
   bmItem: {
     display: "inline-block"
@@ -48,9 +48,11 @@ const styles = {
 
 const ListLink = props => (
   <li
-    css={{
-      marginRight: `1rem`
-    }}
+    css={css`
+      padding: 1rem;
+      border-bottom: 1px solid;
+      margin-bottom: 0;
+    `}
   >
     <Link to={props.to} css={{ textDecoration: `none` }} className="menu-item">
       {props.children}
@@ -62,14 +64,14 @@ const ListLink = props => (
 const Line = styled.path`
   fill: none;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: #000;
+  stroke: #888;
   stroke-width: 5.5;
   stroke-linecap: round;
 `;
 
 const FancyIcon = props => (
   <div
-    className="burgerBody test"
+    className="burgerBody"
     css={css`
       align-items: center;
       display: flex;
@@ -82,7 +84,20 @@ const FancyIcon = props => (
     `}
   >
     <svg
-      className="ham hamRotate ham4"
+      className=""
+      css={css`
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 400ms;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        .activate {
+          transform: rotate(45deg);
+        }
+      `}
       viewBox="0 0 100 100"
       width="80"
       onClick="this.classList.toggle('active')"
@@ -91,6 +106,9 @@ const FancyIcon = props => (
         className="top"
         css={css`
           stroke-dasharray: 40 121;
+          .active {
+            stroke-dashoffset: -68px;
+          }
         `}
         d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
       />
@@ -98,6 +116,9 @@ const FancyIcon = props => (
       <Line
         css={css`
           stroke-dasharray: 40 121;
+          .active {
+            stroke-dashoffset: -68px;
+          }
         `}
         className="bottom"
         d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
@@ -140,45 +161,6 @@ class burgerMenu extends React.Component {
 
   render() {
     return (
-      //   <Global
-      //     styles={css`
-      //   .ham {
-      //     cursor: pointer;
-      //     -webkit-tap-highlight-color: transparent;
-      //     transition: transform 400ms;
-      //     -moz-user-select: none;
-      //     -webkit-user-select: none;
-      //     -ms-user-select: none;
-      //     user-select: none;
-      //   }
-      //   .hamRotate.active {
-      //     transform: rotate(45deg);
-      //   }
-      //   .line {
-      //     fill:none;
-      //     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-      //     stroke:#000;
-      //     stroke-width:5.5;
-      //     stroke-linecap:round;
-      //   }
-
-      //   .ham4 .top {
-      //     stroke-dasharray: 40 121;
-      //   }
-      //   .ham4 .bottom {
-      //     stroke-dasharray: 40 121;
-      //   }
-      //   .ham4.active .top {
-      //     stroke-dashoffset: -68px;
-      //   }
-      //   .ham4.active .bottom {
-      //     stroke-dashoffset: -68px;
-      //   }
-
-      //   }
-      // `}
-      //   >
-
       <div
         css={css`
           @media (min-width: 970px) {
@@ -201,9 +183,6 @@ class burgerMenu extends React.Component {
         </Menu>
       </div>
     );
-    {
-      /* </Global> */
-    }
   }
 }
 

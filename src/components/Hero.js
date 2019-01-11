@@ -9,27 +9,31 @@ import heroImage from "../../static/images/juliane-liebermann-542688.jpg";
 const Hero = props => {
   return (
     <section
-      css={{
-        width: `100vw`,
-        height: `100vh`,
+      css={css`
+        width: 100%;
+        height: 100vh;
+        min-height: 800px;
+
         /* Flexbox stuff */
-        display: `flex`,
-        justifyContent: `center`,
-        alignItems: `center`,
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         /* Text styles */
-        textAlign: `center`,
-        color: `white`,
+        text-align: center;
+        color: white;
 
         /* Background styles */
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5))`,
-        // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${heroImage})`,
-        backgroundSize: `cover`,
-        backgroundPosition: `center center`,
-        backgroundRepeat: `no-repeat`,
-        backgroundAttachment: `fixed`
-        // padding: `3rem 0 0 0`
-      }}
+        background-image: linear-gradient(
+          rgba(0, 0, 0, 0.5),
+          rgba(0, 0, 0, 0.5)
+        );
+
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      `}
     >
       <Img
         fluid={props.heroImg.childImageSharp.fluid}
@@ -46,19 +50,23 @@ const Hero = props => {
         css={css`
           padding: 40px;
           z-index: 2;
+          max-width: 800px;
         `}
       >
         <h1
-          css={{
-            fontSize: `10vmin`,
-            textTransform: `uppercase`,
-            marginBottom: `4rem`
-          }}
+          css={css`
+            font-size: 10vmin;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+          `}
         >
           Light My Fire
         </h1>
-        <hr/>
-        <h2 style={{ marginBottom: `0` }}>
+        <h2
+          css={css`
+            margin-bottom: 0;
+          `}
+        >
           A house fire can destroy an entire family's possessions. Our goal is
           to help them get back on their feet
         </h2>
@@ -71,7 +79,7 @@ const Hero = props => {
             width: `200px`,
 
             /* Padding and margins */
-            padding: `1em`,
+            padding: `0.5em`,
             marginTop: `50px`,
             marginLeft: `auto`,
             marginRight: `auto`,
@@ -82,7 +90,7 @@ const Hero = props => {
             fontSize: `1.5em`,
 
             /* Border styles */
-            border: `3px solid white`,
+            border: `2px solid white`,
             borderRadius: `4px`,
             backgroundColor: `rgba(249, 68, 68, 0.8)`
           }}

@@ -62,6 +62,7 @@ export default ({ children }) => (
               grid-row: 1;
               grid-column: span 2;
               margin-bottom: 3rem;
+              padding-right: 0;
             }
             @media (max-width: 670px) {
               padding: 0 2rem;

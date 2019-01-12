@@ -32,15 +32,6 @@ export default ({ children }) => (
         `}
       />
       <div
-        // style={{
-        //   display: `grid`,
-        //   gridTemplateColumns: `auto 300px`,
-        //   gridRow: `2/3`,
-        //   gridColumn: `1/3`,
-        //   padding: `1.5rem 3rem`,
-        //   margin: `2rem auto`,
-        //   maxWidth: 1200
-        // }}
         css={css`
           display: grid;
           grid-template-columns: auto 300px;
@@ -54,6 +45,10 @@ export default ({ children }) => (
             grid-row: 2;
             grid-column: span 2;
           }
+          @media (max-width: 670px) {
+            margin: 3rem 0 0;
+            padding: 0;
+          }
         `}
       >
         <main
@@ -61,10 +56,15 @@ export default ({ children }) => (
             justify-self: start;
             padding-right: 2rem;
             grid-column: 1/2;
+            margin-bottom: 2rem;
             @media (max-width: 970px) {
               margin-top: 100px;
               grid-row: 1;
               grid-column: span 2;
+              margin-bottom: 3rem;
+            }
+            @media (max-width: 670px) {
+              padding: 0 2rem;
             }
           `}
         >
@@ -76,6 +76,8 @@ export default ({ children }) => (
             @media (max-width: 970px) {
               grid-row: 2;
               grid-column: span 2;
+              margin-bottom: 2rem;
+              padding: 0 2rem;
             }
           `}
         >

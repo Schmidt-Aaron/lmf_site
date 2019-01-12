@@ -2,6 +2,8 @@
 import React from "react";
 import NavMenu from "../components/NavMenu";
 import logo from "../../static/images/lmflogo-text.png";
+import logoLight from "../../static/images/lmflogo-light.png";
+import logoDark from "../../static/images/lmflogo.png";
 import { StaticQuery, Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
 
@@ -60,21 +62,25 @@ export default () => (
           >
             <Link
               to="/"
-              css={{
-                textShadow: `none`,
-                backgroundImage: `none`,
-                textDecoration: `none`,
-                color: `black`
-              }}
+              css={css`
+                text-shadow: none;
+                background-image: none;
+                text-decoration: none;
+                color: black;
+              `}
+              description="Light My Fire"
             >
               <h3 css={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
               <img
-                src={logo}
+                src={logoDark}
                 alt="Light My Fire Puget Sound"
                 description="Light My Fire"
                 height="100px"
                 width="auto"
-                style={{ marginBottom: 0 }}
+                css={css`
+                  margin-bottom: 0;
+                  margin-left: 0.5rem;
+                `}
               />
             </Link>
           </div>

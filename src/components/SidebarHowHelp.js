@@ -6,7 +6,6 @@ import { css, jsx } from "@emotion/core";
 // inner text for components below
 const helpText =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sint aut eaque odio laborum cum";
-const involvedText = "";
 const eventText =
   "We are putting on a dinner auction in April. Come out and support a good cause!";
 const amazonSmileText =
@@ -17,10 +16,9 @@ const amazonSmileText =
 const HomePageHowHelp = () => {
   return (
     <section>
-      <h2>Help Out Today</h2>
       <div>
         <HowCanHelp
-          title="Amazon Smile"
+          title="Donate While You Shop"
           innerText={amazonSmileText}
           link="/help"
           linkText="Learn More"

@@ -3,7 +3,6 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
 import Img from "gatsby-image";
-import heroImage from "../../static/images/juliane-liebermann-542688.jpg";
 
 // used on homepage only
 const Hero = props => {
@@ -33,10 +32,12 @@ const Hero = props => {
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        margin-bottom: 5rem;
       `}
     >
       <Img
         fluid={props.heroImg.childImageSharp.fluid}
+        style={{ position: "absolute" }}
         css={css`
           position: absolute;
           top: 100px;

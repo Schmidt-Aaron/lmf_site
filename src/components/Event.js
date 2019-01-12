@@ -4,9 +4,19 @@ import { css, jsx } from "@emotion/core";
 
 const Event = props => {
   return (
-    <section css={{ display: `flex` }}>
+    <section
+      css={css`
+        display: flex;
+        justify-content: center;
+      `}
+    >
       <img src={props.imgURL} alt={props.imgAlt} height="300px" width="auto" />
-      <div css={{ marginLeft: `2rem`, textAlign: `left` }}>
+      <div
+        css={css`
+          margin-left: 2rem;
+          text-align: left;
+        `}
+      >
         <p>
           <span>What:</span> {props.eventName}
         </p>

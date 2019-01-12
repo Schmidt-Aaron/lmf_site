@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layouts/layout";
 import Mission from "../components/Mission";
 import Board from "../components/Board";
@@ -7,7 +8,9 @@ import Chairman from "../components/Board/ChairmanLetter";
 export default ({ data }) => (
   <Layout>
     <Mission />
+    <hr />
     <Chairman />
+    <hr />
     <Board {...data} />
   </Layout>
 );

@@ -1,9 +1,6 @@
 /** @jsx jsx */
 import React from "react";
 import { Link } from "gatsby";
-// import Menu from "@material-ui/core/Menu";
-import Button from "@material-ui/core/Button";
-// import MenuItem from "@material-ui/core/MenuItem";
 import { css, jsx } from "@emotion/core";
 import BurgerMenu from "./BurgerMenu";
 

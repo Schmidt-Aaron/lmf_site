@@ -1,6 +1,5 @@
 import React from "react";
 import BoardMember from "../BoardMember";
-import diane from "../../../static/images/diane.jpg";
 
 const linkedIn = "https://www.linkedin.com/in/diane-salz-b12a4997";
 const DianeSalz = props => {

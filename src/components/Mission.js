@@ -1,19 +1,23 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
+import styled from "@emotion/styled";
+import { Underlined } from "./styles";
 
 // This component is used on the homepage and the about us page
 
 const Mission = props => {
   return (
     <section
-      className="mission"
       css={css`
         max-width: 800px;
         margin: 0 auto 5rem;
       `}
     >
-      <h2>Our Mission</h2>
+      <Underlined>
+        <h2>Our Mission</h2>
+      </Underlined>
+
       <p>
         In the Seattle area alone, there are around 400 home fires every year.
         Immediately following these tragedies, many families are left homeless

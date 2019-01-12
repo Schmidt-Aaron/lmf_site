@@ -1,13 +1,16 @@
 import React from "react";
 import DianeSign from "../../../static/images/diane_sign.png";
 
+import { Underlined } from "../styles";
 // chairmans letter; used on about page
 
 const Chairman = () => {
   return (
     <section>
       <em>
-        <h2>A Letter from our Board</h2>
+        <Underlined>
+          <h2>A Letter from our Board</h2>
+        </Underlined>
         <p>Dear Friends and potential donors of Light My Fire,</p>
         <p>
           We have a great need in our community that needs to be fulfilled.

@@ -2,6 +2,7 @@
 import React from "react";
 import HowCanHelp from "./HowCanHelpWidget";
 import { css, jsx } from "@emotion/core";
+import { Underlined } from "./styles";
 
 const amazonSmileLink = "https://smile.amazon.com/ch/46-5717849";
 // inner text for components below
@@ -19,7 +20,9 @@ const amazonText =
 const HomePageHowHelp = () => {
   return (
     <section>
-      <h2>Help Today</h2>
+      <Underlined>
+        <h2>Help Today</h2>
+      </Underlined>
       <div
         css={css`
           display: grid;

@@ -7,13 +7,20 @@ import JeremyKennard from "./Board/JeremyKennard";
 import RobertFrance from "./Board/RobertFrance";
 import RyanJensen from "./Board/RyanJensen";
 import { css, jsx } from "@emotion/core";
+import { Underlined } from "./styles";
 
 //  board members imported from  ../Board; used on About
 
 const Board = props => {
   return (
-    <section style={{ marginBottom: `3rem` }}>
-      <h2>Board of Directors</h2>
+    <section
+      css={css`
+        marginbottom: 3rem;
+      `}
+    >
+      <Underlined>
+        <h2>Board of Directors</h2>
+      </Underlined>
       <div
         css={css`
           display: grid;

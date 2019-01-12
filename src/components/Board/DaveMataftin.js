@@ -1,6 +1,5 @@
 import React from "react";
 import BoardMember from "../BoardMember";
-import davePic from "../../../static/images/dave.jpg";
 
 const DaveMataftin = props => {
   return (

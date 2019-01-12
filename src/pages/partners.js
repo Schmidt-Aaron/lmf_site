@@ -1,10 +1,13 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
 import Partners from "../components/Partners";
+import { Underlined } from "../components/styles";
 
 export default () => (
   <Layout>
-    <h1>Light My Fire Partners</h1>
+    <Underlined>
+      <h1>Light My Fire Partners</h1>
+    </Underlined>
     <p>
       Support from Puget Sound area businesses is critical to our success, so
       we’ll highlight those partners that work with us. When contacting any of

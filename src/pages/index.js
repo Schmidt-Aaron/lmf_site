@@ -7,24 +7,21 @@ import UpcomingEvents from "../components/UpcomingEvents";
 import { css, jsx } from "@emotion/core";
 import React from "react";
 import { graphql } from "gatsby";
+import { Wrapper } from "../components/styles";
 
+// Homepage content
 export default ({ data }) => (
   <Layout>
     <Hero {...data} />
-    <section
-      css={css`
-        padding: 1.5rem 3rem;
-        margin: 2rem auto;
-        max-width: 1200;
-      `}
-    >
-      <Mission />
+    <Mission />
+    <Wrapper>
       <HomepageHowHelp />
-      <UpcomingEvents />
-    </section>
+    </Wrapper>
+    <UpcomingEvents />
   </Layout>
 );
 
+// query for any outside data
 export const query = graphql`
   query {
     heroImg: file(relativePath: { eq: "juliane-liebermann-542688.jpg" }) {

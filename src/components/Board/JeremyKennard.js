@@ -1,6 +1,5 @@
 import React from "react";
 import BoardMember from "../BoardMember";
-import jeremy from "../../../static/images/jeremy.jpg";
 
 const linkedIn = "https://www.linkedin.com/in/jeremy-kennard-06554b30";
 const JeremyKennard = props => {

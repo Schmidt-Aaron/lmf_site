@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
 import { Link } from "gatsby";
+import { Underlined } from "../components/styles";
 
 // paypal link
 const donate =
@@ -10,7 +11,9 @@ export default () => {
   return (
     <Layout>
       <section>
-        <h1>How You Can Help</h1>
+        <Underlined>
+          <h1>How You Can Help</h1>
+        </Underlined>
         <p>
           This website is under construction. Information on how to help out
           will be supplied shortly. Thanks for your patience. In the mean time

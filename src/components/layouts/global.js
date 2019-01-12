@@ -4,9 +4,11 @@
  * Used in the layout files
  */
 
+/** @jsx jsx */
 import React from "react";
 import { Helmet } from "react-helmet";
 import { StaticQuery, Link, graphql } from "gatsby";
+import { css, jsx } from "@emotion/core";
 
 // global effects; used in other layouts as parent wrapper
 
@@ -22,7 +24,13 @@ export default ({ children }) => (
       }
     `}
     render={data => (
-      <div>
+      <div
+        css={css`
+          h1 {
+            font-weight: 500;
+          }
+        `}
+      >
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[

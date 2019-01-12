@@ -3,7 +3,7 @@ import funstonTheme from "typography-theme-funston";
 
 // funston theme modifications
 funstonTheme.baseLineHeight = "1.625";
-funstonTheme.headerWeight = "500";
+funstonTheme.headerWeight = "400";
 funstonTheme.headerFontFamily = [
   "Roboto",
   "-apple-system",

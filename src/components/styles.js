@@ -17,7 +17,7 @@ export const Underlined = ({ children }) => {
       <hr
         css={css`
           position: relative;
-          top: -40px;
+          top: -43px;
           background: #ffc4c7;
           height: 10px;
           z-index: -1;

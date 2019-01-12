@@ -29,6 +29,7 @@ export default () => (
           grid-row: 1;
           grid-column: 1/3;
           z-index: 5;
+          border-top: solid 5px #ff6d70;
           @media (max-width: 970px) {
             position: fixed;
             min-width: 100%;

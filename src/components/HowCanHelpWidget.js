@@ -6,16 +6,16 @@ import { css, jsx } from "@emotion/core";
 const HowCanHelp = props => {
   return (
     <div
-      style={{
-        display: `flexbox`,
-        flexDirection: `column`,
-        alignItems: `center`,
-        justifyContent: `center`,
-        border: `1px black solid`,
-        padding: `1rem`,
-        textAlign: `center`,
-        margin: `0.5rem 0`
-      }}
+      css={css`
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px black solid;
+        padding: 1rem;
+        text-align: center;
+        margin: 0.5rem 0;
+      `}
     >
       <h3>{props.title}</h3>
       <p>{props.innerText}</p>

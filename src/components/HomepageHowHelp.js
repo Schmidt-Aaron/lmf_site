@@ -2,7 +2,7 @@
 import React from "react";
 import HowCanHelp from "./HowCanHelpWidget";
 import { css, jsx } from "@emotion/core";
-import { Underlined } from "./styles";
+import { Underlined, Wrapper } from "./styles";
 
 const amazonSmileLink = "https://smile.amazon.com/ch/46-5717849";
 // inner text for components below
@@ -20,43 +20,45 @@ const amazonText =
 const HomePageHowHelp = () => {
   return (
     <section>
-      <Underlined>
-        <h2>Help Today</h2>
-      </Underlined>
-      <div
-        css={css`
-          display: grid;
-          grid-gap: 10px;
-          grid-template-rows: 1/1;
-          grid-template-columns: repeat(3, 1fr);
-          margin-bottom: 5rem;
-          @media (max-width: 860px) {
-            grid-template-columns: auto;
-          }
-        `}
-      >
-        <HowCanHelp
-          title="Amazon Smile"
-          innerText={amazonText}
-          otherSite={amazonSmileLink}
-          linkTitle="Sign up for Amazon Smile"
-          linkText="Sign Up"
-        />
-        <HowCanHelp
-          title="Get Involved"
-          innerText={involvedText}
-          link="/help"
-          linkTitle="Find out how you can get involved"
-          linkText="Learn More"
-        />
-        <HowCanHelp
-          title="Come to an Event!"
-          innerText={eventText}
-          link="/events"
-          linkTitle="Find out about our onext fun event"
-          linkText="Upcoming Events"
-        />
-      </div>
+      <Wrapper>
+        <Underlined>
+          <h2>Help Today</h2>
+        </Underlined>
+        <div
+          css={css`
+            display: grid;
+            grid-gap: 10px;
+            grid-template-rows: 1/1;
+            grid-template-columns: repeat(3, 1fr);
+            margin: 0 1rem 5rem;
+            @media (max-width: 860px) {
+              grid-template-columns: auto;
+            }
+          `}
+        >
+          <HowCanHelp
+            title="Amazon Smile"
+            innerText={amazonText}
+            otherSite={amazonSmileLink}
+            linkTitle="Sign up for Amazon Smile"
+            linkText="Sign Up"
+          />
+          <HowCanHelp
+            title="Get Involved"
+            innerText={involvedText}
+            link="/help"
+            linkTitle="Find out how you can get involved"
+            linkText="Learn More"
+          />
+          <HowCanHelp
+            title="Come to an Event!"
+            innerText={eventText}
+            link="/events"
+            linkTitle="Find out about our onext fun event"
+            linkText="Upcoming Events"
+          />
+        </div>
+      </Wrapper>
     </section>
   );
 };

@@ -12,6 +12,7 @@ const Mission = props => {
       css={css`
         max-width: 800px;
         margin: 0 auto 5rem;
+        padding: 0 1rem;
       `}
     >
       <Underlined>

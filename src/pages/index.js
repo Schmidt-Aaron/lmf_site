@@ -7,16 +7,13 @@ import UpcomingEvents from "../components/UpcomingEvents";
 import { css, jsx } from "@emotion/core";
 import React from "react";
 import { graphql } from "gatsby";
-import { Wrapper } from "../components/styles";
 
 // Homepage content
 export default ({ data }) => (
   <Layout>
     <Hero {...data} />
     <Mission />
-    <Wrapper>
-      <HomepageHowHelp />
-    </Wrapper>
+    <HomepageHowHelp />
     <UpcomingEvents />
   </Layout>
 );

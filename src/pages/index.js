@@ -1,19 +1,21 @@
 /** @jsx jsx */
+import React from "react";
+import { css, jsx } from "@emotion/core";
+import { graphql } from "gatsby";
 import Layout from "../components/layouts/homeLayout";
 import Hero from "../components/Hero";
 import HomepageHowHelp from "../components/HomepageHowHelp";
 import Mission from "../components/Mission";
 import UpcomingEvents from "../components/UpcomingEvents";
-import { css, jsx } from "@emotion/core";
-import React from "react";
-import { graphql } from "gatsby";
+import AmazonSmile from "../components/AmazonSmile";
 
 // Homepage content
 export default ({ data }) => (
   <Layout>
     <Hero {...data} />
     <Mission />
-    <HomepageHowHelp />
+    {/* <HomepageHowHelp /> */}
+    {/* <AmazonSmile /> */}
     <UpcomingEvents />
   </Layout>
 );

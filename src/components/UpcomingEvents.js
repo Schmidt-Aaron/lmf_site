@@ -18,17 +18,24 @@ const UpcomingEvents = () => {
         <Event
           imgURL={bannerPic}
           imgAlt="LMF silent auction 2019"
-          eventName="Annual Dinner Auction"
+          eventName="Annual Charity Dinner Auction"
           date="April 6th, 2019"
-          location="Foss Waterway Seaport 705 Dock Street, Tacoma, WA 98402"
+          time="5:00 - 8:30PM"
+          location="Foss Waterway Seaport"
+          street="705 Dock Street,"
+          city="Tacoma, WA 98402"
           directions="https://goo.gl/maps/GTTWGpB4uiR2"
           info="If you would like to donate, or are interested in attending
-        please email us."
+        please email us. Tables are still available through the link below at a price of $700 for 10 seats."
+          details="We are pleased to annouce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the awesome Foss Waterway down in Tacoma. We have a couple special surprises cooked up for the event"
         />
         <form
           action="https://www.paypal.com/cgi-bin/webscr"
           method="post"
           target="_top"
+          css={css`
+            text-align: center;
+          `}
         >
           <input type="hidden" name="cmd" value="_s-xclick" />
           <input type="hidden" name="hosted_button_id" value="RS5L4GWE78HWG" />

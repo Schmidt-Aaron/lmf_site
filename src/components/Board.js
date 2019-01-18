@@ -15,7 +15,7 @@ const Board = props => {
   return (
     <section
       css={css`
-        marginbottom: 3rem;
+        margin-bottom: 3rem;
       `}
     >
       <Underlined>

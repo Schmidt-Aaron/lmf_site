@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from "react";
 // import auction from "../../static/images/auction2019.png";
-import bannerPic from "../../static/images/MtRainier.jpg";
+import bannerPic from "../../static/images/MtRainier-s.jpg";
 import Event from "./Event";
 import { css, jsx } from "@emotion/core";
 import { Underlined, Wrapper } from "./styles";

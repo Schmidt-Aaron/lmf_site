@@ -40,7 +40,7 @@ const Hero = props => {
         style={{ position: "absolute" }}
         css={css`
           position: absolute;
-          top: 100px;
+          top: 105px;
           left: 0;
           width: 100%;
           height: 100%;

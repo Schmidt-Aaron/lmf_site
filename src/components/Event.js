@@ -55,6 +55,15 @@ const Event = props => {
           text-align: left;
           max-width: 1200px;
           margin: 0 auto;
+          @media (max-width: 1200px) {
+            padding: 3rem;
+          }
+          @media (max-width: 1000px) {
+            display: block;
+          }
+          @media (max-width: 600px) {
+            padding: 0;
+          }
         `}
       >
         <div
@@ -62,10 +71,21 @@ const Event = props => {
             margin-right: 1rem;
             padding-right: 1rem;
             border-right: 1px solid #eee;
+            @media (max-width: 1000px) {
+              border-right: none;
+            }
           `}
         >
           <p>{props.details}</p>
           <p>{props.info}</p>
+          <hr
+            css={css`
+              display: none;
+              @media (max-width: 1000px) {
+                display: block;
+              }
+            `}
+          />
         </div>
         <div
           css={css`

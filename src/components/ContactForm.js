@@ -21,7 +21,7 @@ const ContactForm = () => {
       name="contact"
       method="POST"
       data-netlify="true"
-      action="/thanks"
+      action="/thanks/"
       netlify-honeypot="bot-field"
     >
       <fieldset style={{ border: `0 solid black` }}>

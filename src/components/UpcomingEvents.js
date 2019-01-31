@@ -22,7 +22,7 @@ const UpcomingEvents = () => {
           date="April 6th, 2019"
           time="5:00 - 8:30PM"
           location="Foss Waterway Seaport"
-          street="705 Dock Street,"
+          street="705 Dock Street"
           city="Tacoma, WA 98402"
           directions="https://goo.gl/maps/GTTWGpB4uiR2"
           info="If you would like to donate, or are interested in attending

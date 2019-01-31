@@ -20,8 +20,8 @@ export default () => (
     </p>
     <ContactForm />
     <p>
-      You can also email us at lightmyfireofps@gmail.com if you have any
-      questions or concerns.
+      You can also email us at info@lmfps.org if you have any questions or
+      concerns.
     </p>
   </Layout>
 );

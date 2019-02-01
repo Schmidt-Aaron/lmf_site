@@ -71,5 +71,14 @@ export const query = graphql`
         }
       }
     }
+    richRye: file(relativePath: { eq: "richRye.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;

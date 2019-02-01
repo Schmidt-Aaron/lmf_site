@@ -8,6 +8,7 @@ import RobertFrance from "./Board/RobertFrance";
 import RyanJensen from "./Board/RyanJensen";
 import { css, jsx } from "@emotion/core";
 import { Underlined } from "./styles";
+import RichRye from "./Board/RichRye";
 
 //  board members imported from  ../Board; used on About
 
@@ -41,6 +42,7 @@ const Board = props => {
         <DianeSalz img={props.diane} />
         <JeremyKennard img={props.jeremy} />
         <RyanJensen img={props.ryanJensen} />
+        <RichRye img={props.richRye} />
       </div>
     </section>
   );

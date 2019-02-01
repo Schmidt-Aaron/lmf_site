@@ -35,7 +35,7 @@ const ContactForm = () => {
       name="contact"
       method="POST"
       data-netlify="true"
-      action="/thanks/index.html"
+      action="/thanks/"
       netlify-honeypot="bot-field"
     >
       <fieldset

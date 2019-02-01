@@ -127,10 +127,8 @@ class ContactForm extends React.Component {
           <button
             type="submit"
             css={css`
-              margin-left: 110px;
+              display: block;
               @media (max-width: 1024px) {
-                display: block;
-                margin-left: 0;
               }
             `}
           >

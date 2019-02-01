@@ -33,6 +33,9 @@ const Hero = props => {
         background-repeat: no-repeat;
         background-attachment: fixed;
         margin-bottom: 5rem;
+        @media (max-width: 800px) {
+          min-height: inherit;
+        }
       `}
     >
       <Img
@@ -45,6 +48,9 @@ const Hero = props => {
           width: 100%;
           height: 100%;
           z-index: -1;
+          @media (max-width: 800px) {
+            top: 100px;
+          }
         `}
       />
       <div
@@ -59,6 +65,9 @@ const Hero = props => {
             font-size: 10vmin;
             text-transform: uppercase;
             margin-bottom: 3rem;
+            @media (max-width: 800px) {
+              margin-bottom: 1rem;
+            }
           `}
         >
           Light My Fire
@@ -66,6 +75,9 @@ const Hero = props => {
         <h2
           css={css`
             margin-bottom: 0;
+            @media (max-width: 800px) {
+              font-size: 3vmax;
+            }
           `}
         >
           A house fire can destroy an entire family's possessions. Our goal is

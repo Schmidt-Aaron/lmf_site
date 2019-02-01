@@ -6,14 +6,17 @@ import Layout from "../components/layouts/homeLayout";
 import Hero from "../components/Hero";
 import HomepageHowHelp from "../components/HomepageHowHelp";
 import Mission from "../components/Mission";
-import UpcomingEvents from "../components/UpcomingEvents";
+import UpcomingEvents from "../components/HomepageUpcomingEvents";
 import AmazonSmile from "../components/AmazonSmile";
+import { TextWrapper } from "../components/styles";
 
 // Homepage content
 export default ({ data }) => (
   <Layout>
     <Hero {...data} />
-    <Mission />
+    <TextWrapper>
+      <Mission />
+    </TextWrapper>
     {/* <HomepageHowHelp /> */}
     {/* <AmazonSmile /> */}
     <UpcomingEvents />

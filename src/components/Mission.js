@@ -10,7 +10,6 @@ const Mission = props => {
   return (
     <section
       css={css`
-        max-width: 800px;
         margin: 0 auto 5rem;
       `}
     >
@@ -18,7 +17,13 @@ const Mission = props => {
         <h2>Our Mission</h2>
       </Underlined>
 
-      <p>
+      <p
+        css={css`
+          @media (max-width: 768px) {
+            text-align: left;
+          }
+        `}
+      >
         In the Seattle area alone, there are around 400 home fires every year.
         Immediately following these tragedies, many families are left homeless
         with no place to go. Light My Fire helps local fire departments by

@@ -33,7 +33,7 @@ const Hero = props => {
         background-repeat: no-repeat;
         background-attachment: fixed;
         margin-bottom: 5rem;
-        @media (max-width: 800px) {
+        @media (max-width: 1024px) {
           min-height: inherit;
         }
       `}
@@ -48,7 +48,7 @@ const Hero = props => {
           width: 100%;
           height: 100%;
           z-index: -1;
-          @media (max-width: 800px) {
+          @media (max-width: 768px) {
             top: 100px;
           }
         `}
@@ -65,7 +65,7 @@ const Hero = props => {
             font-size: 10vmin;
             text-transform: uppercase;
             margin-bottom: 3rem;
-            @media (max-width: 800px) {
+            @media (max-width: 768px) {
               margin-bottom: 1rem;
             }
           `}
@@ -75,7 +75,7 @@ const Hero = props => {
         <h2
           css={css`
             margin-bottom: 0;
-            @media (max-width: 800px) {
+            @media (max-width: 768px) {
               font-size: 3vmax;
             }
           `}

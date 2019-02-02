@@ -6,7 +6,9 @@ import styled from "@emotion/styled";
 // event detail divs
 const Info = styled.div`
   display: flex;
-  justify-content: center;
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
   @media (max-width: 425px) {
     justify-content: inherit;
   }

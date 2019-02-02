@@ -9,19 +9,21 @@ import { Link } from "gatsby";
 const styles = {
   bmBurgerButton: {
     position: "fixed",
-    width: "100px",
-    height: "100px",
-    right: "0",
-    top: "0"
+    width: "30px",
+    height: "30px",
+    // width: "100px",
+    // height: "100px",
+    right: "40px",
+    top: "40px"
   },
   bmBurgerBars: {
-    background: "#373a47",
-    display: `none` // hide built in hambeuger
+    background: "#373a47"
+    // display: `none` // hide built in hambeuger
   },
   bmCrossButton: {
     height: "24px",
-    width: "24px",
-    display: `none` // hide built in cross
+    width: "24px"
+    // display: `none` // hide built in cross
   },
   bmCross: {
     background: "#bdc3c7"
@@ -29,6 +31,9 @@ const styles = {
   bmMenu: {
     background: "#373a47",
     fontSize: "1.15em"
+  },
+  bmMenuWrap: {
+    top: "0"
   },
   bmMorphShape: {
     fill: "#373a47"
@@ -42,7 +47,8 @@ const styles = {
     display: "inline-block"
   },
   bmOverlay: {
-    background: "rgba(0, 0, 0, 0.3)"
+    background: "rgba(0, 0, 0, 0.3)",
+    top: "0"
   }
 };
 
@@ -69,63 +75,90 @@ const Line = styled.path`
   stroke-linecap: round;
 `;
 
-const FancyIcon = props => (
-  <div
-    className="burgerBody"
-    css={css`
-      align-items: center;
-      display: flex;
-      height: 100%;
-      justify-content: center;
-      margin: 0;
-      overflow: hidden;
-      position: absolute;
-      width: 100%;
-    `}
-  >
-    <svg
-      className=""
-      css={css`
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent;
-        transition: transform 400ms;
-        -moz-user-select: none;
-        -webkit-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+//  code below not used currently - custom burger menu
+// class FancyIcon extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       closed: true
+//     };
+//     this.triggerAnimation = this.triggerAnimation.bind(this);
+//   }
 
-        .activate {
-          transform: rotate(45deg);
-        }
-      `}
-      viewBox="0 0 100 100"
-      width="80"
-      onClick="this.classList.toggle('active')"
-    >
-      <Line
-        className="top"
-        css={css`
-          stroke-dasharray: 40 121;
-          .active {
-            stroke-dashoffset: -68px;
-          }
-        `}
-        d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
-      />
-      <Line css={css``} className="middle" d="m 70,50 h -40" />
-      <Line
-        css={css`
-          stroke-dasharray: 40 121;
-          .active {
-            stroke-dashoffset: -68px;
-          }
-        `}
-        className="bottom"
-        d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
-      />
-    </svg>
-  </div>
-);
+//   triggerAnimation = e => {
+//     // !this.state.closed
+//     //   ? this.setState({
+//     //       closed: false
+//     //     })
+//     //   : this.setState({
+//     //       closed: true
+//     //     });
+//     console.log("triggered");
+//     this.setState({
+//       closed: false
+//     });
+//   };
+
+//   render() {
+//     return (
+//       <div
+//         className="burgerBody"
+//         css={css`
+//           align-items: center;
+//           display: flex;
+//           height: 100%;
+//           justify-content: center;
+//           margin: 0;
+//           overflow: hidden;
+//           position: absolute;
+//           width: 100%;
+//         `}
+//         onClick={this.triggerAnimation}
+//       >
+//         <svg
+//           className=""
+//           css={css`
+//             cursor: pointer;
+//             -webkit-tap-highlight-color: transparent;
+//             transition: transform 400ms;
+//             -moz-user-select: none;
+//             -webkit-user-select: none;
+//             -ms-user-select: none;
+//             user-select: none;
+
+//             .activate {
+//               transform: rotate(45deg);
+//             }
+//           `}
+//           viewBox="0 0 100 100"
+//           width="80"
+//         >
+//           <Line
+//             className="top"
+//             css={css`
+//               stroke-dasharray: 40 121;
+//               .active {
+//                 stroke-dashoffset: -68px;
+//               }
+//             `}
+//             d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
+//           />
+//           <Line css={css``} className="middle" d="m 70,50 h -40" />
+//           <Line
+//             css={css`
+//               stroke-dasharray: 40 121;
+//               .active {
+//                 stroke-dashoffset: -68px;
+//               }
+//             `}
+//             className="bottom"
+//             d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
+//           />
+//         </svg>
+//       </div>
+//     );
+//   }
+// }
 
 class burgerMenu extends React.Component {
   constructor(props) {
@@ -173,7 +206,7 @@ class burgerMenu extends React.Component {
           right
           isOpen={this.state.menuOpen}
           onStateChange={state => this.handleStateChange(state)}
-          customBurgerIcon={<FancyIcon />}
+          // customBurgerIcon={<FancyIcon />}
         >
           <ListLink to="/about">About</ListLink>
           <ListLink to="/partners">Partners</ListLink>

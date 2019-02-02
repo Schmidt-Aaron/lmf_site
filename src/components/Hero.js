@@ -11,7 +11,7 @@ const Hero = props => {
       css={css`
         width: 100%;
         height: 100vh;
-        min-height: 800px;
+        /* min-height: 800px; */
 
         /* Flexbox stuff */
         display: flex;

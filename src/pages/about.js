@@ -80,5 +80,14 @@ export const query = graphql`
         }
       }
     }
+    tammyLamb: file(relativePath: { eq: "tammyLamb2.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(maxWidth: 400) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;

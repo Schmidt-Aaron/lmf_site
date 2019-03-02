@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Light My Fire of Puget Sound`,
-    description: `Light My Fire is a Puget Sound charity devoted to helping familes recover from catastrophic fire damage`,
+    description: `Light My Fire is a Puget Sound charity devoted to helping families recover from catastrophic fire damage`,
     siteUrl: `https://lightmyfireps.org/`
   },
   plugins: [

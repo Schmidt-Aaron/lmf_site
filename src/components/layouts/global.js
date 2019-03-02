@@ -37,7 +37,7 @@ export default ({ children }) => (
             {
               name: "description",
               content:
-                "Light My Fire is a Puget Sound charity devoted to helping familes recover from catastrophic fire damage"
+                "Light My Fire is a Puget Sound charity devoted to helping families recover from catastrophic fire damage"
             },
             {
               name: "google-site-verification",
@@ -46,6 +46,7 @@ export default ({ children }) => (
           ]}
         >
           <link rel="canonical" href="https://lightmyfireps.org/" />
+          <html lang="en" />
         </Helmet>
         {children}
       </div>

@@ -40,3 +40,5 @@
   1. address
   1. mailing list signup
 1. 404 page
+
+site metatag example: https://github.com/gatsbyjs/gatsby/blob/master/www/src/components/site-metadata.js

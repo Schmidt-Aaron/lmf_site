@@ -24,6 +24,8 @@
   1. setup gatsby hook
 1. email accounts -- G suite free --done
 1. favicon
+1. SEO
+  1. add more seo tags ex. https://www.gatsbyjs.org/docs/add-seo-component/
 
 ## Content
 

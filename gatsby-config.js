@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Light My Fire - Puget Sound`
+    title: `Light My Fire of Puget Sound`,
+    description: `Light My Fire is a Puget Sound charity devoted to helping familes recover from catastrophic fire damage`,
+    siteUrl: `https://lightmyfireps.org/`
   },
   plugins: [
     {
@@ -25,6 +27,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

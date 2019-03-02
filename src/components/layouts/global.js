@@ -35,16 +35,18 @@ export default ({ children }) => (
           title={data.site.siteMetadata.title}
           meta={[
             {
-              name: "Light My Fire Puget Sound",
+              name: "description",
               content:
-                "Puget Sound charity devoted to helping familes recover from catasttrophic fire damage"
+                "Light My Fire is a Puget Sound charity devoted to helping familes recover from catastrophic fire damage"
             },
             {
               name: "google-site-verification",
               content: "PfmmbcIvVYhidSZL3yKTkWF_xQwXyXXjM4wRL5KI9GI"
             }
           ]}
-        />
+        >
+          <link rel="canonical" href="https://lightmyfireps.org/" />
+        </Helmet>
         {children}
       </div>
     )}

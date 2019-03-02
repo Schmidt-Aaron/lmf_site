@@ -71,7 +71,7 @@ export const query = graphql`
         }
       }
     }
-    richRye: file(relativePath: { eq: "richRye.jpg" }) {
+    richRye: file(relativePath: { eq: "richRye1.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.

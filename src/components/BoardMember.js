@@ -49,7 +49,7 @@ const BoardMember = props => {
         </h3>
         <h4
           css={css`
-            fontsize: 0.8rem;
+            font-size: 0.8rem;
           `}
         >
           {props.job}

@@ -33,7 +33,7 @@ const Partners = () => {
         description="belfor"
       />
       <PartnerImage
-        link="https://www.arkenco.com/"
+        link="https://www.dlsrestore.com/"
         imgURL={dls}
         altText="dls logo"
         description="dls"

@@ -1,6 +1,18 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
+import styled from "@emotion/styled";
+
+// event detail divs
+const Info = styled.div`
+  display: flex;
+  @media (max-width: 1024px) {
+    justify-content: center;
+  }
+  @media (max-width: 425px) {
+    justify-content: inherit;
+  }
+`;
 
 const calender =
   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACVSURBVFhH7dGxCYAwEIXh7Jal3MEiC7iOuIC1YG1nY6lETgIBOcLTcDnuh1dcqg/irK+avD8ljVip+HiEIGIGRNcuUNKIler64ZRStBArZcCCDIimHzjOy70n9M7TD/w7fUDui9A7Tx+wdvqA3Behd54+YO30AbkvKr259AFrZ0A0A6K1C1y3XcQMiO4VKGnEssCcuwDgzmLhWVU1zwAAAABJRU5ErkJggg==";
@@ -53,10 +65,17 @@ const Event = props => {
         css={css`
           display: flex;
           text-align: left;
-          max-width: 1200px;
+          max-width: 1024px;
           margin: 0 auto;
           @media (max-width: 1024px) {
             display: block;
+            padding: 3rem;
+          }
+          @media (max-width: 768px) {
+            padding: 0 2rem 2rem;
+          }
+          @media (max-width: 425px) {
+            padding: 0 1.5rem 1rem;
           }
         `}
       >
@@ -97,11 +116,7 @@ const Event = props => {
             }
           `}
         >
-          <div
-            css={css`
-              display: flex;
-            `}
-          >
+          <Info>
             <span>
               <img
                 src={location}
@@ -129,12 +144,8 @@ const Event = props => {
                 <a href={props.directions}>Directions</a>
               </small>
             </p>
-          </div>
-          <div
-            css={css`
-              display: flex;
-            `}
-          >
+          </Info>
+          <Info>
             <span>
               <img
                 src={calender}
@@ -153,12 +164,8 @@ const Event = props => {
             >
               {props.date}
             </p>
-          </div>
-          <div
-            css={css`
-              display: flex;
-            `}
-          >
+          </Info>
+          <Info>
             <span>
               <img
                 src={clock}
@@ -177,7 +184,7 @@ const Event = props => {
             >
               {props.time}
             </p>
-          </div>
+          </Info>
         </div>
       </div>
     </section>

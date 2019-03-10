@@ -15,8 +15,10 @@ export default () => (
       information on our Facebook account.
     </p>
     <UpcomingEvents style={{ marginBottom: `2rem` }} />
+    <hr />
+    <hr />
     <Underlined>
-      <h2>Our Highlights</h2>
+      <h2>Past Event Highlights</h2>
     </Underlined>
     <p>
       We do a variety of events throughout the year. We will post some photos &

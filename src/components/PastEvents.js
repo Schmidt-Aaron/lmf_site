@@ -7,7 +7,6 @@ import { css, jsx } from "@emotion/core";
 const PastEvents = () => {
   return (
     <section>
-      <h2>Past Events</h2>
       <h3>2015 President’s Choice Fundraiser</h3>
       <p>
         The Puget Sound Adjusters Association (PSAA) is an association dedicated

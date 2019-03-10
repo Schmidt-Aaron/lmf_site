@@ -14,6 +14,7 @@
 1. create a modal?? with transition animation
 1. better facebook icon
 1. linkedin icon for board members
+1. better pattern for sidebar images
 
 ## Features
 
@@ -21,8 +22,10 @@
 1. join mailing list
 1. find provider
   1. setup gatsby hook
-1. email accounts -- G suite free
+1. email accounts -- G suite free --done
 1. favicon
+1. SEO
+  1. add more seo tags ex. https://www.gatsbyjs.org/docs/add-seo-component/
 
 ## Content
 
@@ -36,3 +39,6 @@
   1. links
   1. address
   1. mailing list signup
+1. 404 page
+
+site metatag example: https://github.com/gatsbyjs/gatsby/blob/master/www/src/components/site-metadata.js

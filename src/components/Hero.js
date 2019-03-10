@@ -11,7 +11,7 @@ const Hero = props => {
       css={css`
         width: 100%;
         height: 100vh;
-        min-height: 800px;
+        /* min-height: 800px; */
 
         /* Flexbox stuff */
         display: flex;
@@ -24,8 +24,8 @@ const Hero = props => {
 
         /* Background styles */
         background-image: linear-gradient(
-          rgba(0, 0, 0, 0.5),
-          rgba(0, 0, 0, 0.5)
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.45)
         );
 
         background-size: cover;
@@ -33,6 +33,9 @@ const Hero = props => {
         background-repeat: no-repeat;
         background-attachment: fixed;
         margin-bottom: 5rem;
+        @media (max-width: 1024px) {
+          min-height: inherit;
+        }
       `}
     >
       <Img
@@ -40,11 +43,14 @@ const Hero = props => {
         style={{ position: "absolute" }}
         css={css`
           position: absolute;
-          top: 100px;
+          top: 105px;
           left: 0;
           width: 100%;
           height: 100%;
           z-index: -1;
+          @media (max-width: 768px) {
+            top: 100px;
+          }
         `}
       />
       <div
@@ -59,6 +65,9 @@ const Hero = props => {
             font-size: 10vmin;
             text-transform: uppercase;
             margin-bottom: 3rem;
+            @media (max-width: 768px) {
+              margin-bottom: 1rem;
+            }
           `}
         >
           Light My Fire
@@ -66,6 +75,9 @@ const Hero = props => {
         <h2
           css={css`
             margin-bottom: 0;
+            @media (max-width: 768px) {
+              font-size: 3vmax;
+            }
           `}
         >
           A house fire can destroy an entire family's possessions. Our goal is

@@ -53,7 +53,22 @@ const UpcomingEvents = () => {
             width="1"
             height="1"
           /> */}
-          <button type="submit" name="submit">
+          <button
+            type="submit"
+            name="submit"
+            css={css`
+              padding: 10px;
+              text-decoration: none;
+              background-color: #cc3a3d;
+              color: white;
+              border-radius: 5px;
+              &:hover {
+                transform: translateY(-1px);
+                background-color: #ff6d70;
+                color: white;
+              }
+            `}
+          >
             Purchase a Table
           </button>
         </form>

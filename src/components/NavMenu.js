@@ -46,7 +46,7 @@ export default () => (
       <ListLink to="/partners">Partners</ListLink>
       <ListLink to="/events">Events</ListLink>
       <ListLink to="/contact">Contact</ListLink>
-      <ListLink to="/help">Help</ListLink>
+      <ListLink to="/help">Help Out</ListLink>
       <li
         css={{
           display: `inline-block`,

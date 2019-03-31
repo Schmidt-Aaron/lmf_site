@@ -14,24 +14,35 @@ export default () => {
         <Underlined>
           <h1>How You Can Help</h1>
         </Underlined>
-        <p>
+        {/* <p>
           This website is under construction. Information on how to help out
           will be supplied shortly. Thanks for your patience. In the mean time
           if you have have questions you can email us at
           lightmyfireofps@gmail.com
+        </p> */}
+        <p>
+          Their are multiple ways you can help out our cause. We accept
+          donations, both monetary, and physical items that can be auctioned
+          off. We are a participating charity on Amazon Smile, and we also put
+          on one or more fun events each year. More info on each of these
+          options are below. If there is another way that you would like to help
+          out not listed here, please contact us to discuss it.
         </p>
         <h2>Donate to LMF</h2>
         <p>
           We are accepting monetary donations through{" "}
           <a href={donate}>Paypal</a>. We also accept service/material donations
-          that we can auction off. For more information on what you can do
-          please <Link to="/contact">contact us</Link>.
+          that we can auction off. If you have a service/item that you want to
+          donate for our chairty auction please{" "}
+          <Link to="/contact">contact us</Link> to get the ball rolling.
         </p>
         <h2>Come to one of our events</h2>
 
         <p>
-          We put on several events a year. Learn about our upcoming{" "}
-          <Link to="/events">events</Link>.
+          We put on several events a year, including a charity dinner auction.
+          These are always a great time and a perfect place to show your
+          support, meet the people behind the scenes, and just have a good time.
+          Learn about our upcoming <Link to="/events">events</Link>.
         </p>
 
         <h2>Amazon Smile</h2>

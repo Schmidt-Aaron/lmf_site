@@ -86,27 +86,32 @@ const Hero = props => {
         <Link
           to="/help"
           className="btn"
-          css={{
+          css={css`
             /* Positioning and sizing */
-            display: `block`,
-            width: `200px`,
+            display: block;
+            width: 200px;
 
             /* Padding and margins */
-            padding: `0.5em`,
-            marginTop: `50px`,
-            marginLeft: `auto`,
-            marginRight: `auto`,
+            padding: 0.5em;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
 
             /* Text styles */
-            color: `white`,
-            textDecoration: `none`,
-            fontSize: `1.5em`,
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
 
             /* Border styles */
-            border: `2px solid white`,
-            borderRadius: `4px`,
-            backgroundColor: `rgba(249, 68, 68, 0.8)`
-          }}
+            border: 2px solid white;
+            border-radius: 4px;
+            background-color: #cc3a3d;
+            &:hover {
+              transform: translateY(-1px);
+              background-color: #ff6d70;
+              color: white;
+            }
+          `}
         >
           Help Today
         </Link>

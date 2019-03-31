@@ -25,7 +25,16 @@ const PartnerImage = props => {
 
 const Partners = () => {
   return (
-    <div>
+    <div
+      css={css`
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        align-items: center;
+        justify-items: center;
+      `}
+    >
       <PartnerImage
         link="https://www.belfor.com/en/us/belfor-usa-offices/washington/seattle"
         imgURL={belfor}

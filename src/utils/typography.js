@@ -1,5 +1,6 @@
 import Typography from "typography";
 import funstonTheme from "typography-theme-funston";
+import { redirectTo } from "@reach/router";
 
 // funston theme modifications
 funstonTheme.baseLineHeight = "1.625";
@@ -34,6 +35,11 @@ funstonTheme.googleFonts = [
     styles: ["400", "500"]
   }
 ];
+funstonTheme.overrideThemeStyles = () => ({
+  "a:hover": {
+    color: "#cc3a3d"
+  }
+});
 
 const typography = new Typography(funstonTheme);
 

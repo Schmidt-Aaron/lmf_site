@@ -87,6 +87,7 @@ export default () => (
           href={donate}
           css={css`
             padding: 10px;
+            text-transform: uppercase;
             text-decoration: none;
             background-color: #cc3a3d;
             color: white;

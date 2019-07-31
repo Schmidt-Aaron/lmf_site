@@ -11,7 +11,7 @@ const Chairman = () => {
         <Underlined>
           <h2>A Letter from our Board</h2>
         </Underlined>
-        <p>Dear Friends and potential donors of Light My Fire,</p>
+        <p>Dear friends and potential donors of Light My Fire,</p>
         <p>
           We have a great need in our community that needs to be fulfilled.
           Anyone who has ever experienced a fire to their home or business knows

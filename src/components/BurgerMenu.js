@@ -18,7 +18,7 @@ const styles = {
   },
   bmBurgerBars: {
     background: "#373a47"
-    // display: `none` // hide built in hambeuger
+    // display: `none` // hide built in hamburger
   },
   bmCrossButton: {
     height: "24px",

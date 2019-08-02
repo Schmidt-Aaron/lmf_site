@@ -15,6 +15,7 @@
 1. better facebook icon
 1. linkedin icon for board members
 1. better pattern for sidebar images
+1. gatsby-background-image
 
 ## Features
 
@@ -30,7 +31,7 @@
 ## Content
 
 1. amazon smile
-  1. browser extentions
+  1. browser extensions
 1. Events
 1. Dinner Auction
 1. Donation stuff
@@ -38,7 +39,7 @@
 1. footer info
   1. links
   1. address
-  1. mailing list signup
+  1. mailing list sign-up
 1. 404 page
 
 site metatag example: https://github.com/gatsbyjs/gatsby/blob/master/www/src/components/site-metadata.js

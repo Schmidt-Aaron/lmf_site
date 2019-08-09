@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import React from "react";
 import DaveMataftin from "./Board/DaveMataftin";
-import DavidKean from "./Board/DavidKean";
 import DianeSalz from "./Board/DianeSalz";
 import JeremyKennard from "./Board/JeremyKennard";
 import RobertFrance from "./Board/RobertFrance";
-import RyanJensen from "./Board/RyanJensen";
 import { css, jsx } from "@emotion/core";
 import { Underlined } from "./styles";
 import RichRye from "./Board/RichRye";
@@ -40,10 +38,8 @@ const Board = props => {
       >
         <RobertFrance img={props.rob} />
         <DaveMataftin img={props.dave} />
-        <DavidKean img={props.davidKean} />
         <DianeSalz img={props.diane} />
         <JeremyKennard img={props.jeremy} />
-        <RyanJensen img={props.ryanJensen} />
         <RichRye img={props.richRye} />
         <TammyLamb img={props.tammyLamb} />
         <TeraRose img={props.teraRose} />

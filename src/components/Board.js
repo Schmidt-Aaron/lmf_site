@@ -10,6 +10,7 @@ import { css, jsx } from "@emotion/core";
 import { Underlined } from "./styles";
 import RichRye from "./Board/RichRye";
 import TammyLamb from "./Board/TammyLamb";
+import TeraRose from "./Board/TeraRose";
 
 //  board members imported from  ../Board; used on About
 
@@ -45,6 +46,7 @@ const Board = props => {
         <RyanJensen img={props.ryanJensen} />
         <RichRye img={props.richRye} />
         <TammyLamb img={props.tammyLamb} />
+        <TeraRose img={props.teraRose} />
       </div>
     </section>
   );

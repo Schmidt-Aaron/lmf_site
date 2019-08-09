@@ -1,10 +1,8 @@
 /** @jsx jsx */
 import React from "react";
-import belfor from "../../static/images/belfor.250x74.png";
 import dls from "../../static/images/dls.250x230.png";
-import farmers from "../../static/images/farmers.115x61.png";
 import psaa from "../../static/images/psaa.261x131.png";
-import pwc from "../../static/images/pwc.252x77.png";
+import statewide from "../../static/images/statewide.jpg";
 import servpro from "../../static/images/servpro.250x57.png";
 import techblox from "../../static/images/techblox.254x55.png";
 import { css, jsx } from "@emotion/core";
@@ -36,35 +34,19 @@ const Partners = () => {
       `}
     >
       <PartnerImage
-        link="https://www.belfor.com/en/us/belfor-usa-offices/washington/seattle"
-        imgURL={belfor}
-        altText="belfor logo"
-        description="belfor"
-      />
-      <PartnerImage
         link="https://www.dlsrestore.com/"
         imgURL={dls}
         altText="dls logo"
         description="dls"
       />
-      <PartnerImage
-        link="https://agents.farmers.com/wa/bellevue/johnson-marshall"
-        imgURL={farmers}
-        altText="farmers logo"
-        description="farmers"
-      />
+
       <PartnerImage
         link="http://pugetsoundadjusters.org/"
         imgURL={psaa}
         altText="psaa logo"
         description="psaa"
       />
-      <PartnerImage
-        link="http://www.pwcconstruction.com/"
-        imgURL={pwc}
-        altText="pwc logo"
-        description="pwc"
-      />
+
       <PartnerImage
         link="https://www.servprorenton.com/"
         imgURL={servpro}
@@ -76,6 +58,12 @@ const Partners = () => {
         imgURL={techblox}
         altText="techblox logo"
         description="techblox"
+      />
+      <PartnerImage
+        link="http://gostatewide.com/"
+        imgURL={statewide}
+        altText="statewide logo"
+        description="Statewide"
       />
     </div>
   );

@@ -89,5 +89,14 @@ export const query = graphql`
         }
       }
     }
+    teraRose: file(relativePath: { eq: "teraRose.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 400) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;

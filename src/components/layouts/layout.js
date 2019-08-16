@@ -24,12 +24,13 @@ export default ({ children }) => (
       `}
     >
       <Header
-        css={css`
-          width: 100vw;
-          height: 100px;
-          margin: 0 auto;
-          grid-row: 1;
-        `}
+      // css={css`
+      //   width: 100vw;
+      //   height: 100px;
+      //   margin: 0 auto;
+      //   grid-row: 1;
+      //   box-shadow: 3px 2px 4px hsla(0%, 0%, 0%, 0.2);
+      // `}
       />
       <div
         css={css`

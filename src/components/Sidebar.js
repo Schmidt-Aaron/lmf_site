@@ -5,7 +5,12 @@ import { css, jsx } from "@emotion/core";
 
 const Sidebar = () => {
   return (
-    <div css={{ textAlign: `center` }}>
+    <div
+      css={css`
+        padding: 0 1rem;
+        text-align: center;
+      `}
+    >
       <SidebarHowHelp style={{ display: `block`, flexDirection: `column` }} />
     </div>
   );

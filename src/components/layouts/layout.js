@@ -74,11 +74,13 @@ export default ({ children }) => (
         <aside
           css={css`
             grid-column: 2/3;
+            border-left: solid 1px hsla(0, 0%, 0%, 0.2);
             @media (max-width: 970px) {
               grid-row: 2;
               grid-column: span 2;
               margin-bottom: 2rem;
               padding: 0 2rem;
+              border-left: none;
             }
           `}
         >

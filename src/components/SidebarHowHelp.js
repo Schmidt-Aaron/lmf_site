@@ -4,19 +4,21 @@ import HowCanHelp from "./HowCanHelpWidget";
 import { css, jsx } from "@emotion/core";
 import smilePic from "../../static/images/2019_Valentines_smile_300x250.png";
 import smilePicWide from "../../static/images/2019_Valentines_smile_728x90.png";
+import { Underlined } from "./styles";
+import genericSmile from "../../static/images/amazon-smile.jpg";
+import genericSmileWide from "../../static/images/amazon-smile-wide.jpg";
 
 const amazonLink = "https://smile.amazon.com/ch/46-5717849";
 
 // inner text for components below
-const helpText =
-  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sint aut eaque odio laborum cum";
+
 const eventText =
   "Our yearly dinner auction went off without a hitch in this April (2019). Stay tuned for info on our 2020 event!";
 // text for last event
 // const eventText =
 //   "We are putting on a dinner auction in April. Come out and support a good cause!";
 const amazonSmileText =
-  "We are now a participating charity on Amazon Smile! If you select our charity for your Amazon Smile account a small portion of your purchases will be donated to us.";
+  "We are now a participating charity on Amazon Smile! Use the link below to select our charity for your Amazon account and a small portion of eligible purchases will be donated to us.";
 
 //  used on the homepage only
 
@@ -32,32 +34,51 @@ const SidebarHowHelp = () => {
         /> */}
         <div
           css={css`
-            @media (max-width: 1023px) {
+            @media (max-width: 970px) {
               display: none;
             }
           `}
         >
+          <Underlined>
+            <h3
+              css={css`
+                font-size: 1.1rem;
+                text-align: left;
+              `}
+            >
+              Donate When you Shop
+            </h3>
+          </Underlined>
+          <p
+            css={css`
+              text-align: justify;
+              line-height: 1.4;
+              font-size: 0.9rem;
+            `}
+          >
+            {amazonSmileText}
+          </p>
           <a href={amazonLink}>
-            <img src={smilePic} title="Shop to Donate" />
+            <img src={genericSmile} title="Shop to Donate" />
           </a>
         </div>
         <div
           css={css`
-            @media (min-width: 1024px) {
+            @media (min-width: 970px) {
               display: none;
             }
           `}
         >
           <a href={amazonLink}>
-            <img src={smilePicWide} title="Shop to Donate" />
+            <img src={genericSmileWide} title="Shop to Donate" />
           </a>
         </div>
-        <HowCanHelp
+        {/* <HowCanHelp
           title="Dinner Auction"
           innerText={eventText}
           link="/events"
           linkText="Details"
-        />
+        /> */}
       </div>
     </section>
   );

@@ -1,9 +1,10 @@
 import React from "react";
+import { graphql } from "gatsby";
 import Layout from "../components/layouts/layout";
 import Partners from "../components/Partners";
 import { Underlined } from "../components/styles";
 
-export default () => (
+export default ({ data }) => (
   <Layout>
     <Underlined>
       <h1>Light My Fire Partners</h1>
@@ -17,7 +18,69 @@ export default () => (
       to make it happen!
     </p>
     <div>
-      <Partners />
+      <Partners {...data} />
     </div>
   </Layout>
 );
+
+// query for any parter logos (jpgs + pngs) to enable gatsby image optimization
+// all image data is passed into the Partners component above
+
+export const query = graphql`
+  query {
+    WD: file(relativePath: { eq: "1800WD_logo_lg.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    statewide: file(relativePath: { eq: "statewide.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    dls: file(relativePath: { eq: "dls.250x230.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    psaa: file(relativePath: { eq: "psaa.261x131.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    servpro: file(relativePath: { eq: "servpro.250x57.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    techblox: file(relativePath: { eq: "techblox.254x55.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;

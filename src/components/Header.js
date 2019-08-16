@@ -39,7 +39,7 @@ export default () => (
           css={css`
             display: grid;
             /* width: 100vw; */
-            max-width: 1600px;
+            max-width: 1200px;
             margin: 0 auto;
             grid-template-rows: 100px;
             grid-template-columns: minmax(max-content, max-content) 1fr;

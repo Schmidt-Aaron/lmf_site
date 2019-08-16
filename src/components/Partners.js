@@ -32,7 +32,6 @@ const PartnerImage = props => {
 const Partners = props => {
   //deconstruct incoming images
   const { WD, dls, psaa, servpro, statewide, techblox } = props;
-  console.log(props);
   return (
     <div
       css={css`

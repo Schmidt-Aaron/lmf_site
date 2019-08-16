@@ -27,7 +27,7 @@ const UpcomingEvents = () => {
           directions="https://goo.gl/maps/GTTWGpB4uiR2"
           info="If you would like to donate, or are interested in attending
         please email us. Tables are still available through the link below at a price of $700 for 10 seats. (PayPal)"
-          details="We are pleased to annouce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the awesome Foss Waterway down in Tacoma. We have a couple special surprises cooked up for the event"
+          details="We are pleased to announce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the awesome Foss Waterway down in Tacoma. We have a couple special surprises cooked up for the event"
         />
 
         {/* <form

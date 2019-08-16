@@ -11,9 +11,12 @@ const amazonLink = "https://smile.amazon.com/ch/46-5717849";
 const helpText =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia sint aut eaque odio laborum cum";
 const eventText =
-  "We are putting on a dinner auction in April. Come out and support a good cause!";
+  "Our yearly dinner auction went off without a hitch in this April (2019). Stay tuned for info on our 2020 event!";
+// text for last event
+// const eventText =
+//   "We are putting on a dinner auction in April. Come out and support a good cause!";
 const amazonSmileText =
-  "We are now a participating charity on Amazon Smile! If you select our charity for your Amazon Smile account a small portion of your puchases will be donated to us.";
+  "We are now a participating charity on Amazon Smile! If you select our charity for your Amazon Smile account a small portion of your purchases will be donated to us.";
 
 //  used on the homepage only
 

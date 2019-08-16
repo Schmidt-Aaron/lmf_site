@@ -19,16 +19,6 @@ const BoardMember = props => {
         }
       `}
     >
-      {/* <img
-        src={props.imgURL}
-        alt={props.imgAlt}
-        description={props.ImgDescription}
-        width="100%"
-        css={css`
-        margin-bottom: 0.5rem;
-      `} 
-      />
-      */}
       <Img
         fluid={props.img.childImageSharp.fluid}
         // css={css`

@@ -20,7 +20,7 @@ const Hero = props => {
 
         /* Text styles */
         text-align: center;
-        color: white;
+        color: hsla(0, 0%, 100%, 0.95);
 
         /* Background styles */
         background-image: linear-gradient(

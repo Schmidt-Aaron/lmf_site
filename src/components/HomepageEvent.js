@@ -65,7 +65,7 @@ const Event = props => {
         css={css`
           display: flex;
           text-align: left;
-          max-width: 1024px;
+          max-width: 960px;
           margin: 0 auto;
           @media (max-width: 1024px) {
             display: block;

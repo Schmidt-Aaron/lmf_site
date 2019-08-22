@@ -1,16 +1,14 @@
 /** @jsx jsx */
 import React from "react";
-import Global from "./global";
 import Footer from "../Footer";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import { css, jsx } from "@emotion/core";
-import backgroundTexture from "../../../static/images/asfalt-dark.png";
 
 //  standard layout for every page except homepage
 
 export default ({ children }) => (
-  <Global>
+  <>
     <div
       css={css`
         width: 100vw;
@@ -23,15 +21,7 @@ export default ({ children }) => (
         grid-template-rows: min-content auto max-content;
       `}
     >
-      <Header
-      // css={css`
-      //   width: 100vw;
-      //   height: 100px;
-      //   margin: 0 auto;
-      //   grid-row: 1;
-      //   box-shadow: 3px 2px 4px hsla(0%, 0%, 0%, 0.2);
-      // `}
-      />
+      <Header />
       <div
         css={css`
           display: grid;
@@ -41,7 +31,6 @@ export default ({ children }) => (
           padding: 1.5rem 3rem;
           margin: 2rem auto;
           max-width: 1200px;
-          /* background: url(../../../static/images/asfalt-dark.png) repeat; */
           @media (max-width: 970px) {
             grid-row: 2;
             grid-column: span 2;
@@ -90,5 +79,5 @@ export default ({ children }) => (
       </div>
       <Footer />
     </div>
-  </Global>
+  </>
 );

@@ -2,9 +2,11 @@ import React from "react";
 import Layout from "../components/layouts/layout";
 import ContactForm from "../components/ContactForm";
 import { Underlined } from "../components/styles";
+import SEO from "../components/seo";
 
 export default () => (
   <Layout>
+    <SEO title="Contact Us" />
     <Underlined>
       <h1>Contact LMF</h1>
     </Underlined>

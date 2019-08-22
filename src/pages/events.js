@@ -3,9 +3,11 @@ import Layout from "../components/layouts/layout";
 import UpcomingEvents from "../components/UpcomingEvents";
 import PastEvents from "../components/PastEvents";
 import { Underlined } from "../components/styles";
+import SEO from "../components/seo";
 
 export default () => (
   <Layout>
+    <SEO title="Events" />
     <Underlined>
       <h1>Events</h1>
     </Underlined>

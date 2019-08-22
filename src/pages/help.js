@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/layouts/layout";
 import { Link } from "gatsby";
 import { Underlined } from "../components/styles";
+import SEO from "../components/seo";
 
 // paypal link
 const donate =
@@ -10,6 +11,7 @@ const donate =
 export default () => {
   return (
     <Layout>
+      <SEO title="How to Help" />
       <section>
         <Underlined>
           <h1>How You Can Help</h1>

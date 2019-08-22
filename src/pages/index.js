@@ -9,10 +9,12 @@ import Mission from "../components/Mission";
 import UpcomingEvents from "../components/HomepageUpcomingEvents";
 import AmazonSmile from "../components/AmazonSmile";
 import { TextWrapper } from "../components/styles";
+import SEO from "../components/seo";
 
 // Homepage content
 export default ({ data }) => (
   <Layout>
+    <SEO title="Home" />
     <Hero {...data} />
     <TextWrapper>
       <Mission />

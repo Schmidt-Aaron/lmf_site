@@ -1,9 +1,11 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
+import SEO from "../components/seo";
 
 export default () => {
   return (
     <Layout>
+      <SEO title="You Rock!!" />
       <section>
         <h1>Thanks for purchasing a table at our upcoming event!</h1>
         <p>

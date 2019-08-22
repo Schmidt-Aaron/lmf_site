@@ -1,11 +1,13 @@
 import React from "react";
 import Layout from "../components/layouts/layout";
 import { Link } from "@reach/router";
+import SEO from "../components/seo";
 
 // used on privacy page
 
 export default () => (
   <Layout>
+    <SEO title="Privacy Practices" />
     <h1>Privacy Policy</h1>
     <p>
       Light My Fire of Puget sound does not collect any identifiable visitor

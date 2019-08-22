@@ -1,10 +1,5 @@
 /** @jsx jsx */
 import React from "react";
-import dls from "../../static/images/dls.250x230.png";
-import psaa from "../../static/images/psaa.261x131.png";
-import statewide from "../../static/images/statewide.jpg";
-import servpro from "../../static/images/servpro.250x57.png";
-import techblox from "../../static/images/techblox.254x55.png";
 import { css, jsx } from "@emotion/core";
 import Img from "gatsby-image";
 
@@ -47,27 +42,27 @@ const Partners = props => {
         link="https://www.dlsrestore.com/"
         fluid={dls.childImageSharp.fluid}
         altText="dls logo"
-        description="dls"
+        description="DLS Restore"
       />
 
       <PartnerImage
         link="http://pugetsoundadjusters.org/"
         fluid={psaa.childImageSharp.fluid}
         altText="psaa logo"
-        description="psaa"
+        description="PSAA"
       />
 
       <PartnerImage
         link="https://www.servprorenton.com/"
         fluid={servpro.childImageSharp.fluid}
         altText="servpro logo"
-        description="servpro renton"
+        description="Servpro Renton"
       />
       <PartnerImage
         link="https://www.techblox.com/cgi-sys/suspendedpage.cgi"
         fluid={techblox.childImageSharp.fluid}
         altText="techblox logo"
-        description="techblox"
+        description="Techblox"
       />
       <PartnerImage
         link="http://gostatewide.com/"
@@ -79,7 +74,7 @@ const Partners = props => {
         link="https://www.1800WATERDAMAGE.com"
         fluid={WD.childImageSharp.fluid}
         altText="1800 water damage logo"
-        description="1800 water damage"
+        description="1-800 Water Damage"
       />
       <PartnerImage
         link="https://www.westpierce.org/ "

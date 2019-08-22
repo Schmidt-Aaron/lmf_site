@@ -3,9 +3,11 @@ import { graphql } from "gatsby";
 import Layout from "../components/layouts/layout";
 import Partners from "../components/Partners";
 import { Underlined } from "../components/styles";
+import SEO from "../components/seo";
 
 export default ({ data }) => (
   <Layout>
+    <SEO title="Partners" />
     <Underlined>
       <h1>Light My Fire Partners</h1>
     </Underlined>

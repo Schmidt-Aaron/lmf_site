@@ -16,8 +16,6 @@ const ListLink = props => (
     css={css`
       display: inline-block;
       margin-right: 1rem;
-
-      }
     `}
   >
     <Link

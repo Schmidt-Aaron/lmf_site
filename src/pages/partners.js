@@ -82,5 +82,14 @@ export const query = graphql`
         }
       }
     }
+    westPierce: file(relativePath: { eq: "west_pierce.png" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;

@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "gatsby";
 import { css, jsx } from "@emotion/core";
 import BurgerMenu from "./BurgerMenu";
+import { colors } from "../utils/theme";
 
 // paypal link
 const donate =
@@ -12,12 +13,22 @@ const donate =
 const facebook = "https://www.facebook.com/lightmyfireps";
 const ListLink = props => (
   <li
-    css={{
-      display: `inline-block`,
-      marginRight: `1rem`
-    }}
+    css={css`
+      display: inline-block;
+      margin-right: 1rem;
+
+      }
+    `}
   >
-    <Link to={props.to} css={{ textDecoration: `none` }}>
+    <Link
+      to={props.to}
+      css={css`
+        text-decoration: none;
+        color: ${colors.black};
+      `}
+      activeStyle={{ color: `${colors.darkRed}` }}
+      partiallyActive={true}
+    >
       {props.children}
     </Link>
   </li>
@@ -89,11 +100,11 @@ export default () => (
             padding: 10px;
             text-transform: uppercase;
             text-decoration: none;
-            background-color: #cc3a3d;
+            background-color: ${colors.darkRed};
             color: white;
             border-radius: 5px;
             &:hover {
-              background-color: #ff6d70;
+              background-color: ${colors.mediumRed};
               color: white;
             }
           `}

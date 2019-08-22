@@ -1,6 +1,7 @@
 import Typography from "typography";
 import funstonTheme from "typography-theme-funston";
 import { redirectTo } from "@reach/router";
+import { colors } from "../utils/theme";
 
 // funston theme modifications
 funstonTheme.baseLineHeight = "1.625";
@@ -36,8 +37,12 @@ funstonTheme.googleFonts = [
   }
 ];
 funstonTheme.overrideThemeStyles = () => ({
+  a: {
+    color: colors.mediumRed,
+    textDecoration: "none"
+  },
   "a:hover": {
-    color: "#cc3a3d"
+    color: colors.darkRed
   }
 });
 

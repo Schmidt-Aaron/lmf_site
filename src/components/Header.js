@@ -1,11 +1,9 @@
 /** @jsx jsx */
 import React from "react";
 import NavMenu from "../components/NavMenu";
-import logo from "../../static/images/lmflogo-text.png";
-import logoLight from "../../static/images/lmflogo-light.png";
-import logoDark from "../../static/images/lmflogo.png";
 import { StaticQuery, Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
+import Img from "gatsby-image";
 
 // used on everypage
 
@@ -17,6 +15,15 @@ export default () => (
         site {
           siteMetadata {
             title
+          }
+        }
+        logo: file(relativePath: { eq: "lmflogo.png" }) {
+          childImageSharp {
+            # Specify the image processing specifications right in the query.
+            # Makes it trivial to update as your page's design changes.
+            fixed(quality: 90, height: 100) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }
@@ -72,7 +79,13 @@ export default () => (
               description="Light My Fire"
             >
               <h3 css={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
-              <img
+              <Img
+                fixed={data.logo.childImageSharp.fixed}
+                alt={"Light My Fire Puget Sound"}
+                title={"Light My Fire Puget Sound"}
+                imgStyle={{ marginBottom: 0, marginLeft: `0.5rem` }}
+              />
+              {/* <img
                 src={logoDark}
                 alt="Light My Fire Puget Sound"
                 description="Light My Fire"
@@ -82,7 +95,7 @@ export default () => (
                   margin-bottom: 0;
                   margin-left: 0.5rem;
                 `}
-              />
+              /> */}
             </Link>
           </div>
           <div

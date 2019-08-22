@@ -2,8 +2,6 @@
 import React from "react";
 import HowCanHelp from "./HowCanHelpWidget";
 import { css, jsx } from "@emotion/core";
-import smilePic from "../../static/images/2019_Valentines_smile_300x250.png";
-import smilePicWide from "../../static/images/2019_Valentines_smile_728x90.png";
 import { Underlined } from "./styles";
 import genericSmile from "../../static/images/amazon-smile.jpg";
 import genericSmileWide from "../../static/images/amazon-smile-wide.jpg";

@@ -2,6 +2,7 @@
 import React from "react";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
+import { colors } from "../utils/theme";
 
 // commonly used styled components go here
 
@@ -18,7 +19,7 @@ export const Underlined = ({ children }) => {
         css={css`
           position: relative;
           top: -43px;
-          background: #ffc4c7;
+          background: ${colors.underlines};
           height: 10px;
           z-index: -1;
           transform: scaleX(1.05);

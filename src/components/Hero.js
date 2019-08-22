@@ -3,6 +3,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
 import Img from "gatsby-image";
+import { colors } from "../utils/theme";
 
 // used on homepage only
 const Hero = props => {
@@ -105,10 +106,10 @@ const Hero = props => {
             /* Border styles */
             border: 2px solid white;
             border-radius: 4px;
-            background-color: #cc3a3d;
+            background-color: ${colors.darkRed};
             &:hover {
               transform: translateY(-1px);
-              background-color: #ff6d70;
+              background-color: ${colors.mediumRed};
               color: white;
             }
           `}

@@ -2,6 +2,7 @@
 import React from "react";
 import { css, jsx } from "@emotion/core";
 import Img from "gatsby-image";
+import { colors } from "../utils/theme";
 
 // board member template; Used on Board.js
 
@@ -52,7 +53,18 @@ const BoardMember = props => {
           {props.description}
         </p>
 
-        {linkedIn ? <a href={linkedIn}>LinkedIn</a> : ""}
+        {linkedIn ? (
+          <a
+            href={linkedIn}
+            css={css`
+              color: ${colors.black};
+            `}
+          >
+            LinkedIn
+          </a>
+        ) : (
+          ""
+        )}
       </div>
     </section>
   );

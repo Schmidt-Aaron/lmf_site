@@ -31,7 +31,7 @@ const PartnerImage = props => {
 
 const Partners = props => {
   //deconstruct incoming images
-  const { WD, dls, psaa, servpro, statewide, techblox } = props;
+  const { WD, dls, psaa, servpro, statewide, techblox, westPierce } = props;
   return (
     <div
       css={css`
@@ -80,6 +80,12 @@ const Partners = props => {
         fluid={WD.childImageSharp.fluid}
         altText="1800 water damage logo"
         description="1800 water damage"
+      />
+      <PartnerImage
+        link="https://www.westpierce.org/ "
+        fluid={westPierce.childImageSharp.fluid}
+        altText="West Pierce Fire & Rescue logo"
+        description="West Pierce Fire & Rescue"
       />
     </div>
   );

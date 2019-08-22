@@ -3,8 +3,10 @@ import React from "react";
 import { css, jsx } from "@emotion/core";
 import styled from "@emotion/styled";
 import { navigate } from "gatsby";
+import { colors } from "../utils/theme";
 
-// styled lable
+console.log(colors);
+// styled label
 const Label = styled.label`
   display: none;
   min-width: 110px;
@@ -128,6 +130,13 @@ class ContactForm extends React.Component {
             type="submit"
             css={css`
               display: block;
+              border-radius: 5px;
+              color: white;
+              background-color: ${colors.darkRed};
+
+              :hover {
+                background-color: ${colors.mediumRed};
+              }
               @media (max-width: 1024px) {
               }
             `}

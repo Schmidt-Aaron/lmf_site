@@ -112,18 +112,13 @@ export default class PayPal extends Component {
               ]
             });
           }}
-          onApprove={(
-            data,
-            actions,
-            state = { ...this.state },
-            postData = this.postData
-          ) => {
+          onApprove={(data, actions, state = { ...this.state }) => {
             // Capture the funds from the transaction
             return actions.order.capture().then(function(details) {
               // Show a success message to your buyer
               // alert("Transaction completed by " + details.payer.name.given_name);
-              console.log(details);
-              console.log(state);
+              // console.log(details);
+              // console.log(state);
               // // OPTIONAL: Call your server to save the transaction
               // return fetch("/paypal-transaction-complete", {
               //   method: "post",
@@ -137,12 +132,13 @@ export default class PayPal extends Component {
                 ...state,
                 ...details
               };
+              console.log(payload);
               fetch("/", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/x-www-form-urlencoded"
                 },
-                body: encode({ "form-name": "tableSale", payload })
+                body: encode({ "form-name": "tableSale", ...payload })
               })
                 .then(() =>
                   navigate("/receipt", {

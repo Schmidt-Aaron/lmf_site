@@ -1,18 +1,23 @@
+/** @jsx jsx */
 import React from "react";
 import Layout from "../components/layouts/layout";
 import UpcomingEvents from "../components/UpcomingEvents";
 import { Underlined } from "../components/styles";
 import SEO from "../components/seo";
-import PaypalButton from "../components/PaypalButton";
-
-const CLIENT = {
-  sandbox: "sampleID",
-  production: "xxxXXX"
-};
-
-const ENV = process.env.NODE_ENV === "production" ? "production" : "sandbox";
+import Paypal from "../components/Paypal";
+import { css, jsx } from "@emotion/core";
 
 class Table extends React.Component {
+  // loads our paypal script
+  // componentDidMount() {
+  //   const script = document.createElement("script");
+
+  //   script.src = "https://www.paypal.com/sdk/js?client-id=sb";
+  //   script.async = true;
+
+  //   document.body.appendChild(script);
+  // }
+
   render() {
     const onSuccess = payment => console.log("Successful payment!", payment);
     const onError = error =>
@@ -23,26 +28,21 @@ class Table extends React.Component {
       <Layout>
         <SEO title="Purchase a Table" />
         <Underlined>
-          <h1>Purchase a Table</h1>
+          <h1>2020 Charity Dinner and Auction</h1>
         </Underlined>
-        <p>
-          We do a variety of events throughout the year. We will post some
-          photos & highlight information for these events. You can also find
-          other photos and information on our Facebook account.
-        </p>
+
         <UpcomingEvents style={{ marginBottom: `2rem` }} />
         <hr />
-        <hr />
-        <PaypalButton
-          client={CLIENT}
-          env={ENV}
-          commit={true}
-          currency={"USD"}
-          total={1000}
-          onSuccess={onSuccess}
-          onError={onError}
-          onCancel={onCancel}
-        />
+        <Underlined>
+          <h2>Purchase a Table</h2>
+        </Underlined>
+        <p>
+          To purchase a table please fill out the fields below and then use the
+          PayPal button to make your payment. The 'Table Captain' is the primary
+          point-of-contact and the company information is used for sponsorship
+          purposes
+        </p>
+        <Paypal />
       </Layout>
     );
   }

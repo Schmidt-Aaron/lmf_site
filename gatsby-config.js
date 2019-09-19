@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Light My Fire of Puget Sound`,
@@ -31,7 +35,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
-    "gatsby-plugin-svgr",
+    `gatsby-plugin-svgr`,
+    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

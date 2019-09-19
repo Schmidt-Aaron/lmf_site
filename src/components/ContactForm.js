@@ -89,7 +89,7 @@ class ContactForm extends React.Component {
               <input name="bot-field" onChange={this.handleChange} />
             </label>
           </p>
-          <Label htmlfor="name">Name:</Label>
+          <Label htmlFor="name">Name:</Label>
           <Input
             type="text"
             name="name"
@@ -97,7 +97,7 @@ class ContactForm extends React.Component {
             onChange={this.handleChange}
           />
 
-          <Label htmlfor="email">Email:</Label>
+          <Label htmlFor="email">Email:</Label>
           <Input
             type="email"
             name="email"

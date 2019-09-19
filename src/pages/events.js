@@ -4,6 +4,7 @@ import UpcomingEvents from "../components/UpcomingEvents";
 import PastEvents from "../components/PastEvents";
 import { Underlined } from "../components/styles";
 import SEO from "../components/seo";
+import { Link } from "gatsby";
 
 export default () => (
   <Layout>
@@ -17,7 +18,7 @@ export default () => (
       information on our Facebook account.
     </p>
     <UpcomingEvents style={{ marginBottom: `2rem` }} />
-    <hr />
+    <Link to="/table">Purchase a Table</Link>
     <hr />
     <Underlined>
       <h2>Past Event Highlights</h2>

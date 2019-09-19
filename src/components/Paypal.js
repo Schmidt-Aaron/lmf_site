@@ -24,7 +24,6 @@ export default class PayPal extends Component {
       captain: "",
       company: ""
     };
-    // this.postData = this.postData.bind(this);
   }
 
   handleChange = e => {
@@ -81,6 +80,7 @@ export default class PayPal extends Component {
             <input
               type="text"
               name="captain"
+              id="captain"
               value={captain}
               onChange={this.handleChange}
               required
@@ -90,11 +90,23 @@ export default class PayPal extends Component {
             Company:
             <input
               type="text"
+              id="company"
               name="company"
               value={company}
               onChange={this.handleChange}
             />
           </label>
+          <div
+            css={css`
+              display: none;
+            `}
+          >
+            <input type="text" name="payerName" id="payerName" />
+            <input type="text" name="payerEmail" id="payerEmail" />
+            <input type="text" name="itemPurchased" id="itemPurchased" />
+            <input type="text" name="purchaseStatus" id="purchaseStatus" />
+            <input type="text" name="purchaseTime" id="purchaseTime" />
+          </div>
         </form>
         <PayPalButton
           createOrder={(data, actions) => {
@@ -131,7 +143,14 @@ export default class PayPal extends Component {
               let payload = {
                 captain: state.captain,
                 company: state.company,
-                ...details
+                payerName:
+                  details.payer.name.given_name +
+                  " " +
+                  details.payer.name.surname,
+                payerEmail: details.payer.email_address,
+                itemPurchased: details.purchase_units[0].description,
+                purchaseStatus: details.status,
+                purchaseTime: details.create_time
               };
               console.log(payload);
               fetch("/", {

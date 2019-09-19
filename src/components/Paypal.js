@@ -24,7 +24,7 @@ export default class PayPal extends Component {
       captain: "",
       company: ""
     };
-    this.postData = this.postData.bind(this);
+    // this.postData = this.postData.bind(this);
   }
 
   handleChange = e => {
@@ -43,16 +43,16 @@ export default class PayPal extends Component {
   //     .catch(error => alert(error));
   // };
 
-  postData(...state) {
-    console.log(state);
-    fetch("/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: encode({ "form-name": "tableSale", state })
-    });
-  }
+  // postData(...state) {
+  //   console.log(state);
+  //   fetch("/", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/x-www-form-urlencoded"
+  //     },
+  //     body: encode({ "form-name": "tableSale", state })
+  //   });
+  // }
 
   render() {
     // transaction details
@@ -129,7 +129,8 @@ export default class PayPal extends Component {
               // postData(state)
               // combine
               let payload = {
-                ...state,
+                captain: state.captain,
+                company: state.company,
                 ...details
               };
               console.log(payload);

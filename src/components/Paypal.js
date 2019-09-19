@@ -10,7 +10,7 @@ const CLIENT = {
   production: process.env.GATSBY_PAYPAL_CLIENT
 };
 
-/ helper
+// helper
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))

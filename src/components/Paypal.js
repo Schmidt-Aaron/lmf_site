@@ -6,11 +6,11 @@ import { navigate } from "gatsby";
 
 // replace with env vars
 const CLIENT = {
-  sandbox: process.env.PAYPAL_SB,
-  production: process.env.PAYPAL_CLIENT
+  sandbox: process.env.GATSBY_PAYPAL_SB,
+  production: process.env.GATSBY_PAYPAL_CLIENT
 };
 
-// helper
+/ helper
 const encode = data => {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))

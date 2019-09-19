@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import React from "react";
 import Layout from "../components/layouts/layout";
 import UpcomingEvents from "../components/UpcomingEvents";
@@ -5,6 +6,15 @@ import PastEvents from "../components/PastEvents";
 import { Underlined } from "../components/styles";
 import SEO from "../components/seo";
 import { Link } from "gatsby";
+import styled from "@emotion/styled";
+import { css, jsx } from "@emotion/core";
+
+// const TableLink = styled.Link`
+//   padding: 1rem;
+//   background-color: #cc3a3d;
+//   color: white;
+//   border-radius: 5px;
+// `;
 
 export default () => (
   <Layout>
@@ -17,8 +27,29 @@ export default () => (
       highlight information for these events. You can also find other photos and
       information on our Facebook account.
     </p>
+    <Underlined>
+      <h2>Upcoming Events</h2>
+    </Underlined>
     <UpcomingEvents style={{ marginBottom: `2rem` }} />
-    <Link to="/table">Purchase a Table</Link>
+    <Link
+      to="/table"
+      css={css`
+        display: grid;
+        padding: 0.5rem;
+        margin: 1rem auto;
+        text-align: center;
+        background-color: #cc3a3d;
+        color: white;
+        border-radius: 5px;
+        &:hover {
+          transform: translateY(-1px);
+          background-color: #ff6d70;
+          color: white;
+        }
+      `}
+    >
+      Purchase a Table
+    </Link>
     <hr />
     <Underlined>
       <h2>Past Event Highlights</h2>

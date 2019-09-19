@@ -8,22 +8,7 @@ import Paypal from "../components/Paypal";
 import { css, jsx } from "@emotion/core";
 
 class Table extends React.Component {
-  // loads our paypal script
-  // componentDidMount() {
-  //   const script = document.createElement("script");
-
-  //   script.src = "https://www.paypal.com/sdk/js?client-id=sb";
-  //   script.async = true;
-
-  //   document.body.appendChild(script);
-  // }
-
   render() {
-    const onSuccess = payment => console.log("Successful payment!", payment);
-    const onError = error =>
-      console.log("Erroneous payment OR failed to load script!", error);
-    const onCancel = data => console.log("Cancelled payment!", data);
-
     return (
       <Layout>
         <SEO title="Purchase a Table" />
@@ -37,11 +22,19 @@ class Table extends React.Component {
           <h2>Purchase a Table</h2>
         </Underlined>
         <p>
-          To purchase a table please fill out the fields below and then use the
-          PayPal button to make your payment. The 'Table Captain' is the primary
-          point-of-contact and the company information is used for sponsorship
-          purposes
+          To purchase a table at our upcoming event please fill out the fields
+          below and then use the PayPal button to make your payment. The 'Table
+          Captain' will be our the primary point-of-contact and the company
+          information is used for sponsorship purposes at the event.
         </p>
+        <div
+          css={css`
+            display: flex;
+            margin-bottom: 1rem;
+          `}
+        >
+          <span>(1) Table for 2020 LMF Dinner Auction (10 seats) - $1000</span>
+        </div>
         <Paypal />
       </Layout>
     );

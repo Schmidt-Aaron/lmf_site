@@ -25,7 +25,7 @@ class Table extends React.Component {
           To purchase a table at our upcoming event please fill out the fields
           below and then use the PayPal button to make your payment. The 'Table
           Captain' will be our the primary point-of-contact and the company
-          information is used for sponsorship purposes at the event.
+          information will be used for sponsorship purposes.
         </p>
         <div
           css={css`

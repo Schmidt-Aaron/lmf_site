@@ -85,7 +85,7 @@ const Event = props => {
               grid-template-columns: repeat(3, 1fr);
             }
             @media (max-width: 670px) {
-              display: flex,
+              display: flex;
               flex-direction: column;
             }
           `}

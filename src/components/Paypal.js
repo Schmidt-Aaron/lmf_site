@@ -113,7 +113,7 @@ export default class PayPal extends Component {
         </form>
         <div
           css={css`
-            width: 500px;
+            max-width: 500px;
           `}
         >
           <PayPalButton

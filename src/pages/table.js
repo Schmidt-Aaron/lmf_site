@@ -29,7 +29,6 @@ class Table extends React.Component {
         </p>
         <div
           css={css`
-            display: flex;
             margin-bottom: 1rem;
           `}
         >

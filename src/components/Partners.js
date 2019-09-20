@@ -36,6 +36,9 @@ const Partners = props => {
         grid-template-rows: auto;
         align-items: center;
         justify-items: center;
+        @media (max-width: 670px) {
+          grid-template-columns: 1fr 1fr;
+        }
       `}
     >
       <PartnerImage

@@ -46,7 +46,7 @@ export default () => (
       >
         <div
           style={{
-            maxWidth: 1200,
+            maxWidth: 600,
             margin: `0 auto`,
             color: `white`,
             textAlign: `center`
@@ -59,8 +59,23 @@ export default () => (
             imgStyle={{ margin: 0, height: 100 }}
           />
 
-          <p css={{ margin: `0` }}>
-            Copyright © {year()} Light My Fire of Puget Sound
+          <p
+            css={css`
+              font-size: 0.6rem;
+              margin-bottom: 0.25rem;
+            `}
+          >
+            Copyright © {year()} Light My Fire of Puget Sound All Rights
+            Reserved. Light My Fire of Puget Sound is a 501 (c)(3) non-profit
+            recognized by the IRS.
+          </p>
+          <p
+            css={css`
+              font-size: 0.6rem;
+              margin-bottom: 0;
+            `}
+          >
+            Tax ID Number: 46-5717849
           </p>
           <Link to="/privacy" css={{ textDecoration: `none` }}>
             Privacy Policy

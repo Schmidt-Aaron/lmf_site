@@ -44,8 +44,8 @@ const Event = props => {
           /> */}
           <h3
             css={css`
+              margin: 0 1rem;
               font-size: 2rem;
-              margin-bottom: 0;
             `}
           >
             {props.eventName}
@@ -103,8 +103,10 @@ const Event = props => {
               grid-gap: 10px;
               grid-template-columns: repeat(3, 1fr);
             }
-            @media (max-width: 425px) {
-              display: block;
+            @media (max-width: 670px) {
+              display: flex;
+              flex-direction: column;
+              align-items: baseline;
             }
           `}
         >

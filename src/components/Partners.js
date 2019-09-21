@@ -39,7 +39,7 @@ const Partners = props => {
         @media (max-width: 670px) {
           grid-template-columns: 1fr 1fr;
         }
-        @media (max-width: 400px) {
+        @media (max-width: 440px) {
           grid-template-columns: 1fr;
         }
       `}

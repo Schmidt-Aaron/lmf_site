@@ -32,7 +32,7 @@ class Table extends React.Component {
             margin-bottom: 1rem;
           `}
         >
-          <span>(1) Table for 2020 LMF Dinner Auction (10 seats) - $1000</span>
+          <span>2020 LMF Dinner Auction 1 table (10 seats) - $1000</span>
         </div>
         <Paypal />
       </Layout>

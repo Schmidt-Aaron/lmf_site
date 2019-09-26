@@ -3,6 +3,8 @@ import React from "react";
 import { css, jsx } from "@emotion/core";
 import Img from "gatsby-image";
 import { colors } from "../utils/theme";
+import { IconContext } from "react-icons";
+import { FaLinkedin } from "react-icons/fa";
 
 // board member template; Used on Board.js
 
@@ -20,15 +22,12 @@ const BoardMember = props => {
         }
       `}
     >
-      <Img
-        fluid={props.img.childImageSharp.fluid}
-        // css={css`
-        //   margin-bottom: 0.5rem;
-        // `}
-      />
+      <Img fluid={props.img.childImageSharp.fluid} />
       <div
         css={css`
           padding: 10px;
+          height: 150px;
+          position: relative;
         `}
       >
         <h3
@@ -52,19 +51,30 @@ const BoardMember = props => {
         >
           {props.description}
         </p>
-
-        {linkedIn ? (
-          <a
-            href={linkedIn}
-            css={css`
-              color: ${colors.black};
-            `}
-          >
-            LinkedIn
-          </a>
-        ) : (
-          ""
-        )}
+        <div
+          css={css`
+            position: absolute;
+            bottom: 0;
+          `}
+        >
+          {linkedIn ? (
+            <a
+              href={linkedIn}
+              css={css`
+                color: #0077b5;
+                &:hover {
+                  color: #000;
+                }
+              `}
+            >
+              <IconContext.Provider value={{ size: "1.75rem" }}>
+                <FaLinkedin />
+              </IconContext.Provider>
+            </a>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </section>
   );

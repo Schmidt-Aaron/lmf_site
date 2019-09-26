@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import { css, jsx } from "@emotion/core";
 import BurgerMenu from "./BurgerMenu";
 import { colors } from "../utils/theme";
+import { IconContext } from "react-icons";
+import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 
 // paypal link
 const donate =
@@ -64,26 +66,20 @@ export default () => (
       >
         <a
           css={css`
-            position: relative;
-            top: 6px;
+            color: #3c5a99;
+            &:hover {
+              color: #5475bc;
+            }
           `}
           href={facebook}
           target="_blank"
+          rel="noopener noreferrer"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            css={css`
-              fill: #3c5a99;
-              &:hover {
-                fill: #5475bc;
-              }
-            `}
+          <IconContext.Provider
+            value={{ size: "2rem", style: { verticalAlign: "middle" } }}
           >
-            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z" />
-          </svg>
+            <FaFacebookSquare />
+          </IconContext.Provider>
         </a>
       </li>
       <li

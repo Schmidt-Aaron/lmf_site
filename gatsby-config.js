@@ -38,6 +38,15 @@ module.exports = {
     `gatsby-plugin-svgr`,
     `gatsby-plugin-typescript`,
     {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        production: true,
+        disable: !process.env.ANALYZE_BUNDLE_SIZE,
+        generateStatsFile: true,
+        analyzerMode: "static"
+      }
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-131110014-1",

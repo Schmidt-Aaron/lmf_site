@@ -9,7 +9,8 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
-    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore"
+    "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
+    "analyze": "cross-env ANALYZE_BUNDLE_SIZE=true gatsby build"
   },
   "dependencies": {
     "@emotion/core": "^10.0.17",
@@ -49,12 +50,14 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.0",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^3.6.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.3",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.5",
     "prettier": "^1.18.2"
   }
 }

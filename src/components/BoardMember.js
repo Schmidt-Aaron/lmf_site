@@ -16,6 +16,7 @@ const BoardMember = props => {
         border: 1px solid grey;
         box-shadow: 3px 4px 6px 0px grey;
         z-index: 1;
+        transition: all 0.3s;
         &:hover {
           transform: scale(1.03);
           z-index: 3;
@@ -62,6 +63,7 @@ const BoardMember = props => {
               href={linkedIn}
               css={css`
                 color: #0077b5;
+                transition: all 0.3s;
                 &:hover {
                   color: #000;
                 }

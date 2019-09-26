@@ -67,6 +67,7 @@ export default () => (
         <a
           css={css`
             color: #3c5a99;
+            transition: all 0.3s;
             &:hover {
               color: #5475bc;
             }

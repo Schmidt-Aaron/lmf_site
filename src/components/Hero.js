@@ -107,6 +107,7 @@ const Hero = props => {
             border: 2px solid white;
             border-radius: 4px;
             background-color: ${colors.darkRed};
+            transition: all 0.3s;
             &:hover {
               transform: translateY(-1px);
               background-color: ${colors.mediumRed};

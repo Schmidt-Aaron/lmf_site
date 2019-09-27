@@ -40,6 +40,7 @@ const UpcomingEvents = () => {
             color: white;
             border-radius: 5px;
             text-align: center;
+            transition: all 0.3s;
             &:hover {
               transform: translateY(-1px);
               background-color: #ff6d70;

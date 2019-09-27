@@ -41,6 +41,7 @@ export default () => (
         background-color: #cc3a3d;
         color: white;
         border-radius: 5px;
+        transition: all 0.3s;
         &:hover {
           transform: translateY(-1px);
           background-color: #ff6d70;

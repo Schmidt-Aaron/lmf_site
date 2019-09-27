@@ -132,9 +132,10 @@ class ContactForm extends React.Component {
               border-radius: 5px;
               color: white;
               background-color: ${colors.darkRed};
-
+              transition: all 0.3s;
               :hover {
                 background-color: ${colors.mediumRed};
+                transform: translateY(-1px);
               }
               @media (max-width: 1024px) {
               }

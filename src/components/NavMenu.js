@@ -98,6 +98,7 @@ export default () => (
             background-color: ${colors.darkRed};
             color: white;
             border-radius: 5px;
+            transition: all 0.3s;
             &:hover {
               background-color: ${colors.mediumRed};
               color: white;

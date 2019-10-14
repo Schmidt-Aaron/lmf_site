@@ -1,31 +1,28 @@
 /** @jsx jsx */
 import React from "react";
-// import auction from "../../static/images/auction2019.png";
-import bannerPic from "../../static/images/MtRainier-s.jpg";
 import Event from "./Event";
 import { css, jsx } from "@emotion/core";
 import { Underlined, Wrapper } from "./styles";
-import { Link } from "gatsby";
-import data from "../components/data/events";
 
 // this component is used on the homepage and the events page
 
-const UpcomingEvents = () => {
+const UpcomingEvents = props => {
   return (
     <section>
       <Wrapper>
         <Event
-          imgURL={bannerPic}
-          imgAlt={data.imgAlt}
-          eventName={data.eventName}
-          date={data.date}
-          time={data.time}
-          location={data.location}
-          street={data.street}
-          city={data.city}
-          directions={data.directions}
-          info={data.info}
-          details={data.details}
+          imgURL={props.imgURL}
+          imgAlt={props.imgAlt}
+          eventName={props.eventName}
+          subHeader={props.subHeader}
+          date={props.date}
+          time={props.time}
+          location={props.location}
+          street={props.street}
+          city={props.city}
+          directions={props.directions}
+          info={props.info}
+          details={props.details}
         />
       </Wrapper>
     </section>

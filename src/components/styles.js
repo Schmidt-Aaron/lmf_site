@@ -50,12 +50,11 @@ export const TextWrapper = ({ children }) => {
         max-width: 800px;
         margin: 0 auto;
         @media (max-width: 1024px) {
+          width: calc(100vw - 4rem);
         }
         @media (max-width: 768px) {
-          padding: 0 2rem 2rem;
         }
         @media (max-width: 425px) {
-          padding: 0 1.5rem 1rem;
         }
       `}
     >

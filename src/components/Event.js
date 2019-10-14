@@ -2,6 +2,7 @@
 import React from "react";
 import { css, jsx } from "@emotion/core";
 import { CalendarIcon, ClockIcon, LocationIcon } from "./EventIcons";
+import { TextWrapper } from "./styles";
 
 const Event = props => {
   return (
@@ -24,12 +25,6 @@ const Event = props => {
         `}
       >
         <div css={css``}>
-          {/* <img
-            src={props.imgURL}
-            alt={props.imgAlt}
-            height="400px"
-            width="auto"
-          /> */}
           <h3
             css={css`
               font-size: 2rem;
@@ -38,120 +33,139 @@ const Event = props => {
           >
             {props.eventName}
           </h3>
-          <p>Live and Silent</p>
+          <p>{props.subHeader}</p>
         </div>
       </div>
-      <div
-        css={css`
-          display: flex;
-          text-align: left;
-          max-width: 1200px;
-          margin: 0 auto;
-          @media (max-width: 1024px) {
-            display: block;
-          }
-        `}
-      >
+      <TextWrapper>
         <div
           css={css`
-            margin-right: 1rem;
-            padding-right: 1rem;
-            border-right: 1px solid #eee;
+            display: flex;
+            text-align: left;
+            max-width: 960px;
+            margin: 0 auto 3rem;
             @media (max-width: 1024px) {
-              border-right: none;
-              margin: 0;
-              padding: 0;
-              width: 100%;
-            }
-          `}
-        >
-          <p>{props.details}</p>
-          <p>{props.info}</p>
-          <hr
-            css={css`
-              display: none;
-              @media (max-width: 1024px) {
-                display: block;
-              }
-            `}
-          />
-        </div>
-        <div
-          css={css`
-            min-width: 200px;
-            @media (max-width: 1024px) {
-              display: grid;
-              grid-gap: 10px;
-              grid-template-columns: repeat(3, 1fr);
+              display: block;
             }
             @media (max-width: 670px) {
-              display: flex;
-              flex-direction: column;
+              padding: 0;
             }
           `}
         >
           <div
             css={css`
-              display: flex;
+              margin-right: 1rem;
+              padding-right: 1rem;
+              border-right: 1px solid #eee;
+              @media (max-width: 1024px) {
+                border-right: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+              }
             `}
           >
-            <span>
-              <LocationIcon />
-            </span>
-            <p
+            <p>{props.details}</p>
+            <p>{props.info}</p>
+            <hr
               css={css`
-                font-size: 0.7rem;
-                margin-left: 0.5rem;
+                display: none;
+                @media (max-width: 1024px) {
+                  display: block;
+                  margin: 2rem;
+                }
+              `}
+            />
+          </div>
+          <div
+            css={css`
+              min-width: 200px;
+              @media (max-width: 1024px) {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: repeat(3, 1fr);
+              }
+              @media (max-width: 670px) {
+                display: flex;
+                flex-direction: column;
+                margin: auto 2rem;
+              }
+            `}
+          >
+            <div
+              css={css`
+                display: flex;
               `}
             >
-              {props.location} <br />
-              {props.street} <br />
-              {props.city}{" "}
-              <small
+              <span>
+                <LocationIcon />
+              </span>
+              <p
                 css={css`
-                  display: block;
+                  font-size: 0.7rem;
+                  margin-left: 0.5rem;
                 `}
               >
-                <a href={props.directions}>Directions</a>
-              </small>
-            </p>
-          </div>
-          <div
-            css={css`
-              display: flex;
-            `}
-          >
-            <span>
-              <CalendarIcon />
-            </span>
-            <p
+                {props.location} <br />
+                {props.street} <br />
+                {props.city}{" "}
+                <small
+                  css={css`
+                    display: block;
+                  `}
+                >
+                  <a href={props.directions}>Directions</a>
+                </small>
+              </p>
+            </div>
+            <div
               css={css`
-                font-size: 0.7rem;
-                margin-left: 0.5rem;
+                display: flex;
+                @media (max-width: 1024px) {
+                  justify-content: center;
+                }
+                @media (max-width: 670px) {
+                  justify-content: inherit;
+                }
               `}
             >
-              {props.date}
-            </p>
-          </div>
-          <div
-            css={css`
-              display: flex;
-            `}
-          >
-            <span>
-              <ClockIcon />
-            </span>
-            <p
+              <span>
+                <CalendarIcon />
+              </span>
+              <p
+                css={css`
+                  font-size: 0.7rem;
+                  margin-left: 0.5rem;
+                `}
+              >
+                {props.date}
+              </p>
+            </div>
+            <div
               css={css`
-                font-size: 0.7rem;
-                margin-left: 0.5rem;
+                display: flex;
+                @media (max-width: 1024px) {
+                  justify-content: center;
+                }
+                @media (max-width: 670px) {
+                  justify-content: inherit;
+                }
               `}
             >
-              {props.time}
-            </p>
+              <span>
+                <ClockIcon />
+              </span>
+              <p
+                css={css`
+                  font-size: 0.7rem;
+                  margin-left: 0.5rem;
+                `}
+              >
+                {props.time}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
+      </TextWrapper>
     </section>
   );
 };

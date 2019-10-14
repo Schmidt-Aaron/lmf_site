@@ -8,6 +8,7 @@ import SEO from "../components/seo";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
+import data, { PSAAHoliday2019 } from "../components/data/events";
 
 // const TableLink = styled.Link`
 //   padding: 1rem;
@@ -30,13 +31,13 @@ export default () => (
     <Underlined>
       <h2>Upcoming Events</h2>
     </Underlined>
-    <UpcomingEvents style={{ marginBottom: `2rem` }} />
+    <UpcomingEvents style={{ marginBottom: `2rem` }} {...data} />
     <Link
       to="/table"
       css={css`
         display: grid;
         padding: 0.5rem;
-        margin: 1rem auto;
+        margin: 1rem auto 3rem;
         text-align: center;
         background-color: #cc3a3d;
         color: white;
@@ -51,7 +52,16 @@ export default () => (
     >
       Purchase a Table
     </Link>
+    <UpcomingEvents {...PSAAHoliday2019} />
+    <p>
+      For more information about the event and instructions on how to register
+      or become a sponser:{" "}
+      <a href="http://pugetsoundadjusters.org/attachments/stashed_files/PSAA_2019_Holiday_Party_Registration_and_Vendor_Sponsorships.pdf">
+        Event Flyer
+      </a>{" "}
+    </p>
     <hr />
+
     <Underlined>
       <h2>Past Event Highlights</h2>
     </Underlined>

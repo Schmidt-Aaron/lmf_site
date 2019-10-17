@@ -17,6 +17,7 @@
 
 // banner pictures
 import dinnerAuction from "../../../static/images/MtRainier-s.jpg";
+import psaaHoliday from "../../../static/images/psaa-holiday1.jpg";
 
 const LMF2020 = {
   imgURL: dinnerAuction,
@@ -36,7 +37,7 @@ const LMF2020 = {
 };
 
 export const PSAAHoliday2019 = {
-  imgURL: dinnerAuction,
+  imgURL: psaaHoliday,
   imgAlt: "PSAA Pajama Party",
   eventName: "The PSAA Pajama Party & Casino",
   subHeader: "Come party in your PJ's!",

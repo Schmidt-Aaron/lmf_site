@@ -52,6 +52,7 @@ export default () => (
     >
       Purchase a Table
     </Link>
+    <hr />
     <UpcomingEvents {...PSAAHoliday2019} />
     <p>
       For more information about the event and instructions on how to register

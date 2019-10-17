@@ -53,7 +53,7 @@ export default ({ data }) => (
           Purchase a Table
         </Link>
       </TextWrapper>
-
+      <hr />
       <UpcomingEvents {...PSAAHoliday2019} />
       <TextWrapper>
         <p>

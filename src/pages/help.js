@@ -16,14 +16,9 @@ export default () => {
         <Underlined>
           <h1>How You Can Help</h1>
         </Underlined>
-        {/* <p>
-          This website is under construction. Information on how to help out
-          will be supplied shortly. Thanks for your patience. In the mean time
-          if you have have questions you can email us at
-          lightmyfireofps@gmail.com
-        </p> */}
+
         <p>
-          Their are multiple ways you can help out our cause. We accept
+          There are multiple ways you can help out our cause. We accept
           donations, both monetary, and physical items that can be auctioned
           off. We are a participating charity on Amazon Smile, and we also put
           on one or more fun events each year. More info on each of these

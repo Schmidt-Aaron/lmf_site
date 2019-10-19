@@ -18,6 +18,31 @@
 // banner pictures
 import dinnerAuction from "../../../static/images/MtRainier-s.jpg";
 import psaaHoliday from "../../../static/images/psaa-holiday1.jpg";
+import { graphql } from "gatsby";
+
+// query for any outside data
+export const query = graphql`
+  query {
+    dinnerAuction: file(relativePath: { eq: "MtRanier-s.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    psaaHoliday: file(relativePath: { eq: "psaa-holiday.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`;
 
 const LMF2020 = {
   imgURL: dinnerAuction,

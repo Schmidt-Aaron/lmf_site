@@ -3,6 +3,7 @@ import React from "react";
 import { css, jsx } from "@emotion/core";
 import { CalendarIcon, ClockIcon, LocationIcon } from "./EventIcons";
 import { TextWrapper } from "./styles";
+import BackgroundImage from "gatsby-background-image";
 
 const Event = props => {
   return (

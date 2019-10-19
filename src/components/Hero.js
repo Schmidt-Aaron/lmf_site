@@ -2,7 +2,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
-import Img from "gatsby-image";
+import Image from "gatsby-image";
 import { colors } from "../utils/theme";
 
 // used on homepage only
@@ -39,7 +39,7 @@ const Hero = props => {
         }
       `}
     >
-      <Img
+      <Image
         fluid={props.heroImg.childImageSharp.fluid}
         style={{ position: "absolute" }}
         css={css`

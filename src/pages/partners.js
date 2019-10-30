@@ -93,5 +93,14 @@ export const query = graphql`
         }
       }
     }
+    southKing: file(relativePath: { eq: "south_king.jpg" }) {
+      childImageSharp {
+        # Specify the image processing specifications right in the query.
+        # Makes it trivial to update as your page's design changes.
+        fluid(quality: 90, maxWidth: 250) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
   }
 `;

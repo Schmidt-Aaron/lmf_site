@@ -26,7 +26,16 @@ const PartnerImage = props => {
 
 const Partners = props => {
   //deconstruct incoming images
-  const { WD, dls, psaa, servpro, statewide, techblox, westPierce } = props;
+  const {
+    WD,
+    dls,
+    psaa,
+    servpro,
+    statewide,
+    techblox,
+    westPierce,
+    southKing
+  } = props;
   return (
     <div
       css={css`
@@ -83,14 +92,17 @@ const Partners = props => {
         description="1-800 Water Damage"
       />
       <PartnerImage
-        link="https://www.westpierce.org/ "
+        link="https://www.westpierce.org/"
         fluid={westPierce.childImageSharp.fluid}
         altText="West Pierce Fire & Rescue logo"
         description="West Pierce Fire & Rescue"
       />
-      <div>
-        <a href="https://www.southkingfire.org/">South King Fire & Rescue</a>
-      </div>
+      <PartnerImage
+        link="https://www.southkingfire.org/"
+        fluid={southKing.childImageSharp.fluid}
+        altText="South King Fire & Rescue logo"
+        description="South King Fire & Rescue"
+      />
     </div>
   );
 };

@@ -3,7 +3,7 @@ import React from "react";
 import NavMenu from "../components/NavMenu";
 import { StaticQuery, Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
-import Img from "gatsby-image";
+import Image from "gatsby-image";
 
 // used on everypage
 
@@ -17,10 +17,8 @@ export default () => (
             title
           }
         }
-        logo: file(relativePath: { eq: "lmflogo.png" }) {
+        logo: file(relativePath: { eq: "lmf-logo.207x212.png" }) {
           childImageSharp {
-            # Specify the image processing specifications right in the query.
-            # Makes it trivial to update as your page's design changes.
             fixed(quality: 90, height: 100) {
               ...GatsbyImageSharpFixed
             }
@@ -50,7 +48,7 @@ export default () => (
             max-width: 1200px;
             margin: 0 auto;
             grid-template-rows: 100px;
-            grid-template-columns: minmax(max-content, max-content) 1fr;
+            grid-template-columns: minmax(150px, max-content) 1fr;
             /* position: fixed; */
             background-color: white;
           `}
@@ -60,11 +58,13 @@ export default () => (
               grid-column: 1;
               grid-row: 1;
               justify-self: start;
+              padding-left: 1rem;
               @media (max-width: 970px) {
                 min-width: 100%;
                 grid-row: 1;
                 grid-column: span 2;
                 justify-self: center;
+                padding-left: inherit;
               }
             `}
           >
@@ -79,23 +79,12 @@ export default () => (
               description="Light My Fire"
             >
               <h3 css={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
-              <Img
+              <Image
                 fixed={data.logo.childImageSharp.fixed}
                 alt={"Light My Fire Puget Sound"}
                 title={"Light My Fire Puget Sound"}
-                imgStyle={{ marginBottom: 0, marginLeft: `0.5rem` }}
+                imgStyle={{ marginBottom: 0 }}
               />
-              {/* <img
-                src={logoDark}
-                alt="Light My Fire Puget Sound"
-                description="Light My Fire"
-                height="100px"
-                width="auto"
-                css={css`
-                  margin-bottom: 0;
-                  margin-left: 0.5rem;
-                `}
-              /> */}
             </Link>
           </div>
           <div

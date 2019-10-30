@@ -88,6 +88,9 @@ const Partners = props => {
         altText="West Pierce Fire & Rescue logo"
         description="West Pierce Fire & Rescue"
       />
+      <div>
+        <a href="https://www.southkingfire.org/">South King Fire & Rescue</a>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,6 @@ import JeremyKennard from "./Board/JeremyKennard";
 import RobertFrance from "./Board/RobertFrance";
 import { css, jsx } from "@emotion/core";
 import { Underlined } from "./styles";
-import RichRye from "./Board/RichRye";
 import TammyLamb from "./Board/TammyLamb";
 import TeraRose from "./Board/TeraRose";
 
@@ -40,7 +39,6 @@ const Board = props => {
         <DaveMataftin img={props.dave} />
         <DianeSalz img={props.diane} />
         <JeremyKennard img={props.jeremy} />
-        <RichRye img={props.richRye} />
         <TammyLamb img={props.tammyLamb} />
         <TeraRose img={props.teraRose} />
       </div>

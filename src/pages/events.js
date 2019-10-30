@@ -32,6 +32,11 @@ export default () => (
       <h2>Upcoming Events</h2>
     </Underlined>
     <UpcomingEvents style={{ marginBottom: `2rem` }} {...data} />
+    <p>
+      * Please send us a digital copy of your logo if you have purchased a
+      table. You are also welcome to use your own branded tablecloths for your
+      table. *
+    </p>
     <Link
       to="/table"
       css={css`

@@ -3,7 +3,6 @@
 
 ## styles and design
 
-1. Add active link styles to nav... etc
 1. Add animation to hamburger menu
 1. sidebar???
 1. header fixed position

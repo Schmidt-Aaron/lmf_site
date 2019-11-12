@@ -28,8 +28,6 @@ const Event = props => {
     }
   `);
 
-  console.log(data);
-
   // destructure our query data
   const auction = data.auction2020.childImageSharp.fluid;
   const holidayParty = data.holidayParty2019.childImageSharp.fluid;
@@ -47,18 +45,16 @@ const Event = props => {
   }
 
   // add background gradient
-  let backgoundImageStack = [
-    imageData,
-    `linear-gradient(
-      rgba(0, 0, 0, 0.25),
-      rgba(0, 0, 0, 0.25)
-    )`
-  ].reverse();
+  let backgroundImageStack = [
+    `linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25))`,
+    imageData
+  ];
 
+  // console.log(backgroundImageStack);
   return (
     <section>
       <BackgroundImage
-        fluid={backgoundImageStack}
+        fluid={backgroundImageStack}
         css={css`
           background-size: cover;
           background-position: center;

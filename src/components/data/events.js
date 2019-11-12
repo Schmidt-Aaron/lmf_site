@@ -2,6 +2,8 @@
 
 /*
   Event Template:
+    shortEventName: ,
+    imgURL: ,
     imgAlt: ,
     eventName: ,
     subHeader: ,
@@ -15,40 +17,11 @@
     info:
 */
 
-// banner pictures
-import dinnerAuction from "../../../static/images/MtRainier-s.jpg";
-import psaaHoliday from "../../../static/images/psaa-holiday1.jpg";
-import { graphql } from "gatsby";
-
-// query for any outside data
-export const query = graphql`
-  query {
-    dinnerAuction: file(relativePath: { eq: "MtRanier-s.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(quality: 90, maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    psaaHoliday: file(relativePath: { eq: "psaa-holiday.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(quality: 90, maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`;
-
-const LMF2020 = {
-  imgURL: dinnerAuction,
+export const LMF2020 = {
+  shortEventName: "auction",
   imgAlt: "LMF silent auction 2020",
   eventName: "Annual Dinner & Charity Auction",
-  subHeader: "Live and Silent",
+  subHeader: "Live and Silent Auctions",
   date: "April 18th, 2020",
   time: "5:00 - 8:30PM",
   location: "Hyatt Regency Lake Washington At Seattle's Southport",
@@ -56,13 +29,13 @@ const LMF2020 = {
   city: "Renton, WA 98056",
   directions: "https://goo.gl/maps/BUebu6i366FU44PXA",
   info:
-    "If you would like to donate, or are interested in attending please email us. Tables are still available below at a price of $1000 for 10 seats.",
+    "If you would like to donate, or are interested in attending please email us. Tables are still available below at a price of $1000 for 10 seats. We hope to see you there!",
   details:
-    "We are pleased to announce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the new waterfront Hyatt Regency at the Renton Landing. We have a couple special surprises cooked up for the event"
+    "We are pleased to announce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the new waterfront Hyatt Regency at the Renton Landing. We also have a couple special surprises cooked up for the event."
 };
 
 export const PSAAHoliday2019 = {
-  imgURL: psaaHoliday,
+  shortEventName: "holidayParty",
   imgAlt: "PSAA Pajama Party",
   eventName: "The PSAA Pajama Party & Casino",
   subHeader: "Come party in your PJ's!",
@@ -77,6 +50,3 @@ export const PSAAHoliday2019 = {
   info:
     "Rooms are available for $149 for double-occupancy if you reserve by November 15th."
 };
-
-// our current export - change for new events
-export default LMF2020;

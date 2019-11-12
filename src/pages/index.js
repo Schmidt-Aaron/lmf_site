@@ -11,7 +11,7 @@ import AmazonSmile from "../components/AmazonSmile";
 import { TextWrapper, Wrapper } from "../components/styles";
 import SEO from "../components/seo";
 import { Link } from "gatsby";
-import auction, { PSAAHoliday2019 } from "../components/data/events";
+import { LMF2020, PSAAHoliday2019 } from "../components/data/events";
 
 // Homepage content
 export default ({ data }) => (
@@ -28,7 +28,7 @@ export default ({ data }) => (
         css={css`
           margin-bottom: 2rem;
         `}
-        {...auction}
+        {...LMF2020}
       />
       <TextWrapper>
         <p>
@@ -80,7 +80,7 @@ export const query = graphql`
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
-        fluid(quality: 90, maxWidth: 2000) {
+        fluid(quality: 90, maxWidth: 1600) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }

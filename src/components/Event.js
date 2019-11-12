@@ -4,17 +4,62 @@ import { css, jsx } from "@emotion/core";
 import { CalendarIcon, ClockIcon, LocationIcon } from "./EventIcons";
 import { TextWrapper } from "./styles";
 import BackgroundImage from "gatsby-background-image";
+import { useStaticQuery, graphql } from "gatsby";
 
 const Event = props => {
+  // need to update the query based on the event background images you are trying to serve b/c static queries cannot use variables (11/12/19) https://github.com/gatsbyjs/gatsby/issues/10482
+
+  const data = useStaticQuery(graphql`
+    query {
+      auction2020: file(relativePath: { eq: "MtRainier-s.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      holidayParty2019: file(relativePath: { eq: "psaa-holiday1.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data);
+
+  // destructure our query data
+  const auction = data.auction2020.childImageSharp.fluid;
+  const holidayParty = data.holidayParty2019.childImageSharp.fluid;
+  const eventName = props.shortEventName;
+
+  // switch to determine which image to use
+  let imageData = null;
+  switch (eventName) {
+    case "auction":
+      imageData = auction;
+      break;
+    case "holidayParty":
+      imageData = holidayParty;
+      break;
+  }
+
+  // add background gradient
+  let backgoundImageStack = [
+    imageData,
+    `linear-gradient(
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25)
+    )`
+  ].reverse();
+
   return (
     <section>
-      <div
+      <BackgroundImage
+        fluid={backgoundImageStack}
         css={css`
-          background-image: linear-gradient(
-              rgba(0, 0, 0, 0.25),
-              rgba(0, 0, 0, 0.25)
-            ),
-            url(${props.imgURL});
           background-size: cover;
           background-position: center;
           min-height: 400px;
@@ -36,7 +81,7 @@ const Event = props => {
           </h3>
           <p>{props.subHeader}</p>
         </div>
-      </div>
+      </BackgroundImage>
       <TextWrapper>
         <div
           css={css`

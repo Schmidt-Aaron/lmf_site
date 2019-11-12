@@ -18,33 +18,8 @@
 // banner pictures
 import dinnerAuction from "../../../static/images/MtRainier-s.jpg";
 import psaaHoliday from "../../../static/images/psaa-holiday1.jpg";
-import { graphql } from "gatsby";
 
-// query for any outside data
-export const query = graphql`
-  query {
-    dinnerAuction: file(relativePath: { eq: "MtRanier-s.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(quality: 90, maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-    psaaHoliday: file(relativePath: { eq: "psaa-holiday.jpg" }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        fluid(quality: 90, maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
-      }
-    }
-  }
-`;
-
-const LMF2020 = {
+export const LMF2020 = {
   imgURL: dinnerAuction,
   imgAlt: "LMF silent auction 2020",
   eventName: "Annual Dinner & Charity Auction",
@@ -77,6 +52,3 @@ export const PSAAHoliday2019 = {
   info:
     "Rooms are available for $149 for double-occupancy if you reserve by November 15th."
 };
-
-// our current export - change for new events
-export default LMF2020;

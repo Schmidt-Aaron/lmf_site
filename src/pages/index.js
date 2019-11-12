@@ -11,7 +11,7 @@ import AmazonSmile from "../components/AmazonSmile";
 import { TextWrapper, Wrapper } from "../components/styles";
 import SEO from "../components/seo";
 import { Link } from "gatsby";
-import auction, { PSAAHoliday2019 } from "../components/data/events";
+import { LMF2020, PSAAHoliday2019 } from "../components/data/events";
 
 // Homepage content
 export default ({ data }) => (
@@ -28,7 +28,7 @@ export default ({ data }) => (
         css={css`
           margin-bottom: 2rem;
         `}
-        {...auction}
+        {...LMF2020}
       />
       <TextWrapper>
         <p>

@@ -6,6 +6,7 @@ import { Underlined } from "../components/styles";
 import SEO from "../components/seo";
 import Paypal from "../components/Paypal";
 import { css, jsx } from "@emotion/core";
+import { LMF2020 } from "../components/data/events";
 
 class Table extends React.Component {
   render() {
@@ -16,7 +17,7 @@ class Table extends React.Component {
           <h1>2020 Charity Dinner and Auction</h1>
         </Underlined>
 
-        <UpcomingEvents style={{ marginBottom: `2rem` }} />
+        <UpcomingEvents {...LMF2020} style={{ marginBottom: `2rem` }} />
         <hr />
         <Underlined>
           <h2>Purchase a Table</h2>

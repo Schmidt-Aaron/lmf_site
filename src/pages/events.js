@@ -8,7 +8,7 @@ import SEO from "../components/seo";
 import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import { css, jsx } from "@emotion/core";
-import data, { PSAAHoliday2019 } from "../components/data/events";
+import { LMF2020, PSAAHoliday2019 } from "../components/data/events";
 
 // const TableLink = styled.Link`
 //   padding: 1rem;
@@ -31,7 +31,7 @@ export default () => (
     <Underlined>
       <h2>Upcoming Events</h2>
     </Underlined>
-    <UpcomingEvents style={{ marginBottom: `2rem` }} {...data} />
+    <UpcomingEvents style={{ marginBottom: `2rem` }} {...LMF2020} />
     <p>
       * Please send us a digital copy of your logo if you have purchased a
       table. You are also welcome to use your own branded tablecloths for your

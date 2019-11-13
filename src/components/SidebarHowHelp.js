@@ -3,8 +3,8 @@ import React from "react";
 import HowCanHelp from "./HowCanHelpWidget";
 import { css, jsx } from "@emotion/core";
 import { Underlined } from "./styles";
-import genericSmile from "../../static/images/amazon-smile.jpg";
-import genericSmileWide from "../../static/images/amazon-smile-wide.jpg";
+import { useStaticQuery, graphql } from "gatsby";
+import Image from "gatsby-image";
 
 const amazonLink = "https://smile.amazon.com/ch/46-5717849";
 
@@ -12,24 +12,39 @@ const amazonLink = "https://smile.amazon.com/ch/46-5717849";
 
 const eventText =
   "Our yearly dinner auction went off without a hitch in this April (2019). Stay tuned for info on our 2020 event!";
-// text for last event
-// const eventText =
-//   "We are putting on a dinner auction in April. Come out and support a good cause!";
+
 const amazonSmileText =
   "We are now a participating charity on Amazon Smile! Use the link below to select our charity for your Amazon account and a small portion of eligible purchases will be donated to us.";
 
 //  used on the homepage only
 
 const SidebarHowHelp = () => {
+  // query our sidebar images
+  const data = useStaticQuery(graphql`
+    query {
+      genericSmile: file(relativePath: { eq: "amazon-smile.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 300) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      genericSmileWide: file(relativePath: { eq: "amazon-smile-wide.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 600) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
+
+  const genericSmile = data.genericSmile.childImageSharp.fluid;
+  const genericSmileWide = data.genericSmileWide.childImageSharp.fluid;
+
   return (
     <section>
       <div>
-        {/* <HowCanHelp
-          title="Donate While You Shop"
-          innerText={amazonSmileText}
-          link="/help"
-          linkText="Learn More"
-        /> */}
         <div
           css={css`
             @media (max-width: 970px) {
@@ -57,7 +72,12 @@ const SidebarHowHelp = () => {
             {amazonSmileText}
           </p>
           <a href={amazonLink}>
-            <img src={genericSmile} title="Shop to Donate" />
+            <Image
+              fluid={genericSmile}
+              title="Shop to Donate"
+              alt="link to amazon smile for LMF"
+              loading="lazy"
+            />
           </a>
         </div>
         <div
@@ -68,7 +88,12 @@ const SidebarHowHelp = () => {
           `}
         >
           <a href={amazonLink}>
-            <img src={genericSmileWide} title="Shop to Donate" />
+            <Image
+              fluid={genericSmileWide}
+              title="Shop to Donate"
+              alt="link to amazon smile for LMF"
+              loading="lazy"
+            />
           </a>
         </div>
         {/* <HowCanHelp

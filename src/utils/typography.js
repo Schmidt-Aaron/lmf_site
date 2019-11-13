@@ -38,14 +38,15 @@ funstonTheme.googleFonts = [
 ];
 funstonTheme.overrideThemeStyles = () => ({
   a: {
-    color: colors.mediumRed,
+    color: colors.darkRed,
     textDecoration: "none"
   },
   "a:hover": {
-    color: colors.darkRed
+    color: colors.mediumRed
   }
 });
 
+funstonTheme.omitGoogleFont = true;
 const typography = new Typography(funstonTheme);
 
 export default typography;

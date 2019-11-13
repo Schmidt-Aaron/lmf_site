@@ -8,3 +8,8 @@ export const onClientEntry = () => {
     console.log(`# IntersectionObserver is polyfilled!`);
   }
 };
+
+// load typeface
+export const onInitialClientRender = () => {
+  require("typeface-roboto");
+};

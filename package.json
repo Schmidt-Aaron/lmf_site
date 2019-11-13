@@ -45,6 +45,7 @@
     "react-paypal-button-v2": "^2.5.0",
     "react-transition-group": "^2.9.0",
     "react-typography": "^0.16.19",
+    "typeface-roboto": "^0.0.75",
     "typography": "^0.16.19",
     "typography-theme-funston": "^0.15.10"
   },

@@ -13,3 +13,5 @@ export const onClientEntry = () => {
 export const onInitialClientRender = () => {
   require("typeface-roboto");
 };
+
+require("typeface-roboto");

@@ -4,6 +4,7 @@ import Global from "./global";
 import Footer from "../Footer";
 import Header from "../Header";
 import { css, jsx } from "@emotion/core";
+import "typeface-roboto";
 // homepage layout
 
 export default ({ children }) => (

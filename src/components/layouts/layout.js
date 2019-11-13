@@ -4,6 +4,7 @@ import Footer from "../Footer";
 import Header from "../Header";
 import Sidebar from "../Sidebar";
 import { css, jsx } from "@emotion/core";
+import "typeface-roboto";
 
 //  standard layout for every page except homepage
 

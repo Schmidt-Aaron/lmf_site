@@ -36,9 +36,6 @@ const ListLink = props => (
 
 // used on every page
 
-class NavMenu extends React.Component {
-  state;
-}
 export default () => (
   <nav>
     <ul

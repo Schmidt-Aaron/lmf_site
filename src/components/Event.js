@@ -133,32 +133,44 @@ const Event = props => {
               }
             `}
           >
-            <div
+            <a
+              href={props.directions}
+              alt="click for directions"
               css={css`
-                display: flex;
+                color: unset;
+                &:hover {
+                  color: unset;
+                }
               `}
             >
-              <span>
-                <LocationIcon />
-              </span>
-              <p
+              <div
                 css={css`
-                  font-size: 0.7rem;
-                  margin-left: 0.5rem;
+                  display: flex;
                 `}
               >
-                {props.location} <br />
-                {props.street} <br />
-                {props.city}{" "}
-                <small
+                <span>
+                  <LocationIcon />
+                </span>
+                <p
                   css={css`
-                    display: block;
+                    font-size: 0.7rem;
+                    margin-left: 0.5rem;
                   `}
                 >
-                  <a href={props.directions}>Directions</a>
-                </small>
-              </p>
-            </div>
+                  {props.location} <br />
+                  {props.street} <br />
+                  {props.city}{" "}
+                  <small
+                    css={css`
+                      display: block;
+                    `}
+                  >
+                    {" "}
+                    Click for directions
+                  </small>
+                </p>
+              </div>
+            </a>
             <div
               css={css`
                 display: flex;

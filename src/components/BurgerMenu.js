@@ -75,91 +75,6 @@ const Line = styled.path`
   stroke-linecap: round;
 `;
 
-//  code below not used currently - custom burger menu
-// class FancyIcon extends React.Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       closed: true
-//     };
-//     this.triggerAnimation = this.triggerAnimation.bind(this);
-//   }
-
-//   triggerAnimation = e => {
-//     // !this.state.closed
-//     //   ? this.setState({
-//     //       closed: false
-//     //     })
-//     //   : this.setState({
-//     //       closed: true
-//     //     });
-//     console.log("triggered");
-//     this.setState({
-//       closed: false
-//     });
-//   };
-
-//   render() {
-//     return (
-//       <div
-//         className="burgerBody"
-//         css={css`
-//           align-items: center;
-//           display: flex;
-//           height: 100%;
-//           justify-content: center;
-//           margin: 0;
-//           overflow: hidden;
-//           position: absolute;
-//           width: 100%;
-//         `}
-//         onClick={this.triggerAnimation}
-//       >
-//         <svg
-//           className=""
-//           css={css`
-//             cursor: pointer;
-//             -webkit-tap-highlight-color: transparent;
-//             transition: transform 400ms;
-//             -moz-user-select: none;
-//             -webkit-user-select: none;
-//             -ms-user-select: none;
-//             user-select: none;
-
-//             .activate {
-//               transform: rotate(45deg);
-//             }
-//           `}
-//           viewBox="0 0 100 100"
-//           width="80"
-//         >
-//           <Line
-//             className="top"
-//             css={css`
-//               stroke-dasharray: 40 121;
-//               .active {
-//                 stroke-dashoffset: -68px;
-//               }
-//             `}
-//             d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20"
-//           />
-//           <Line css={css``} className="middle" d="m 70,50 h -40" />
-//           <Line
-//             css={css`
-//               stroke-dasharray: 40 121;
-//               .active {
-//                 stroke-dashoffset: -68px;
-//               }
-//             `}
-//             className="bottom"
-//             d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20"
-//           />
-//         </svg>
-//       </div>
-//     );
-//   }
-// }
-
 class burgerMenu extends React.Component {
   constructor(props) {
     super(props);
@@ -208,11 +123,20 @@ class burgerMenu extends React.Component {
           onStateChange={state => this.handleStateChange(state)}
           // customBurgerIcon={<FancyIcon />}
         >
-          <ListLink to="/about">About</ListLink>
-          <ListLink to="/partners">Partners</ListLink>
-          <ListLink to="/events">Events</ListLink>
-          <ListLink to="/contact">Contact</ListLink>
-          <ListLink to="/help">Help</ListLink>
+          <ul
+            css={css`
+              display: inline-block;
+              width: 100%;
+              list-style: none;
+              margin-left: 0;
+            `}
+          >
+            <ListLink to="/about">About</ListLink>
+            <ListLink to="/partners">Partners</ListLink>
+            <ListLink to="/events">Events</ListLink>
+            <ListLink to="/contact">Contact</ListLink>
+            <ListLink to="/help">Help</ListLink>
+          </ul>
         </Menu>
       </div>
     );

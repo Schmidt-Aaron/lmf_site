@@ -56,7 +56,7 @@ export default ({ children }) => (
               padding-right: 0;
             }
             @media (max-width: 670px) {
-              padding: 0 2rem;
+              padding: 0 1rem;
             }
           `}
         >

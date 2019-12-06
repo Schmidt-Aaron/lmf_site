@@ -49,13 +49,14 @@ export default ({ children }) => (
             grid-column: 1/2;
             margin-bottom: 2rem;
             @media (max-width: 970px) {
-              margin-top: 100px;
+              margin-top: 100px; /**  fixed header height*/
               grid-row: 1;
               grid-column: span 2;
               margin-bottom: 3rem;
               padding-right: 0;
             }
-            @media (max-width: 670px) {
+            @media (max-width: 768px) {
+              margin-top: 80px; /**  fixed header height*/
               padding: 0 1rem;
             }
           `}

@@ -27,6 +27,9 @@ export default ({ children }) => (
           @media (max-width: 970px) {
             margin-top: 100px;
           }
+          @media (max-width: 768px) {
+            margin-top: 80px; /** fixed header height */
+          }
         `}
       >
         {children}

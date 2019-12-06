@@ -50,7 +50,7 @@ const Hero = props => {
           height: 100%;
           z-index: -1;
           @media (max-width: 768px) {
-            top: 100px;
+            top: 80px; /** fixed header height */
           }
         `}
       />

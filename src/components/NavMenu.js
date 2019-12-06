@@ -51,6 +51,7 @@ export default () => (
       `}
     >
       <ListLink to="/about">About</ListLink>
+      <ListLink to="/board">Board</ListLink>
       <ListLink to="/partners">Partners</ListLink>
       <ListLink to="/events">Events</ListLink>
       <ListLink to="/contact">Contact</ListLink>

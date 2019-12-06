@@ -73,24 +73,24 @@ const Partners = props => {
         altText="servpro logo"
         description="Servpro Renton"
       />
-      <PartnerImage
+      {/* <PartnerImage
         link="https://www.techblox.com/cgi-sys/suspendedpage.cgi"
         fluid={techblox.childImageSharp.fluid}
         altText="techblox logo"
         description="Techblox"
-      />
+      /> */}
       <PartnerImage
         link="http://gostatewide.com/"
         fluid={statewide.childImageSharp.fluid}
         altText="statewide logo"
         description="Statewide"
       />
-      <PartnerImage
+      {/* <PartnerImage
         link="https://www.1800WATERDAMAGE.com"
         fluid={WD.childImageSharp.fluid}
         altText="1800 water damage logo"
         description="1-800 Water Damage"
-      />
+      /> */}
       <PartnerImage
         link="https://www.westpierce.org/"
         fluid={westPierce.childImageSharp.fluid}

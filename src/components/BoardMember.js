@@ -27,7 +27,7 @@ const BoardMember = props => {
       <div
         css={css`
           padding: 10px;
-          height: 150px;
+          min-height: 150px;
           position: relative;
         `}
       >
@@ -69,7 +69,7 @@ const BoardMember = props => {
                 }
               `}
             >
-              <IconContext.Provider value={{ size: "1.75rem" }}>
+              <IconContext.Provider value={{ size: "2.5rem" }}>
                 <FaLinkedin />
               </IconContext.Provider>
             </a>

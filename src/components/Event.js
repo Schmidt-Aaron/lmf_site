@@ -11,7 +11,14 @@ const Event = props => {
 
   const data = useStaticQuery(graphql`
     query {
-      auction2020: file(relativePath: { eq: "MtRainier-s.jpg" }) {
+      auction2020: file(relativePath: { eq: "hyatt.jpg" }) {
+        childImageSharp {
+          fluid(quality: 90, maxWidth: 1200) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      auction2: file(relativePath: { eq: "hyatt_dining.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1200) {
             ...GatsbyImageSharpFluid_withWebp
@@ -29,7 +36,7 @@ const Event = props => {
   `);
 
   // destructure our query data
-  const auction = data.auction2020.childImageSharp.fluid;
+  const auction = data.auction2.childImageSharp.fluid;
   const holidayParty = data.holidayParty2019.childImageSharp.fluid;
   const eventName = props.shortEventName;
 

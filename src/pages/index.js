@@ -73,10 +73,10 @@ export default ({ data }) => (
   </Layout>
 );
 
-// query for any outside data
+// query for any outside data; hero image
 export const query = graphql`
   query {
-    heroImg: file(relativePath: { eq: "juliane-liebermann-542688.jpg" }) {
+    heroImg: file(relativePath: { eq: "remembering.jpg" }) {
       childImageSharp {
         # Specify the image processing specifications right in the query.
         # Makes it trivial to update as your page's design changes.
@@ -87,3 +87,17 @@ export const query = graphql`
     }
   }
 `;
+// // query for any outside data
+// export const query = graphql`
+//   query {
+//     heroImg: file(relativePath: { eq: "juliane-liebermann-542688.jpg" }) {
+//       childImageSharp {
+//         # Specify the image processing specifications right in the query.
+//         # Makes it trivial to update as your page's design changes.
+//         fluid(quality: 90, maxWidth: 1600) {
+//           ...GatsbyImageSharpFluid_withWebp
+//         }
+//       }
+//     }
+//   }
+// `;

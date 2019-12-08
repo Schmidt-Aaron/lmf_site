@@ -51,6 +51,10 @@ export default () => (
             grid-template-columns: minmax(150px, max-content) 1fr;
             /* position: fixed; */
             background-color: white;
+
+            @media (max-width: 768px) {
+              grid-template-rows: 80px;
+            }
           `}
         >
           <div
@@ -59,12 +63,17 @@ export default () => (
               grid-row: 1;
               justify-self: start;
               padding-left: 1rem;
+              height: 100px;
+              min-width: 100%;
               @media (max-width: 970px) {
                 min-width: 100%;
                 grid-row: 1;
                 grid-column: span 2;
                 justify-self: center;
                 padding-left: inherit;
+              }
+              @media (max-width: 768px) {
+                height: 80px;
               }
             `}
           >
@@ -76,14 +85,15 @@ export default () => (
                 text-decoration: none;
                 color: black;
               `}
-              description="Light My Fire"
+              description="Light My Fire of Puget Sound Homepage"
             >
               <h3 css={{ display: `none` }}>{data.site.siteMetadata.title}</h3>
               <Image
                 fixed={data.logo.childImageSharp.fixed}
                 alt={"Light My Fire Puget Sound"}
                 title={"Light My Fire Puget Sound"}
-                imgStyle={{ marginBottom: 0 }}
+                style={{ marginBottom: 0, height: "100%", width: "100%" }}
+                imgStyle={{ height: "100%", width: "auto" }}
               />
             </Link>
           </div>

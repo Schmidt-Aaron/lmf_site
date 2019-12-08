@@ -13,9 +13,9 @@ class Table extends React.Component {
     return (
       <Layout>
         <SEO title="Purchase a Table" />
-        <Underlined>
+        {/* <Underlined>
           <h1>2020 Charity Dinner and Auction</h1>
-        </Underlined>
+        </Underlined> */}
 
         <UpcomingEvents {...LMF2020} style={{ marginBottom: `2rem` }} />
         <hr />

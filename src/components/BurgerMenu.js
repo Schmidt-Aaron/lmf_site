@@ -4,6 +4,7 @@ import { css, jsx, Global } from "@emotion/core";
 import styled from "@emotion/styled";
 import { slide as Menu } from "react-burger-menu";
 import { Link } from "gatsby";
+import "./burgerMenu.css";
 
 // base styles for burger menu
 const styles = {
@@ -14,7 +15,11 @@ const styles = {
     // width: "100px",
     // height: "100px",
     right: "40px",
-    top: "40px"
+    top: "40px",
+    "@media(min-width: 768px)": {
+      right: "30px",
+      top: "30px"
+    }
   },
   bmBurgerBars: {
     background: "#373a47"
@@ -117,7 +122,7 @@ class burgerMenu extends React.Component {
         `}
       >
         <Menu
-          styles={styles}
+          // styles={styles}
           right
           isOpen={this.state.menuOpen}
           onStateChange={state => this.handleStateChange(state)}

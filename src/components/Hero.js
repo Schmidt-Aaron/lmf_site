@@ -25,8 +25,8 @@ const Hero = props => {
 
         /* Background styles */
         background-image: linear-gradient(
-          rgba(0, 0, 0, 0.15),
-          rgba(0, 0, 0, 0.45)
+          rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.7)
         );
 
         background-size: cover;
@@ -50,7 +50,7 @@ const Hero = props => {
           height: 100%;
           z-index: -1;
           @media (max-width: 768px) {
-            top: 100px;
+            top: 80px; /** fixed header height */
           }
         `}
       />

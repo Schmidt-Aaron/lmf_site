@@ -23,11 +23,11 @@
 }
 
 .bm-cross {
-  background: #bdc3c7;
+  background: #373a47;
 }
 
 .bm-menu {
-  background: #373a47;
+  background: #bdc3c7;
   font-size: 1.15em;
 }
 
@@ -39,7 +39,7 @@
   fill: #373a47;
 }
 .bm-item-list {
-  color: #b8b7ad;
+  color: #373a47;
   list-style: none;
   text-align: center;
 }

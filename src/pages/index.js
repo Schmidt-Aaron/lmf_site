@@ -58,17 +58,6 @@ export default ({ data }) => (
           Purchase a Table
         </Link>
       </TextWrapper>
-      <hr />
-      <UpcomingEvents {...PSAAHoliday2019} />
-      <TextWrapper>
-        <p>
-          For more information about the event and instructions on how to
-          register or become a sponser:{" "}
-          <a href="http://pugetsoundadjusters.org/attachments/stashed_files/PSAA_2019_Holiday_Party_Registration_and_Vendor_Sponsorships.pdf">
-            Event Flyer
-          </a>{" "}
-        </p>
-      </TextWrapper>
     </Wrapper>
   </Layout>
 );

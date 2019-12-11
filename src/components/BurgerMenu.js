@@ -88,8 +88,8 @@ class burgerMenu extends React.Component {
     };
   }
 
-  showSettings(event) {
-    event.preventDefault();
+  showSettings(e) {
+    e.preventDefault();
   }
 
   // This keeps your state in sync with the opening/closing of the menu

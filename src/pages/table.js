@@ -20,21 +20,21 @@ class Table extends React.Component {
         <UpcomingEvents {...LMF2020} style={{ marginBottom: `2rem` }} />
         <hr />
         <Underlined>
-          <h2>Purchase a Table</h2>
+          <h2>Purchase a Table & Sponsorship Opportunities</h2>
         </Underlined>
         <p>
-          To purchase a table at our upcoming event please fill out the fields
-          below and then use the PayPal button to make your payment. The 'Table
-          Captain' will be our the primary point-of-contact and the company
-          information will be used for sponsorship purposes.
+          To purchase a table and/or one of our sponsored items at our upcoming
+          event please fill out the form below. We use Paypal to securely
+          process your payment. Clicking the PayPal button will take you to the
+          Paypal website to complete the payment. The 'Table Captain' will be
+          our the primary point-of-contact and the company information will be
+          used for sponsorship purposes.
         </p>
         <div
           css={css`
             margin-bottom: 1rem;
           `}
-        >
-          <span>2020 LMF Dinner Auction 1 table (10 seats) - $1000</span>
-        </div>
+        ></div>
         <Paypal />
       </Layout>
     );

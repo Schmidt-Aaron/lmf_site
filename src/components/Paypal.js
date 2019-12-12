@@ -58,7 +58,8 @@ export default class PayPal extends Component {
       captain: "",
       company: "",
       contactEmail: "",
-      cart: {}
+      cart: {},
+      validFormData: false
     };
   }
 
@@ -175,7 +176,7 @@ export default class PayPal extends Component {
 
   render() {
     // destructure our state
-    const { captain, company, cart, contactEmail } = this.state;
+    const { captain, company, cart, contactEmail, validFormData } = this.state;
     let totalItems = 0;
     let totalCartAmount = 0;
 
@@ -261,6 +262,7 @@ export default class PayPal extends Component {
             value={contactEmail}
             placeholder={"Contact Email"}
             onChange={this.handleChange}
+            required
           />
           <div
             css={css`
@@ -274,9 +276,16 @@ export default class PayPal extends Component {
             <Input type="text" name="purchaseTime" id="purchaseTime" />
           </div>
         </form>
+        {!validFormData ? (
+          <p>*Please fill out the form to enable payment</p>
+        ) : null}
         <div
           css={css`
             max-width: 500px;
+            pointer-events: ${!validFormData
+              ? `none`
+              : `inherit`}; /** disable clicking until form validation */
+            opacity: ${!validFormData ? `0.5` : `inherit`};
           `}
         >
           <PayPalButton

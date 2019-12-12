@@ -6,12 +6,12 @@ import { colors } from "../utils/theme";
 const StoreItem = props => {
   const {
     name,
-    cost,
-    itemId,
+    unit_amount,
+    sku,
     description,
     addItem,
     removeItem,
-    checkCartForQuantity
+    createCartQuantityHTML
   } = props;
   return (
     <div
@@ -38,7 +38,7 @@ const StoreItem = props => {
             margin-bottom: 0;
             color: white;
           `}
-          onClick={() => addItem(name, cost, itemId)}
+          onClick={() => addItem(name, unit_amount, sku, description)}
         >
           +
         </p>
@@ -48,7 +48,7 @@ const StoreItem = props => {
             margin-bottom: 0;
             color: white;
           `}
-          onClick={() => removeItem(itemId)}
+          onClick={() => removeItem(sku)}
         >
           -
         </p>
@@ -73,7 +73,7 @@ const StoreItem = props => {
             `}
           >
             {name}
-            {checkCartForQuantity(itemId)}
+            {createCartQuantityHTML(sku)}
           </p>
           <p
             css={css`
@@ -81,7 +81,7 @@ const StoreItem = props => {
               font-weight: 500;
             `}
           >
-            ${cost}
+            ${unit_amount}
           </p>
         </div>
         <p

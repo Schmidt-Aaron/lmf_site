@@ -65,15 +65,17 @@ export default class PayPal extends Component {
   };
 
   // add item to our cart
-  addItem = (item, cost, itemId) => {
-    const itemCode = itemId;
+  addItem = (name, unit_amount, sku, description) => {
+    const itemCode = sku;
     let cartCopy = Object.assign({}, this.state.cart);
 
     // if not in cart => add item to cart
     if (!this.state.cart[itemCode]) {
       cartCopy[itemCode] = {
-        item,
-        cost,
+        sku,
+        name,
+        unit_amount,
+        description,
         quantity: 1
       };
       this.setState({
@@ -94,8 +96,8 @@ export default class PayPal extends Component {
   };
 
   // remove item from cart
-  removeItem = itemId => {
-    const itemCode = itemId;
+  removeItem = sku => {
+    const itemCode = sku;
     // check that item is in cart before firing
     if (this.state.cart[itemCode]["quantity"] >= 1) {
       let cartCopy = Object.assign({}, this.state.cart);
@@ -110,49 +112,52 @@ export default class PayPal extends Component {
     console.log("item not found");
   };
 
-  checkCartForQuantity = itemId => {
-    const itemCode = itemId;
+  // returns cart quantity
+  checkCartForQuantity = sku => {
+    const itemCode = sku;
 
-    // return empty string if item is not in cart or if item quantity is 0
     if (
       !this.state.cart[itemCode] ||
       this.state.cart[itemCode]["quantity"] === 0
     ) {
-      return "";
+      return 0;
     }
 
     let itemTotal = this.state.cart[itemCode]["quantity"];
-    return (
-      <span
-        css={css`
-          margin-left: 1rem;
-        `}
-      >
-        ({itemTotal})
-      </span>
-    );
+    return itemTotal;
+  };
+
+  // calc cart quantity then return html
+  createCartQuantityHTML = sku => {
+    let total = this.checkCartForQuantity(sku);
+    if (total === 0) {
+      return "";
+    }
+    if (total > 0) {
+      return (
+        <span
+          css={css`
+            margin-left: 1rem;
+          `}
+        >
+          ({total})
+        </span>
+      );
+    }
   };
 
   render() {
     // destructure our state
     const { captain, company, cart, contactEmail } = this.state;
 
-    // transaction details
-    const item = {
-      description:
-        "Light My Fire 2020 Charity Dinner Auction - Single Table (10 people)",
-      // CC receipt description (22 char max)
-      CC_desc: "LMF 2020 Dinner",
-      amount: 1000
-    };
-
+    // calcs cart total from the cart object in state
     const cartTotal = () => {
       let total = 0;
       let cartCopy = Object.assign({}, cart);
 
       // loop through our cart object
       for (let [key, value] of Object.entries(cartCopy)) {
-        let itemTotalCost = value.cost * value.quantity;
+        let itemTotalCost = value.unit_amount * value.quantity;
         total += itemTotalCost;
       }
 
@@ -161,39 +166,39 @@ export default class PayPal extends Component {
 
     const availableItems = [
       {
-        itemId: "TABLE",
+        sku: "TABLE",
         name: "Buy a Table",
         description:
           "Purchase a table at our upcoming charity dinner. Each table sits 10 people.",
-        amount: 1000
+        unit_amount: 1000
       },
       {
-        itemId: "FIREMAN",
+        sku: "FIREMAN",
         name: "Fireman's Award",
         description:
           "Sponsor the award given to our two board member fire fighters, who make our work possible",
-        amount: 300
+        unit_amount: 300
       },
       {
-        itemId: "CENTER",
+        sku: "CENTER",
         name: "Center Pieces",
         description:
           "Work with fire fighter board member to design center pieces for 20 tables",
-        amount: 400
+        unit_amount: 400
       },
       {
-        itemId: "ROUND",
+        sku: "ROUND",
         name: "Buy a Round",
         description:
           "Sponsor a round of drinks for a table. Ask us about setting up your company flag at the bar. (4 remaining)",
-        amount: 500
+        unit_amount: 500
       },
       {
-        itemId: "COINS",
+        sku: "COINS",
         name: "Challenge Coins",
         description:
           "Purchases (10) Light My Fire of Puget Sound challenge coins.",
-        amount: 800
+        unit_amount: 800
       }
     ];
 
@@ -203,13 +208,13 @@ export default class PayPal extends Component {
           {availableItems.map((item, i) => (
             <StoreItem
               key={i}
-              itemId={item.itemId}
+              sku={item.sku}
               name={item.name}
               description={item.description}
-              cost={item.amount}
+              unit_amount={item.unit_amount}
               addItem={this.addItem}
               removeItem={this.removeItem}
-              checkCartForQuantity={this.checkCartForQuantity}
+              createCartQuantityHTML={this.createCartQuantityHTML}
             />
           ))}
           <p
@@ -276,20 +281,76 @@ export default class PayPal extends Component {
               width: 400px;
             `}
             createOrder={(data, actions) => {
-              return actions.order.create({
-                purchase_units: [
-                  {
-                    amount: {
-                      currency_code: "USD",
-                      value: item.amount
-                    },
+              // transaction details
+              const purchase_units = [
+                {
+                  reference_id: "Light My Fire of Puget Sound",
+                  amount: {
+                    value: 0,
+                    currency_code: "USD",
+                    item_total: {
+                      value: 0,
+                      currency_code: "USD"
+                    }
+                  },
 
-                    description: item.description,
-                    soft_descriptor: item.CC_desc
-                  }
-                ]
+                  description: "Light My Fire 2020 Charity Dinner Auction",
+                  soft_descriptor: "Light My Fire",
+                  items: []
+                }
+              ];
+
+              // builds our purchase unit
+              const createPurchaseUnit = () => {
+                let total = 0;
+                let itemArray = [];
+                // let purchase_unitCopy = Object.assign({}, purchase_units[0])
+
+                // loop through our cart object
+                for (let [key, value] of Object.entries(this.state.cart)) {
+                  const {
+                    sku,
+                    name,
+                    unit_amount,
+                    quantity,
+                    description
+                  } = value;
+                  // update our total
+                  const itemTotalCost = unit_amount * quantity;
+                  total += itemTotalCost;
+
+                  // convert items to Strings for API
+                  const unit_amountString = unit_amount.toString(10);
+                  const quantityString = quantity.toString(10);
+
+                  // update our items array
+                  itemArray.push({
+                    sku,
+                    name,
+                    unit_amount: {
+                      value: unit_amountString,
+                      currency_code: "USD"
+                    },
+                    quantity: quantityString,
+                    description
+                  });
+                }
+
+                //apply the changes to our purchase_units
+                purchase_units[0].amount.value = total.toString(10);
+                purchase_units[0].amount.item_total.value = total.toString(10);
+                purchase_units[0].items = itemArray;
+                console.log(purchase_units);
+              };
+
+              // calls our helper
+              createPurchaseUnit();
+
+              return actions.order.create({
+                purchase_units: purchase_units
               });
             }}
+            catchError={err => console.error(err)}
             onApprove={(data, actions, state = { ...this.state }) => {
               // Capture the funds from the transaction
               return actions.order.capture().then(function(details) {
@@ -326,7 +387,9 @@ export default class PayPal extends Component {
               });
             }}
             options={{
-              clientId: CLIENT.production
+              // clientId: CLIENT.production
+              clientId: CLIENT.sandbox,
+              debug: true
             }}
           />
         </div>

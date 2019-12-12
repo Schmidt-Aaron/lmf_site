@@ -8,7 +8,8 @@ import StoreItem from "./StoreItem";
 
 // replace with env vars
 const CLIENT = {
-  sandbox: process.env.GATSBY_PAYPAL_SB,
+  // sandbox: process.env.GATSBY_PAYPAL_SB,
+  sandbox: "sb",
   production: process.env.GATSBY_PAYPAL_CLIENT
 };
 
@@ -282,16 +283,19 @@ export default class PayPal extends Component {
             `}
             createOrder={(data, actions) => {
               // transaction details
+              const orderID = Date.now();
               const purchase_units = [
                 {
                   reference_id: "Light My Fire of Puget Sound",
+                  invoice_id: orderID,
                   amount: {
                     value: 0,
                     currency_code: "USD",
-                    item_total: {
+                    breakdown: {
+                      item_total: {
                       value: 0,
                       currency_code: "USD"
-                    }
+                    }}
                   },
 
                   description: "Light My Fire 2020 Charity Dinner Auction",
@@ -338,7 +342,7 @@ export default class PayPal extends Component {
 
                 //apply the changes to our purchase_units
                 purchase_units[0].amount.value = total.toString(10);
-                purchase_units[0].amount.item_total.value = total.toString(10);
+                purchase_units[0].amount.breakdown.item_total.value = total.toString(10);
                 purchase_units[0].items = itemArray;
                 console.log(purchase_units);
               };
@@ -348,9 +352,8 @@ export default class PayPal extends Component {
 
               return actions.order.create({
                 purchase_units: purchase_units
-              });
+              }).catch(err => console.log(err));
             }}
-            catchError={err => console.error(err)}
             onApprove={(data, actions, state = { ...this.state }) => {
               // Capture the funds from the transaction
               return actions.order.capture().then(function(details) {
@@ -366,7 +369,7 @@ export default class PayPal extends Component {
                     " " +
                     details.payer.name.surname,
                   payerEmail: details.payer.email_address,
-                  itemPurchased: details.purchase_units[0].description,
+                  itemPurchased: details.purchase_units.items,
                   purchaseStatus: details.status,
                   purchaseTime: details.create_time
                 };
@@ -388,8 +391,8 @@ export default class PayPal extends Component {
             }}
             options={{
               // clientId: CLIENT.production
-              clientId: CLIENT.sandbox,
-              debug: true
+              clientId: CLIENT.sandbox
+              // debug: true
             }}
           />
         </div>

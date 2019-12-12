@@ -20,7 +20,7 @@ export default ({ location }) => {
           rob@lmfps.org.
         </p>
         <p>
-          Thanks again for your support! We can't wait to see you in April!!
+          Thanks again for your support. We can't wait to see you in April!!
         </p>
       </section>
     </Layout>

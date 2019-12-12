@@ -37,6 +37,7 @@ const StoreItem = props => {
             font-size: 2rem;
             margin-bottom: 0;
             color: white;
+            cursor: pointer;
           `}
           onClick={() => addItem(name, unit_amount, sku, description)}
         >
@@ -47,6 +48,7 @@ const StoreItem = props => {
             font-size: 2rem;
             margin-bottom: 0;
             color: white;
+            cursor: pointer;
           `}
           onClick={() => removeItem(sku)}
         >

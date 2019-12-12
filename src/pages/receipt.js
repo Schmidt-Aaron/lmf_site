@@ -11,13 +11,16 @@ export default ({ location }) => {
       <section>
         <h1>Thanks{payer}!</h1>
         <p>
-          A receipt for your table purchase has been emailed to you. You can
-          also log into your PayPal account to view the transaction details.
+          A receipt for your purchase has been emailed to you. You can also log
+          into your PayPal account to view the transaction details.
         </p>
         <p>
-          If there are any questions about your receipt or if you want more
-          details about the upcoming event please email Rob France at
-          rob@lmfps.org.
+          If you purchased one of our sponsorship items we will contact you soon
+          to arrange the details.
+        </p>
+        <p>
+          If you have any questions about your purchase, or the event please
+          email Rob France at rob@lmfps.org.
         </p>
         <p>
           Thanks again for your support. We can't wait to see you in April!!

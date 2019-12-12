@@ -5,6 +5,8 @@ import styled from "@emotion/styled";
 import { PayPalButton } from "react-paypal-button-v2";
 import { navigate } from "gatsby";
 import StoreItem from "./StoreItem";
+import { availableItems } from "./data/storeItems";
+import { totalmem } from "os";
 
 // replace with env vars
 const CLIENT = {
@@ -56,7 +58,9 @@ export default class PayPal extends Component {
       captain: "",
       company: "",
       contactEmail: "",
-      cart: {}
+      cart: {},
+      cartTotal: 0,
+      totalItems: 0
     };
   }
 
@@ -79,20 +83,44 @@ export default class PayPal extends Component {
         description,
         quantity: 1
       };
+
       this.setState({
         cart: cartCopy
       });
+
       console.log(`${itemCode} added to cart`);
     }
 
     // if already in cart => increase quantity
     if (this.state.cart[itemCode]) {
-      // console.log(cartCopy[itemCode]["quantity"]);
-      cartCopy[itemCode]["quantity"] += 1;
+      // limit # items available for purchase
+
+      if (sku === "ROUND") {
+        if (!this.limitCartItemAmount("ROUND", 4, cartCopy)) {
+          cartCopy[itemCode]["quantity"] += 1;
+          console.log(`${itemCode} added to cart`);
+        }
+      } else {
+        cartCopy[itemCode]["quantity"] += 1;
+        console.log(`${itemCode} added to cart`);
+      }
+
+      // update the cart
       this.setState({
         cart: cartCopy
       });
-      console.log(`${itemCode} added to cart`);
+    }
+  };
+
+  // determine if the item can be added to cart
+  // TODO create client alert then fire with this function
+  limitCartItemAmount = (sku, limit, cart) => {
+    if (cart[sku]) {
+      if (cart[sku]["quantity"] === limit) {
+        return true;
+      } else {
+        return false;
+      }
     }
   };
 
@@ -150,58 +178,35 @@ export default class PayPal extends Component {
   render() {
     // destructure our state
     const { captain, company, cart, contactEmail } = this.state;
+    let totalItems = 0;
+    let totalCartAmount = 0;
 
     // calcs cart total from the cart object in state
-    const cartTotal = () => {
+    const updateCartTotals = () => {
       let total = 0;
       let cartCopy = Object.assign({}, cart);
 
       // loop through our cart object
       for (let [key, value] of Object.entries(cartCopy)) {
         let itemTotalCost = value.unit_amount * value.quantity;
-        total += itemTotalCost;
+        totalItems += value.quantity;
+        totalCartAmount += itemTotalCost;
       }
-
-      return total;
     };
+    // const cartTotal = () => {
+    //   let total = 0;
+    //   let cartCopy = Object.assign({}, cart);
 
-    const availableItems = [
-      {
-        sku: "TABLE",
-        name: "Buy a Table",
-        description:
-          "Purchase a table at our upcoming charity dinner. Each table sits 10 people.",
-        unit_amount: 1000
-      },
-      {
-        sku: "FIREMAN",
-        name: "Fireman's Award",
-        description:
-          "Sponsor the award given to our two board member fire fighters, who make our work possible",
-        unit_amount: 300
-      },
-      {
-        sku: "CENTER",
-        name: "Center Pieces",
-        description:
-          "Work with fire fighter board member to design center pieces for 20 tables",
-        unit_amount: 400
-      },
-      {
-        sku: "ROUND",
-        name: "Buy a Round",
-        description:
-          "Sponsor a round of drinks for a table. Ask us about setting up your company flag at the bar. (4 remaining)",
-        unit_amount: 500
-      },
-      {
-        sku: "COINS",
-        name: "Challenge Coins",
-        description:
-          "Purchases (10) Light My Fire of Puget Sound challenge coins.",
-        unit_amount: 800
-      }
-    ];
+    //   // loop through our cart object
+    //   for (let [key, value] of Object.entries(cartCopy)) {
+    //     let itemTotalCost = value.unit_amount * value.quantity;
+    //     total += itemTotalCost;
+    //     totalItems += value.quantity;
+    //     totalCartAmount += itemTotalCost;
+    //   }
+
+    //   return total;
+    // };
 
     return (
       <div>
@@ -223,7 +228,7 @@ export default class PayPal extends Component {
               text-align: end;
             `}
           >
-            Total: ${cartTotal()}
+            {updateCartTotals()} Total ({totalItems} items): ${totalCartAmount}
           </p>
         </div>
         <form
@@ -293,9 +298,10 @@ export default class PayPal extends Component {
                     currency_code: "USD",
                     breakdown: {
                       item_total: {
-                      value: 0,
-                      currency_code: "USD"
-                    }}
+                        value: 0,
+                        currency_code: "USD"
+                      }
+                    }
                   },
 
                   description: "Light My Fire 2020 Charity Dinner Auction",
@@ -328,21 +334,25 @@ export default class PayPal extends Component {
                   const quantityString = quantity.toString(10);
 
                   // update our items array
-                  itemArray.push({
-                    sku,
-                    name,
-                    unit_amount: {
-                      value: unit_amountString,
-                      currency_code: "USD"
-                    },
-                    quantity: quantityString,
-                    description
-                  });
+                  if (quantity > 0) {
+                    itemArray.push({
+                      sku,
+                      name,
+                      unit_amount: {
+                        value: unit_amountString,
+                        currency_code: "USD"
+                      },
+                      quantity: quantityString,
+                      description
+                    });
+                  }
                 }
 
                 //apply the changes to our purchase_units
                 purchase_units[0].amount.value = total.toString(10);
-                purchase_units[0].amount.breakdown.item_total.value = total.toString(10);
+                purchase_units[0].amount.breakdown.item_total.value = total.toString(
+                  10
+                );
                 purchase_units[0].items = itemArray;
                 console.log(purchase_units);
               };
@@ -350,9 +360,11 @@ export default class PayPal extends Component {
               // calls our helper
               createPurchaseUnit();
 
-              return actions.order.create({
-                purchase_units: purchase_units
-              }).catch(err => console.log(err));
+              return actions.order
+                .create({
+                  purchase_units: purchase_units
+                })
+                .catch(err => console.log(err));
             }}
             onApprove={(data, actions, state = { ...this.state }) => {
               // Capture the funds from the transaction

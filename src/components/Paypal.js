@@ -6,7 +6,7 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { navigate } from "gatsby";
 import StoreItem from "./StoreItem";
 import { availableItems } from "./data/storeItems";
-import { totalmem } from "os";
+import { createPurchaseUnit, buildNetlifyFormPayload } from "../utils/helpers";
 
 // replace with env vars
 const CLIENT = {
@@ -58,9 +58,7 @@ export default class PayPal extends Component {
       captain: "",
       company: "",
       contactEmail: "",
-      cart: {},
-      cartTotal: 0,
-      totalItems: 0
+      cart: {}
     };
   }
 
@@ -193,6 +191,7 @@ export default class PayPal extends Component {
         totalCartAmount += itemTotalCost;
       }
     };
+
     // const cartTotal = () => {
     //   let total = 0;
     //   let cartCopy = Object.assign({}, cart);
@@ -201,8 +200,6 @@ export default class PayPal extends Component {
     //   for (let [key, value] of Object.entries(cartCopy)) {
     //     let itemTotalCost = value.unit_amount * value.quantity;
     //     total += itemTotalCost;
-    //     totalItems += value.quantity;
-    //     totalCartAmount += itemTotalCost;
     //   }
 
     //   return total;
@@ -287,78 +284,8 @@ export default class PayPal extends Component {
               width: 400px;
             `}
             createOrder={(data, actions) => {
-              // transaction details
-              const orderID = Date.now();
-              const purchase_units = [
-                {
-                  reference_id: "Light My Fire of Puget Sound",
-                  invoice_id: orderID,
-                  amount: {
-                    value: 0,
-                    currency_code: "USD",
-                    breakdown: {
-                      item_total: {
-                        value: 0,
-                        currency_code: "USD"
-                      }
-                    }
-                  },
-
-                  description: "Light My Fire 2020 Charity Dinner Auction",
-                  soft_descriptor: "Light My Fire",
-                  items: []
-                }
-              ];
-
               // builds our purchase unit
-              const createPurchaseUnit = () => {
-                let total = 0;
-                let itemArray = [];
-                // let purchase_unitCopy = Object.assign({}, purchase_units[0])
-
-                // loop through our cart object
-                for (let [key, value] of Object.entries(this.state.cart)) {
-                  const {
-                    sku,
-                    name,
-                    unit_amount,
-                    quantity,
-                    description
-                  } = value;
-                  // update our total
-                  const itemTotalCost = unit_amount * quantity;
-                  total += itemTotalCost;
-
-                  // convert items to Strings for API
-                  const unit_amountString = unit_amount.toString(10);
-                  const quantityString = quantity.toString(10);
-
-                  // update our items array
-                  if (quantity > 0) {
-                    itemArray.push({
-                      sku,
-                      name,
-                      unit_amount: {
-                        value: unit_amountString,
-                        currency_code: "USD"
-                      },
-                      quantity: quantityString,
-                      description
-                    });
-                  }
-                }
-
-                //apply the changes to our purchase_units
-                purchase_units[0].amount.value = total.toString(10);
-                purchase_units[0].amount.breakdown.item_total.value = total.toString(
-                  10
-                );
-                purchase_units[0].items = itemArray;
-                console.log(purchase_units);
-              };
-
-              // calls our helper
-              createPurchaseUnit();
+              let purchase_units = createPurchaseUnit(cart);
 
               return actions.order
                 .create({
@@ -369,23 +296,10 @@ export default class PayPal extends Component {
             onApprove={(data, actions, state = { ...this.state }) => {
               // Capture the funds from the transaction
               return actions.order.capture().then(function(details) {
-                // let convertItemsIntoArray = details.purchase_units.map(item => item.description)
-
                 // combine disparate data into form payload
-                let payload = {
-                  captain: state.captain,
-                  company: state.company,
-                  contactEmail: state.contactEmail,
-                  payerName:
-                    details.payer.name.given_name +
-                    " " +
-                    details.payer.name.surname,
-                  payerEmail: details.payer.email_address,
-                  itemPurchased: details.purchase_units.items,
-                  purchaseStatus: details.status,
-                  purchaseTime: details.create_time
-                };
-                // console.log(payload);
+                let payload = buildNetlifyFormPayload(details, state);
+
+                // POST netlify form data
                 fetch("/", {
                   method: "POST",
                   headers: {

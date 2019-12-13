@@ -7,6 +7,7 @@ import { navigate } from "gatsby";
 import StoreItem from "./StoreItem";
 import { availableItems } from "./data/storeItems";
 import { createPurchaseUnit, buildNetlifyFormPayload } from "../utils/helpers";
+import FormValidator from "./FormValidator";
 
 // replace with env vars
 const CLIENT = {
@@ -54,17 +55,42 @@ const Input = styled.input`
 export default class PayPal extends Component {
   constructor(props) {
     super(props);
+
+    this.validator = new FormValidator([
+      {
+        field: "captain",
+        method: "isEmpty",
+        validWhen: false,
+        message: "Table Captain is required."
+      },
+      {
+        field: "contactEmail",
+        method: "isEmpty",
+        validWhen: false,
+        message: "Email is required."
+      },
+      {
+        field: "contactEmail",
+        method: "isEmail",
+        validWhen: true,
+        message: "That is not a valid email."
+      }
+    ]);
+
     this.state = {
       captain: "",
       company: "",
       contactEmail: "",
       cart: {},
-      validFormData: false
+      validation: this.validator.valid(),
+      isValidated: false
     };
   }
 
   // handle form input data binding
-  handleChange = e => {
+  handleChange = async e => {
+    e.preventDefault();
+
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -174,15 +200,40 @@ export default class PayPal extends Component {
     }
   };
 
+  // fire our form validation
+  checkForm = () => {
+    const validation = this.validator.validate(this.state);
+    this.setState({ validation, isValidated: true });
+  };
+
+  // fire form validation if enter is pushed
+  enterKeyPushed = e => {
+    let code = e.charCode;
+    if (code === 13) {
+      // 13 = 'enter keycode'
+      console.log("you hit enter");
+      this.checkForm();
+    }
+  };
+
   render() {
     // destructure our state
-    const { captain, company, cart, contactEmail, validFormData } = this.state;
+    const {
+      captain,
+      company,
+      cart,
+      contactEmail,
+      isValidated,
+      validation
+    } = this.state;
     let totalItems = 0;
     let totalCartAmount = 0;
 
+    // check if form is validated then if validation passes
+    let isValid = isValidated ? validation.isValid : false;
+
     // calcs cart total from the cart object in state
     const updateCartTotals = () => {
-      let total = 0;
       let cartCopy = Object.assign({}, cart);
 
       // loop through our cart object
@@ -235,16 +286,36 @@ export default class PayPal extends Component {
           data-netlify="true"
           netlify-honeypot="bot-field"
         >
-          <Label htmlFor="captain">Table Captain:</Label>
-          <Input
-            type="text"
-            name="captain"
-            id="captain"
-            value={captain}
-            onChange={this.handleChange}
-            placeholder="Table Captain"
-            required
-          />
+          <div
+            className={validation.captain.isInvalid}
+            css={css`
+              position: relative;
+            `}
+          >
+            <p
+              css={css`
+                display: inline-block;
+                color: red;
+                font-size: 0.5rem;
+                margin: 0;
+                position: absolute;
+                top: -16px;
+              `}
+            >
+              {validation.captain.message}
+            </p>
+            <Label htmlFor="captain">Table Captain:</Label>
+            <Input
+              type="text"
+              name="captain"
+              id="captain"
+              value={captain}
+              onChange={this.handleChange}
+              placeholder="Table Captain"
+              onBlur={this.checkForm}
+              onKeyPress={this.enterKeyPushed}
+            />
+          </div>
           <Label htmlFor="company">Company:</Label>
           <Input
             type="text"
@@ -253,17 +324,39 @@ export default class PayPal extends Component {
             value={company}
             placeholder="Company"
             onChange={this.handleChange}
+            onBlur={this.checkForm}
+            onKeyPress={this.enterKeyPushed.bind(this)}
           />
-          <Label htmlFor="contactEmail">Contact Email:</Label>
-          <Input
-            type="text"
-            name="contactEmail"
-            id="contactEmail"
-            value={contactEmail}
-            placeholder={"Contact Email"}
-            onChange={this.handleChange}
-            required
-          />
+          <div
+            className={validation.contactEmail.isInvalid}
+            css={css`
+              position: relative;
+            `}
+          >
+            <p
+              css={css`
+                display: inline-block;
+                color: red;
+                font-size: 0.5rem;
+                margin: 0;
+                position: absolute;
+                top: -16px;
+              `}
+            >
+              {validation.contactEmail.message}
+            </p>
+            <Label htmlFor="contactEmail">Contact Email:</Label>
+            <Input
+              type="text"
+              name="contactEmail"
+              id="contactEmail"
+              value={contactEmail}
+              placeholder={"Contact Email"}
+              onChange={this.handleChange}
+              onBlur={this.checkForm}
+              onKeyPress={this.enterKeyPushed.bind(this)}
+            />
+          </div>
           <div
             css={css`
               display: none;
@@ -276,16 +369,29 @@ export default class PayPal extends Component {
             <Input type="text" name="purchaseTime" id="purchaseTime" />
           </div>
         </form>
-        {!validFormData ? (
-          <p>*Please fill out the form to enable payment</p>
+
+        {!isValid ? (
+          <p
+            css={css`
+              font-size: 0.7rem;
+            `}
+          >
+            *Please complete the form to enable payment. If you are using a
+            mobile device you may also need to click outside of the form fields
+            to toggle the payment buttons.
+          </p>
         ) : null}
         <div
           css={css`
-            max-width: 500px;
-            pointer-events: ${!validFormData
+            width: calc(100% - 140px);
+            pointer-events: ${!isValid
               ? `none`
               : `inherit`}; /** disable clicking until form validation */
-            opacity: ${!validFormData ? `0.5` : `inherit`};
+            opacity: ${!isValid ? `0.5` : `inherit`};
+            @media (max-width: 1028px) {
+              margin: 0 auto;
+              width: 100%;
+            }
           `}
         >
           <PayPalButton

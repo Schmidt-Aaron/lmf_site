@@ -34,7 +34,7 @@ const styles = {
     background: "#bdc3c7"
   },
   bmMenu: {
-    background: "#373a47",
+    background: "#fbfbfb",
     fontSize: "1.15em"
   },
   bmMenuWrap: {

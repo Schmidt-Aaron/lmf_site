@@ -83,7 +83,6 @@ export const buildNetlifyFormPayload = (details, state) => {
 
   const finalItemString = purchasedItemsArray.join(",");
 
-  console.log(purchasedItems);
   let payload = {
     captain: state.captain,
     company: state.company,

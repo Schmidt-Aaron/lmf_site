@@ -364,6 +364,7 @@ export default class PayPal extends Component {
           >
             <Input type="text" name="payerEmail" id="payerEmail" />
             <Input type="text" name="payerName" id="payerName" />
+            <Input type="text" name="contactEmail" id="contactEmail" />
             <Input type="text" name="itemPurchased" id="itemPurchased" />
             <Input type="text" name="purchaseStatus" id="purchaseStatus" />
             <Input type="text" name="purchaseTime" id="purchaseTime" />

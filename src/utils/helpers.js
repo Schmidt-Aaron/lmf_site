@@ -79,9 +79,9 @@ export const buildNetlifyFormPayload = (details, state) => {
 
     let itemString = `${name}: ${quantity}`;
     if (i === length - 1) {
-      purchaseItems.concat(`${itemString}`);
+      purchasedItems.concat(`${itemString}`);
     } else {
-      purchaseItems.concat(`${itemString},`);
+      purchasedItems.concat(`${itemString},`);
     }
   });
 

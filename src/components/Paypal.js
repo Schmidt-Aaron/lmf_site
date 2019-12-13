@@ -119,9 +119,18 @@ export default class PayPal extends Component {
     // if already in cart => increase quantity
     if (this.state.cart[itemCode]) {
       // limit # items available for purchase
-
       if (sku === "ROUND") {
         if (!this.limitCartItemAmount("ROUND", 4, cartCopy)) {
+          cartCopy[itemCode]["quantity"] += 1;
+          console.log(`${itemCode} added to cart`);
+        }
+      } else if (sku === "FIREMAN") {
+        if (!this.limitCartItemAmount("FIREMAN", 2, cartCopy)) {
+          cartCopy[itemCode]["quantity"] += 1;
+          console.log(`${itemCode} added to cart`);
+        }
+      } else if (sku === "CENTER") {
+        if (!this.limitCartItemAmount("CENTER", 1, cartCopy)) {
           cartCopy[itemCode]["quantity"] += 1;
           console.log(`${itemCode} added to cart`);
         }
@@ -163,7 +172,6 @@ export default class PayPal extends Component {
 
       console.log(`${itemCode} removed`);
     }
-    console.log("item not found");
   };
 
   // returns cart quantity

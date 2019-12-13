@@ -433,8 +433,8 @@ export default class PayPal extends Component {
               });
             }}
             options={{
-              // clientId: CLIENT.production
-              clientId: CLIENT.sandbox
+              clientId: CLIENT.production
+              // clientId: CLIENT.sandbox
               // debug: true
             }}
           />

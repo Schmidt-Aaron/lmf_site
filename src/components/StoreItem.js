@@ -25,35 +25,59 @@ const StoreItem = props => {
         css={css`
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: center;
           border-right: 1px solid grey;
           flex-basis: 75px;
           background-color: ${colors.PRIMARY};
         `}
       >
-        <p
+        <div
           css={css`
+            width: 100%;
+            display: flex;
+            flex-basis: 50%;
+            align-items: center;
+            justify-content: center;
             font-size: 2rem;
             margin-bottom: 0;
             color: white;
             cursor: pointer;
+            border-bottom: 1px solid ${colors.black};
           `}
           onClick={() => addItem(name, unit_amount, sku, description)}
         >
-          +
-        </p>
-        <p
+          <p
+            css={css`
+              margin: 0;
+              line-height: 10px;
+            `}
+          >
+            +
+          </p>
+        </div>
+        <div
           css={css`
+            width: 100%;
+            display: flex;
+            flex-basis: 50%;
+            align-items: center;
+            justify-content: center;
             font-size: 2rem;
             margin-bottom: 0;
             color: white;
             cursor: pointer;
+            border-top: 1px solid ${colors.black};
           `}
           onClick={() => removeItem(sku)}
         >
-          -
-        </p>
+          <p
+            css={css`
+              margin: 0;
+              line-height: 10px;
+            `}
+          >
+            -
+          </p>
+        </div>
       </div>
       <div
         css={css`

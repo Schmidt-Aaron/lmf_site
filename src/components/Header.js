@@ -71,6 +71,7 @@ export default () => (
                 grid-column: span 2;
                 justify-self: center;
                 padding-left: inherit;
+                margin-left: 1rem;
               }
               @media (max-width: 768px) {
                 height: 80px;

@@ -1,3 +1,4 @@
+/** code from https://github.com/mikeries/react-validation-tutorial */
 import validator from "validator";
 
 class FormValidator {

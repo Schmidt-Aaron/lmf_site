@@ -69,13 +69,30 @@ export const createPurchaseUnit = cart => {
 export const buildNetlifyFormPayload = (details, state) => {
   // let purchaseItems = details.purchase_units.items.map(item)
   console.log(details);
+
+  let purchasedItems = "";
+  // calc length of item array
+  const length = details.purchase_units[0].items.length;
+  details.purchase_units[0].items.map((item, i) => {
+    const name = item.name;
+    const quantity = item.quantity;
+
+    let itemString = `${name}: ${quantity}`;
+    if (i === length - 1) {
+      purchaseItems.concat(`${itemString}`);
+    } else {
+      purchaseItems.concat(`${itemString},`);
+    }
+  });
+
   let payload = {
     captain: state.captain,
     company: state.company,
     contactEmail: state.contactEmail,
     payerName: details.payer.name.given_name + " " + details.payer.name.surname,
     payerEmail: details.payer.email_address,
-    itemPurchased: details.purchase_units.items,
+    itemPurchased: purchasedItems,
+    purchaseAmount: details.purchase_units[0].amount.value,
     purchaseStatus: details.status,
     purchaseTime: details.create_time
   };

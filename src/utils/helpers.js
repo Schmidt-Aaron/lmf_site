@@ -67,13 +67,15 @@ export const createPurchaseUnit = cart => {
 // combine paypal response with form data(state) into one payload that will be sent off to netlify forms
 // TODO test multiple item use case
 export const buildNetlifyFormPayload = (details, state) => {
+  let purchaseItems = details.purchase_units.items.join(",");
+
   let payload = {
     captain: state.captain,
     company: state.company,
     contactEmail: state.contactEmail,
     payerName: details.payer.name.given_name + " " + details.payer.name.surname,
     payerEmail: details.payer.email_address,
-    itemPurchased: details.purchase_units.items,
+    itemPurchased: purchaseItems,
     purchaseStatus: details.status,
     purchaseTime: details.create_time
   };

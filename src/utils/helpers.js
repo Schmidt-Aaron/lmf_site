@@ -68,7 +68,7 @@ export const createPurchaseUnit = cart => {
 // TODO test multiple item use case
 export const buildNetlifyFormPayload = (details, state) => {
   // let purchaseItems = details.purchase_units.items.map(item)
-  console.log(details.purchase_units.items);
+  console.log(details);
   let payload = {
     captain: state.captain,
     company: state.company,

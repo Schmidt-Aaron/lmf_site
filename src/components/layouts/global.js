@@ -45,7 +45,7 @@ export default ({ children }) => (
             }
           ]}
         >
-          <link rel="canonical" href="https://lightmyfireps.org/" />
+          <link rel="canonical" href="https://lmfps.org/" />
           <html lang="en" />
         </Helmet>
         {children}

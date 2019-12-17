@@ -75,7 +75,7 @@ function SEO({ description, lang, meta, title }) {
         // },
       ].concat(meta)}
     >
-      <link rel="canonical" href="https://lightmyfireps.org/" />
+      <link rel="canonical" href="https://lmfps.org/" />
     </Helmet>
   );
 }

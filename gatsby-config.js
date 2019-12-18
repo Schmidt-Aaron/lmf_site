@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Light My Fire of Puget Sound`,
     description: `Light My Fire is a Puget Sound charity devoted to helping families recover from catastrophic fire damage`,
-    siteURL: `https://lmfps.org`,
+    siteUrl: `https://lmfps.org`, // needed for sitemap
     googleVerification: `PfmmbcIvVYhidSZL3yKTkWF_xQwXyXXjM4wRL5KI9GI`,
     author: `Aaron Schmidt`,
     authorSite: `https://aaronms.com`

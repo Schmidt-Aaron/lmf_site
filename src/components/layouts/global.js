@@ -10,7 +10,8 @@ import { Helmet } from "react-helmet";
 import { StaticQuery, Link, graphql } from "gatsby";
 import { css, jsx } from "@emotion/core";
 
-// global effects; used in other layouts as parent wrapper
+// global effects; used only in homelayout.js
+// TODO refactor away!!
 
 export default ({ children }) => (
   <StaticQuery
@@ -31,23 +32,6 @@ export default ({ children }) => (
           }
         `}
       >
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: "description",
-              content:
-                "Light My Fire is a Puget Sound charity devoted to helping families recover from catastrophic fire damage"
-            },
-            {
-              name: "google-site-verification",
-              content: "PfmmbcIvVYhidSZL3yKTkWF_xQwXyXXjM4wRL5KI9GI"
-            }
-          ]}
-        >
-          <link rel="canonical" href="https://lmfps.org/" />
-          <html lang="en" />
-        </Helmet>
         {children}
       </div>
     )}

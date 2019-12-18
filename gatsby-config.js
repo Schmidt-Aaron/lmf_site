@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `Light My Fire of Puget Sound`,
     description: `Light My Fire is a Puget Sound charity devoted to helping families recover from catastrophic fire damage`,
-    siteUrl: `https://lmfps.org/`,
+    siteURL: `https://lmfps.org/`,
     googleVerification: `PfmmbcIvVYhidSZL3yKTkWF_xQwXyXXjM4wRL5KI9GI`,
     author: `Aaron Schmidt`,
     authorSite: `https://aaronms.com`
@@ -76,6 +76,12 @@ module.exports = {
         mergeCachingHeaders: true, // boolean to turn off the default caching headers
         transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
         generateMatchPathRewrites: true // boolean to turn off automatic creation of redirect rules for client only paths
+      }
+    },
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://lmfps.org`
       }
     }
   ]

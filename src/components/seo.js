@@ -21,6 +21,7 @@ function SEO({ description, lang, meta, title }) {
             author
             authorSite
             googleVerification
+            bingVerification
           }
         }
       }
@@ -28,7 +29,7 @@ function SEO({ description, lang, meta, title }) {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const { googleVerification } = site.siteMetadata;
+  const { googleVerification, bingVerification } = site.siteMetadata;
   return (
     <Helmet
       htmlAttributes={{
@@ -52,6 +53,10 @@ function SEO({ description, lang, meta, title }) {
         {
           name: "google-site-verification",
           content: googleVerification
+        },
+        {
+          name: "msvalidate.01",
+          content: bingVerification
         },
         {
           property: `og:type`,

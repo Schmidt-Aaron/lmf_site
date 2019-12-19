@@ -8,6 +8,7 @@ module.exports = {
     description: `Light My Fire is a Puget Sound charity devoted to helping families recover from catastrophic fire damage`,
     siteUrl: `https://lmfps.org`, // needed for sitemap
     googleVerification: `PfmmbcIvVYhidSZL3yKTkWF_xQwXyXXjM4wRL5KI9GI`,
+    bingVerification: "338AACFD54E4B7A4CBE19B9AB049FAD9",
     author: `Aaron Schmidt`,
     authorSite: `https://aaronms.com`
   },

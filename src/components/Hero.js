@@ -82,7 +82,7 @@ const Hero = props => {
           `}
         >
           A house fire can destroy everything a family owns. Our goal is to help
-          them get back on their feet
+          them get back on their feet.
         </h2>
         <Link
           to="/help"

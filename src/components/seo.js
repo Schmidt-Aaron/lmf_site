@@ -56,6 +56,14 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`
+        },
+        {
+          property: `og:image`,
+          content: `/static/images/Light My Fire Logo.png`
+        },
+        {
+          property: `og:locale`,
+          content: `en_US`
         }
         // {
         //   name: `twitter:card`,

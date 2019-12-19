@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="Meet the Board" />
+    <SEO title="LMF Board Members" description="Meet the Light My Fire Board Members." />
     <Chairman />
     <hr />
     <Board {...data} />

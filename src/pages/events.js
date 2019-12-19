@@ -19,7 +19,7 @@ import { LMF2020, PSAAHoliday2019 } from "../components/data/events";
 
 export default () => (
   <Layout>
-    <SEO title="Events" />
+    <SEO title="Events" description="Want to help out? Come to our next event!"/>
     <Underlined>
       <h1>Events</h1>
     </Underlined>

@@ -2,13 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layouts/layout";
 import Mission from "../components/Mission";
-import Board from "../components/Board";
-import Chairman from "../components/Board/ChairmanLetter";
 import SEO from "../components/seo";
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="About Our Work" />
+    <SEO title="About Our Work" 
+    description="Learn about how Light My Fire helps our local community." />
     <Mission />
     {/* <hr /> */}
     {/* <Chairman /> */}

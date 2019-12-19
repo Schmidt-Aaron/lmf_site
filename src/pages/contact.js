@@ -6,7 +6,7 @@ import SEO from "../components/seo";
 
 export default () => (
   <Layout>
-    <SEO title="Contact Us" />
+    <SEO title="Contact Us" description="Please use the form to contact us. We look forward to hearing from you!"/>
     <Underlined>
       <h1>Contact LMF</h1>
     </Underlined>

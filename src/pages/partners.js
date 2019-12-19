@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 
 export default ({ data }) => (
   <Layout>
-    <SEO title="Partners" />
+    <SEO title="Partners" description="Come check out our great partners." />
     <Underlined>
       <h1>Our Partners</h1>
     </Underlined>

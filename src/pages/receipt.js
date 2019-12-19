@@ -7,7 +7,7 @@ export default ({ location }) => {
   location.state ? (payer = " " + location.state.payer) : null;
   return (
     <Layout>
-      <SEO title="You Rock!!" />
+      <SEO title="You Rock!!" description="Thanks so much for your sponsorship. You are literally the best!"/>
       <section>
         <h1>Thanks{payer}!</h1>
         <p>

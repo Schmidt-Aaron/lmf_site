@@ -7,7 +7,7 @@ import SEO from "../components/seo";
 
 export default () => (
   <Layout>
-    <SEO title="Privacy Practices" />
+    <SEO title="Privacy Practices" description="We take your privacy seriously. Serious."/>
     <h1>Privacy Policy</h1>
     <p>
       Light My Fire of Puget sound does not collect any identifiable visitor

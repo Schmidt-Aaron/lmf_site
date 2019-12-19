@@ -16,7 +16,7 @@ import { LMF2020, PSAAHoliday2019 } from "../components/data/events";
 // Homepage content
 export default ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Homepage" />
     <Hero {...data} />
     <TextWrapper>
       <Mission />

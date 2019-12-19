@@ -10,6 +10,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 const BoardMember = props => {
   const linkedIn = props.linkedIn || null;
+  const { img, name, job, description } = props;
   return (
     <section
       css={css`
@@ -23,7 +24,7 @@ const BoardMember = props => {
         }
       `}
     >
-      <Img fluid={props.img.childImageSharp.fluid} />
+      <Img fluid={img.childImageSharp.fluid} alt={name} />
       <div
         css={css`
           padding: 10px;
@@ -36,21 +37,21 @@ const BoardMember = props => {
             margin-bottom: 0.5rem;
           `}
         >
-          {props.name}
+          {name}
         </h3>
         <h4
           css={css`
             font-size: 0.8rem;
           `}
         >
-          {props.job}
+          {job}
         </h4>
         <p
           css={css`
             display: none;
           `}
         >
-          {props.description}
+          {description}
         </p>
         <div
           css={css`
@@ -70,7 +71,7 @@ const BoardMember = props => {
               `}
             >
               <IconContext.Provider value={{ size: "2.5rem" }}>
-                <FaLinkedin />
+                <FaLinkedin title={`${name}'s LinkedIn page`} />
               </IconContext.Provider>
             </a>
           ) : (

@@ -5,7 +5,7 @@ import { css, jsx } from "@emotion/core";
 import BurgerMenu from "./BurgerMenu";
 import { colors } from "../utils/theme";
 import { IconContext } from "react-icons";
-import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
 
 // paypal link
 const donate =
@@ -75,9 +75,15 @@ export default () => (
           rel="noopener noreferrer"
         >
           <IconContext.Provider
-            value={{ size: "2rem", style: { verticalAlign: "middle" } }}
+            value={{
+              size: "2rem",
+              style: { verticalAlign: "middle" }
+            }}
           >
-            <FaFacebookSquare />
+            <FaFacebookSquare
+              aria-labelledby="LMF Facebook Page"
+              title="LMF Facebook Page"
+            />
           </IconContext.Provider>
         </a>
       </li>

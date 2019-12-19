@@ -48,7 +48,7 @@ const Chairman = () => {
           whatever way you are able.
         </p>
         <p>
-          <img src={DianeSign} />
+          <img src={DianeSign} alt="Signature from our board member" />
         </p>
       </em>
     </section>

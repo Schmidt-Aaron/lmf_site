@@ -59,7 +59,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://lmfps.org/public/images/Light_My_Fire_Logo.png`
+          content: `https://lmfps.org/images/Light_My_Fire_Logo.png`
         },
         {
           property: `og:locale`,

@@ -252,19 +252,6 @@ export default class PayPal extends Component {
       }
     };
 
-    // const cartTotal = () => {
-    //   let total = 0;
-    //   let cartCopy = Object.assign({}, cart);
-
-    //   // loop through our cart object
-    //   for (let [key, value] of Object.entries(cartCopy)) {
-    //     let itemTotalCost = value.unit_amount * value.quantity;
-    //     total += itemTotalCost;
-    //   }
-
-    //   return total;
-    // };
-
     return (
       <div>
         <div>
@@ -372,7 +359,6 @@ export default class PayPal extends Component {
           >
             <Input type="text" name="payerEmail" id="payerEmail" />
             <Input type="text" name="payerName" id="payerName" />
-            <Input type="text" name="contactEmail" id="contactEmail" />
             <Input type="text" name="itemPurchased" id="itemPurchased" />
             <Input type="text" name="purchaseStatus" id="purchaseStatus" />
             <Input type="text" name="purchaseTime" id="purchaseTime" />

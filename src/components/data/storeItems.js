@@ -7,14 +7,6 @@ export const availableItems = [
     unit_amount: 1000
   },
   {
-    sku: "FIREMAN",
-    name: "Fireman's Award",
-    description:
-      "Sponsor the award given to our two board member firefighters. Without their help and dedication, none of this would be possible. (2 available)",
-    unit_amount: 300,
-    limit: 2
-  },
-  {
     sku: "CENTER",
     name: "Table Centerpieces",
     description:

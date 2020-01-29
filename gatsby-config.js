@@ -52,7 +52,7 @@ module.exports = {
       options: {
         trackingId: "UA-131110014-1",
         // Puts tracking script in the head instead of the body
-        head: false,
+        head: true,
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
@@ -67,6 +67,19 @@ module.exports = {
         // cookieDomain: "example.com"
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Light My Fire of Puget Sound`, //TODO pull data into separate file
+        short_name: `Light My Fire`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#ff6d70`,
+        display: `standalone`,
+        icon: `static/favicon.ico` // This path is relative to the root of the site
+      }
+    },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-netlify`,
       options: {

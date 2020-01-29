@@ -80,8 +80,6 @@ export default () => (
               style: { verticalAlign: "middle" }
             }}
           >
-            {" "}
-            //todo fix aria-* lighthouse issue
             <FaFacebookSquare
               aria-role="button"
               aria-labelledby="LMF Facebook Page"

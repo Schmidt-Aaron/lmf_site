@@ -80,11 +80,7 @@ export default () => (
               style: { verticalAlign: "middle" }
             }}
           >
-            <FaFacebookSquare
-              aria-role="button"
-              aria-labelledby="LMF Facebook Page"
-              title="LMF Facebook Page"
-            />
+            <FaFacebookSquare title="LMF Facebook Page" />
           </IconContext.Provider>
         </a>
       </li>

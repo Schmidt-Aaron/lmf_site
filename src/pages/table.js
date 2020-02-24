@@ -12,7 +12,10 @@ class Table extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Purchase a Table" description="Help out by sponsoring a table, or donating to our charity." />
+        <SEO
+          title="2020 Charity Dinner Auction - Purchase a Table"
+          description="Help out by sponsoring a table at our 2020 dinner auction, or donating to our charity."
+        />
         {/* <Underlined>
           <h1>2020 Charity Dinner and Auction</h1>
         </Underlined> */}

@@ -19,7 +19,10 @@ import { LMF2020, PSAAHoliday2019 } from "../components/data/events";
 
 export default () => (
   <Layout>
-    <SEO title="Events" description="Want to help out? Come to our next event!"/>
+    <SEO
+      title="Events"
+      description="Want to help out? Come to our next event!"
+    />
     <Underlined>
       <h1>Events</h1>
     </Underlined>
@@ -32,12 +35,12 @@ export default () => (
       <h2>Upcoming Events</h2>
     </Underlined>
     <UpcomingEvents style={{ marginBottom: `2rem` }} {...LMF2020} />
-    <p>
+    {/* <p>
       * Please send us a digital copy of your logo if you have purchased a
       table. You are also welcome to use your own branded tablecloths for your
       table. *
-    </p>
-    <Link
+    </p> */}
+    {/* <Link
       to="/table"
       css={css`
         display: grid;
@@ -56,7 +59,7 @@ export default () => (
       `}
     >
       Purchase a Table
-    </Link>
+    </Link> */}
     <hr />
 
     <Underlined>

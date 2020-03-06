@@ -17,22 +17,40 @@
     info:
 */
 
+// update for cancelled event
 export const LMF2020 = {
   shortEventName: "auction",
   imgAlt: "LMF silent auction 2020",
   eventName: "Annual Dinner & Charity Auction",
-  subHeader: "Live and Silent Auctions",
-  date: "April 18th, 2020",
-  time: "5:00 - 8:30PM",
-  location: "Hyatt Regency Lake Washington At Seattle's Southport",
-  street: "1053 Lake Washington Blvd N",
-  city: "Renton, WA 98056",
-  directions: "https://goo.gl/maps/BUebu6i366FU44PXA",
+  subHeader: "Cancelled due to the COVID-19 virus",
+  date: "Cancelled",
+  time: "N/A",
+  location: "N/A",
+  street: "",
+  city: "",
+  directions: "N/A",
   info:
-    "If you would like to donate, or are interested in attending please email us. Tables are still available below at a price of $1000 for 10 seats. We hope to see you there!",
+    "We will be reaching out to everyone who already donated, or purchased a table for the event to see if they would like a refund, or would like to convert the table purchase to a tax-deductible donation. If you have any questions or concerns please contact Rob France at rob@lmfps.org.",
   details:
-    "We are pleased to announce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the new waterfront Hyatt Regency at the Renton Landing. We also have a couple special surprises cooked up for the event."
+    "We are saddened to announce that this year's event is being cancelled due to the recent COVID-19 outbreak. The heart and soul of our charity auctions have always been the firefighters that we support. As a precaution, all non-vital events for King County first-responders have been cancelled until further notice. As a result, they will not be able to attend the event. Because of this, and the current situation we have decided to forego our annual event."
 };
+/* original event details */
+// export const LMF2020 = {
+//   shortEventName: "auction",
+//   imgAlt: "LMF silent auction 2020",
+//   eventName: "Annual Dinner & Charity Auction",
+//   subHeader: "Live and Silent Auctions",
+//   date: "April 18th, 2020",
+//   time: "5:00 - 8:30PM",
+//   location: "Hyatt Regency Lake Washington At Seattle's Southport",
+//   street: "1053 Lake Washington Blvd N",
+//   city: "Renton, WA 98056",
+//   directions: "https://goo.gl/maps/BUebu6i366FU44PXA",
+//   info:
+//     "If you would like to donate, or are interested in attending please email us. Tables are still available below at a price of $1000 for 10 seats. We hope to see you there!",
+//   details:
+//     "We are pleased to announce our annual dinner auction. Join us for a night filled with fun, good eats, and great company. This year we booked the new waterfront Hyatt Regency at the Renton Landing. We also have a couple special surprises cooked up for the event."
+// };
 
 export const PSAAHoliday2019 = {
   shortEventName: "holidayParty",

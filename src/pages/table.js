@@ -38,7 +38,7 @@ class Table extends React.Component {
             margin-bottom: 1rem;
           `}
         ></div>
-        <Paypal />
+        {/* <Paypal /> */}
       </Layout>
     );
   }

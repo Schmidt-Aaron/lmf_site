@@ -31,12 +31,7 @@ export default ({ data }) => (
         {...LMF2020}
       />
       <TextWrapper>
-        <p>
-          * Please send us a digital copy of your logo if you have purchased a
-          table. You are also welcome to use your own branded tablecloths for
-          your table. *
-        </p>
-        <Link
+        {/* <Link
           to="/table"
           css={css`
             display: grid;
@@ -56,7 +51,7 @@ export default ({ data }) => (
           `}
         >
           Purchase a Table
-        </Link>
+        </Link> */}
       </TextWrapper>
     </Wrapper>
   </Layout>

@@ -26,8 +26,8 @@ export const LMF2020 = {
   date: "Cancelled",
   time: "N/A",
   location: "N/A",
-  street: "",
-  city: "",
+  street: "N/A",
+  city: "N/A",
   directions: "N/A",
   info:
     "We will be reaching out to everyone who already donated, or purchased a table for the event to see if they would like a refund, or would like to convert the table purchase to a tax-deductible donation. If you have any questions or concerns please contact Rob France at rob@lmfps.org.",

@@ -57,10 +57,14 @@ export default () => (
       <ListLink to="/contact">Contact</ListLink>
       <ListLink to="/help">Help Out</ListLink>
       <li
-        css={{
-          display: `inline-block`,
-          marginRight: `1rem`
-        }}
+        css={css`
+          display: inline-block;
+          margin-right: 1rem;
+          height: 40px;
+          width: 40px;
+          height: 2rem;
+          width: 2rem;
+        `}
       >
         <a
           css={css`

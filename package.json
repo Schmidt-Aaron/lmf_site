@@ -52,7 +52,7 @@
     "typeface-roboto": "^0.0.75",
     "typography": "^0.16.19",
     "typography-theme-funston": "^0.15.10",
-    "validator": "^12.1.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.17",

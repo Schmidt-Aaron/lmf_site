@@ -2,6 +2,3 @@
 
 # Redirect domain aliases to primary domain
 https://lightmyfireps.org/* https://lmfps.org/:splat 301!
-
-# Optional: Redirect default Netlify subdomain to primary domain
-https://jolly-heisenberg-33a387.netlify.com/* https://lmfps.org/:splat 301!
